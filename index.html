@@ -1,0 +1,2086 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Curso Inframe | O método de R$ 3.900 por casamento, documentado</title>
+<meta name="description" content="Curso completo de Lucas e Manuela sobre como construir um negócio de fotos instantâneas em casamento e venda em eventos. Acesso vitalício às atualizações.">
+<meta name="theme-color" content="#0F0E11">
+<meta property="og:title" content="Curso Inframe">
+<meta property="og:description" content="O método que estamos usando pra faturar R$ 3.900 por casamento em Florianópolis.">
+<meta property="og:image" content="assets/hero-inframe.jpeg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  /* Backgrounds (mais escuro pro mais claro) */
+  --bg-darkest: #08070A;
+  --bg-base: #0F0E11;
+  --bg-elevated: #15131A;
+  --bg-card: #1C1A22;
+  --bg-warm-card: #221F28;
+  --bg-highlight: #2A2632;
+
+  /* Textos */
+  --ink: #F8F4ED;
+  --ink-soft: #C4BEB2;
+  --ink-mute: #8A8278;
+  --ink-dim: #5A5550;
+
+  /* Accents dourados */
+  --accent: #D4AC6E;
+  --accent-deep: #B89668;
+  --gold: #E5C285;
+  --gold-bright: #F0D399;
+
+  /* Estado */
+  --success: #7BA86E;
+  --error: #E07A5F;
+
+  /* Linhas */
+  --line: #2E2A2F;
+  --line-soft: #1F1C20;
+  --line-strong: #3D3842;
+
+  --serif: 'Fraunces', 'Times New Roman', serif;
+  --sans: 'DM Sans', system-ui, sans-serif;
+
+  --max: 1180px;
+  --gutter: clamp(20px, 5vw, 56px);
+
+  --radius-s: 6px;
+  --radius-m: 12px;
+  --radius-l: 20px;
+  --radius-xl: 28px;
+
+  --shadow-1: 0 1px 2px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.2);
+  --shadow-2: 0 4px 16px rgba(0,0,0,0.4), 0 30px 60px rgba(0,0,0,0.35);
+  --shadow-3: 0 12px 40px rgba(0,0,0,0.5), 0 40px 100px rgba(0,0,0,0.45);
+  --shadow-gold: 0 0 60px rgba(212, 172, 110, 0.15), 0 20px 60px rgba(0,0,0,0.4);
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  font-family: var(--sans);
+  background: var(--bg-base);
+  color: var(--ink);
+  font-size: 17px;
+  line-height: 1.55;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Grain sutil pra dar textura ao dark */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  opacity: 0.025;
+  z-index: 1000;
+  mix-blend-mode: overlay;
+}
+
+img { max-width: 100%; display: block; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+a { color: inherit; text-decoration: none; }
+
+.serif { font-family: var(--serif); font-weight: 400; letter-spacing: -0.01em; }
+.serif-italic { font-family: var(--serif); font-style: italic; font-weight: 400; }
+
+.container {
+  width: 100%;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+  position: relative;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.eyebrow::before {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: var(--accent);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 18px 28px;
+  font-family: var(--sans);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border-radius: 999px;
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease), background 0.3s var(--ease), color 0.3s var(--ease);
+  white-space: nowrap;
+  text-align: center;
+  position: relative;
+}
+.btn-primary {
+  background: var(--gold);
+  color: var(--bg-darkest);
+  box-shadow: var(--shadow-gold);
+}
+.btn-primary:hover {
+  background: var(--gold-bright);
+  transform: translateY(-2px);
+  box-shadow: 0 0 80px rgba(229, 194, 133, 0.3), 0 25px 70px rgba(0,0,0,0.5);
+}
+.btn-primary .arrow { transition: transform 0.3s var(--ease); }
+.btn-primary:hover .arrow { transform: translateX(4px); }
+.btn-secondary {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--line-strong);
+}
+.btn-secondary:hover { background: var(--bg-card); border-color: var(--accent); color: var(--gold); }
+.btn-large { padding: 22px 36px; font-size: 16px; }
+.btn-full { width: 100%; }
+
+/* NAV */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(15, 14, 17, 0.75);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border-bottom: 1px solid var(--line-soft);
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+.brand {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.brand small {
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  color: var(--ink-mute);
+  display: block;
+  margin-top: 2px;
+}
+.nav-cta {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 10px 18px;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  color: var(--gold);
+  transition: all 0.3s var(--ease);
+}
+.nav-cta:hover { background: var(--gold); color: var(--bg-darkest); }
+
+@media (max-width: 640px) {
+  .nav-cta { font-size: 12px; padding: 8px 14px; }
+}
+
+/* HERO */
+.hero {
+  padding-top: clamp(48px, 8vw, 100px);
+  padding-bottom: clamp(56px, 9vw, 120px);
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -200px;
+  right: -200px;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(212, 172, 110, 0.12) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -300px;
+  left: -200px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(212, 172, 110, 0.06) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: clamp(32px, 6vw, 72px);
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 16px;
+  background: rgba(212, 172, 110, 0.08);
+  border: 1px solid rgba(212, 172, 110, 0.3);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 32px;
+}
+.hero-tag .dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 12px var(--gold);
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.4); }
+}
+.hero h1 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(36px, 5.5vw, 64px);
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+  margin-bottom: 24px;
+}
+.hero h1 em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--gold);
+  font-feature-settings: 'lnum', 'pnum';
+}
+.hero-sub {
+  font-size: clamp(16px, 1.7vw, 19px);
+  line-height: 1.55;
+  color: var(--ink-soft);
+  margin-bottom: 36px;
+  max-width: 540px;
+}
+.hero-cta-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.hero-microcopy {
+  font-size: 13px;
+  color: var(--ink-mute);
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.hero-microcopy span { display: inline-flex; align-items: center; gap: 6px; }
+.hero-microcopy .check {
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  background: var(--success);
+  color: var(--bg-darkest);
+  font-size: 9px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.hero-visual {
+  position: relative;
+  aspect-ratio: 4/5;
+  border-radius: var(--radius-l);
+  overflow: hidden;
+  box-shadow: var(--shadow-3);
+  transform: rotate(0.5deg);
+  transition: transform 0.6s var(--ease);
+}
+.hero-visual:hover { transform: rotate(0deg) scale(1.01); }
+.hero-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hero-visual::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 50%, rgba(8, 7, 10, 0.6) 100%);
+  pointer-events: none;
+}
+.hero-badge {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  background: rgba(15, 14, 17, 0.85);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(229, 194, 133, 0.3);
+  border-radius: 12px;
+  padding: 14px 18px;
+  box-shadow: var(--shadow-1);
+  z-index: 2;
+}
+.hero-badge-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  margin-bottom: 2px;
+}
+.hero-badge-value {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 18px;
+  color: var(--gold);
+}
+
+@media (max-width: 880px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .hero-visual { max-width: 480px; margin: 0 auto; }
+}
+
+/* STATS BAR */
+.stats {
+  background: var(--bg-darkest);
+  color: var(--ink);
+  padding: clamp(40px, 6vw, 64px) 0;
+  position: relative;
+  border-top: 1px solid var(--line-soft);
+  border-bottom: 1px solid var(--line-soft);
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: clamp(20px, 3vw, 40px);
+}
+.stat { text-align: center; }
+.stat-value {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+.stat-value em {
+  font-style: italic;
+  font-weight: 400;
+}
+.stat-label {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--ink-mute);
+  line-height: 1.4;
+}
+@media (max-width: 720px) {
+  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 32px 20px; }
+  .stat:nth-child(5) { grid-column: 1 / -1; }
+}
+
+/* SECTION BASE */
+.section {
+  padding-top: clamp(72px, 10vw, 128px);
+  padding-bottom: clamp(72px, 10vw, 128px);
+  position: relative;
+}
+.section-header {
+  max-width: 720px;
+  margin-bottom: clamp(40px, 6vw, 72px);
+}
+.section-header.center { margin-left: auto; margin-right: auto; text-align: center; }
+.section-header h2 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(28px, 4vw, 44px);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: 18px 0 16px;
+  color: var(--ink);
+}
+.section-header h2 em {
+  font-style: italic;
+  color: var(--gold);
+}
+.section-header p {
+  font-size: 17px;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  max-width: 620px;
+}
+.section-header.center p { margin-left: auto; margin-right: auto; }
+
+/* PAIN POINTS */
+.pain { background: var(--bg-elevated); }
+.pain-intro {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(20px, 2.4vw, 26px);
+  line-height: 1.4;
+  color: var(--ink);
+  margin-bottom: 40px;
+  max-width: 720px;
+}
+.pain-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px 40px;
+  list-style: none;
+  max-width: 960px;
+}
+.pain-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px 0;
+  border-top: 1px solid var(--line);
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+.pain-item::before {
+  content: '';
+  flex-shrink: 0;
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+  border-radius: 50%;
+  margin-top: 10px;
+  box-shadow: 0 0 8px rgba(212, 172, 110, 0.5);
+}
+.pain-close {
+  margin-top: 48px;
+  font-family: var(--serif);
+  font-size: clamp(20px, 2.4vw, 24px);
+  font-style: italic;
+  color: var(--gold);
+  max-width: 580px;
+}
+@media (max-width: 720px) {
+  .pain-list { grid-template-columns: 1fr; gap: 0; }
+}
+
+/* SOLUTION */
+.solution-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(32px, 5vw, 64px);
+  align-items: start;
+}
+.solution-body p {
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--ink-soft);
+  margin-bottom: 20px;
+}
+.solution-body p strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+.solution-numbers {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-l);
+  padding: 40px;
+  position: sticky;
+  top: 100px;
+}
+.solution-num-item {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--line);
+}
+.solution-num-item:last-child { border-bottom: none; }
+.solution-num-value {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(28px, 3.6vw, 40px);
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.solution-num-label {
+  font-size: 14px;
+  color: var(--ink-soft);
+  line-height: 1.4;
+}
+@media (max-width: 880px) {
+  .solution-grid { grid-template-columns: 1fr; }
+  .solution-numbers { position: static; padding: 32px; }
+}
+
+/* BENEFITS */
+.benefits { background: var(--bg-darkest); }
+.benefits-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.benefit {
+  padding: 32px 24px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  transition: background 0.4s var(--ease);
+}
+.benefit:hover { background: var(--bg-card); }
+.benefit-num {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 22px;
+  color: var(--gold);
+  flex-shrink: 0;
+  line-height: 1;
+  padding-top: 4px;
+  min-width: 40px;
+}
+.benefit-text {
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+.benefit-text strong { color: var(--ink); font-weight: 600; }
+
+@media (max-width: 720px) {
+  .benefits-list { grid-template-columns: 1fr; }
+}
+
+/* CARROSSEL BASE */
+.carousel-section { position: relative; }
+.carousel-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+.carousel-header h3 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(22px, 3vw, 32px);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  max-width: 540px;
+  color: var(--ink);
+}
+.carousel-controls {
+  display: flex;
+  gap: 8px;
+}
+.carousel-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid var(--line-strong);
+  background: var(--bg-card);
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  transition: all 0.3s var(--ease);
+}
+.carousel-btn:hover {
+  background: var(--gold);
+  color: var(--bg-darkest);
+  border-color: var(--gold);
+  transform: scale(1.05);
+}
+.carousel-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+.carousel-btn:disabled:hover { background: var(--bg-card); color: var(--ink); transform: none; }
+
+.carousel {
+  position: relative;
+  margin: 0 calc(-1 * var(--gutter));
+  padding: 0 var(--gutter);
+}
+.carousel-track {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 32px;
+  padding-top: 8px;
+  scrollbar-width: none;
+}
+.carousel-track::-webkit-scrollbar { display: none; }
+.carousel-slide {
+  flex: 0 0 auto;
+  scroll-snap-align: center;
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--line-strong);
+  transition: all 0.3s var(--ease);
+  cursor: pointer;
+}
+.dot.active { background: var(--gold); width: 24px; border-radius: 4px; box-shadow: 0 0 8px rgba(229, 194, 133, 0.5); }
+
+/* CARROSSEL FEEDBACKS . 1 slot grande centralizado por vez */
+.carousel.feedback .carousel-track {
+  padding-left: max(20px, calc(50vw - 200px));
+  padding-right: max(20px, calc(50vw - 200px));
+  gap: 28px;
+}
+.carousel.feedback .carousel-slide {
+  width: min(85vw, 360px);
+  scroll-snap-align: center;
+  transition: opacity 0.5s var(--ease), transform 0.5s var(--ease);
+  opacity: 0.25;
+  transform: scale(0.9);
+}
+.carousel.feedback .carousel-slide.is-active {
+  opacity: 1;
+  transform: scale(1);
+}
+.feedback-slot {
+  position: relative;
+  aspect-ratio: 9/16;
+  background: linear-gradient(160deg, var(--bg-card) 0%, var(--bg-warm-card) 100%);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-l);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: var(--shadow-2);
+  transition: all 0.4s var(--ease);
+}
+.feedback-slot:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-gold);
+}
+.feedback-slot::before {
+  content: '';
+  position: absolute;
+  inset: 12px;
+  border: 1px dashed var(--line-strong);
+  border-radius: calc(var(--radius-l) - 6px);
+  pointer-events: none;
+}
+.feedback-slot-num {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 64px;
+  color: var(--line-strong);
+  line-height: 1;
+  margin-bottom: 8px;
+  transition: color 0.4s var(--ease);
+}
+.feedback-slot:hover .feedback-slot-num { color: var(--accent); }
+.feedback-slot-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+}
+.feedback-slot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  inset: 0;
+}
+
+/* Carrossel 2: fotos de guestbook */
+.photo-card {
+  position: relative;
+  aspect-ratio: 4/5;
+  border-radius: var(--radius-m);
+  overflow: hidden;
+  box-shadow: var(--shadow-2);
+  transition: transform 0.4s var(--ease);
+}
+.photo-card:hover { transform: translateY(-4px); }
+.photo-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease);
+}
+.photo-card:hover img { transform: scale(1.04); }
+.photo-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 28px 24px 24px;
+  background: linear-gradient(180deg, transparent 0%, rgba(8, 7, 10, 0.92) 100%);
+  color: var(--ink);
+}
+.photo-caption-tag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  background: var(--gold);
+  color: var(--bg-darkest);
+  border-radius: 999px;
+  margin-bottom: 10px;
+}
+.photo-caption-text {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 16px;
+  line-height: 1.4;
+}
+.carousel.photos .carousel-slide { width: min(85%, 380px); }
+
+/* OFFER */
+.offer {
+  background: var(--bg-darkest);
+  position: relative;
+  overflow: hidden;
+}
+.offer::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 900px;
+  height: 900px;
+  background: radial-gradient(circle, rgba(212, 172, 110, 0.08) 0%, transparent 60%);
+  pointer-events: none;
+}
+.offer .container { position: relative; z-index: 1; }
+.offer-card {
+  max-width: 720px;
+  margin: 0 auto;
+  background: var(--bg-card);
+  border-radius: var(--radius-xl);
+  padding: clamp(32px, 5vw, 56px);
+  box-shadow: var(--shadow-3);
+  border: 1px solid var(--line-strong);
+  position: relative;
+}
+.offer-card::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: var(--radius-xl);
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(229, 194, 133, 0.4) 0%, transparent 30%, transparent 70%, rgba(229, 194, 133, 0.2) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+.offer-stack {
+  list-style: none;
+  margin: 32px 0;
+}
+.offer-item {
+  display: grid;
+  grid-template-columns: 24px 1fr auto;
+  gap: 18px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+  align-items: start;
+}
+.offer-item:last-of-type { border-bottom: none; }
+.offer-item-check {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: var(--bg-darkest);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+  margin-top: 2px;
+}
+.offer-item-title {
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--ink);
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+.offer-item-desc {
+  font-size: 14px;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+.offer-item-value {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 15px;
+  color: var(--ink-mute);
+  white-space: nowrap;
+  padding-top: 2px;
+}
+
+.offer-total {
+  background: var(--bg-warm-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-m);
+  padding: 24px;
+  margin: 24px 0 28px;
+  text-align: center;
+}
+.offer-total-label {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  margin-bottom: 4px;
+}
+.offer-total-value {
+  font-family: var(--serif);
+  font-size: 22px;
+  text-decoration: line-through;
+  text-decoration-color: var(--ink-dim);
+  color: var(--ink-dim);
+}
+
+.offer-price {
+  text-align: center;
+  padding: 28px 0;
+  border-top: 2px solid var(--gold);
+  border-bottom: 2px solid var(--gold);
+  margin-bottom: 28px;
+}
+.offer-price-tag {
+  display: inline-block;
+  padding: 4px 12px;
+  background: var(--success);
+  color: var(--bg-darkest);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  margin-bottom: 12px;
+}
+.offer-price-main {
+  font-family: var(--serif);
+  font-size: clamp(56px, 8vw, 84px);
+  line-height: 1;
+  color: var(--ink);
+  letter-spacing: -0.03em;
+  margin-bottom: 8px;
+  text-shadow: 0 0 40px rgba(229, 194, 133, 0.15);
+}
+.offer-price-main .currency {
+  font-size: 0.45em;
+  vertical-align: top;
+  margin-right: 4px;
+  color: var(--gold);
+  font-style: italic;
+}
+.offer-price-installment {
+  font-size: 15px;
+  color: var(--ink-soft);
+  margin-bottom: 4px;
+}
+.offer-price-installment strong { color: var(--gold); font-weight: 600; }
+.offer-price-after {
+  font-size: 13px;
+  color: var(--ink-mute);
+}
+.offer-platforms {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+.offer-platforms span {
+  font-size: 12px;
+  color: var(--ink-mute);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* OBJECTIONS */
+.obj-list {
+  max-width: 880px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.obj-item {
+  background: var(--bg-card);
+  border-radius: var(--radius-m);
+  padding: 28px 32px;
+  border-left: 3px solid var(--accent);
+  transition: all 0.3s var(--ease);
+}
+.obj-item:hover { border-left-color: var(--gold); transform: translateX(4px); }
+.obj-question {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 19px;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+.obj-answer {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+.obj-answer strong { color: var(--ink); font-weight: 600; }
+
+/* GUARANTEE */
+.guarantee {
+  background: var(--bg-elevated);
+  position: relative;
+  overflow: hidden;
+}
+.guarantee::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(229, 194, 133, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+.guarantee .container { position: relative; z-index: 1; }
+.guarantee-card {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+.guarantee-seal {
+  width: 140px;
+  height: 140px;
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  margin: 0 auto 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  animation: rotate 24s linear infinite;
+  box-shadow: 0 0 40px rgba(229, 194, 133, 0.25);
+}
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.guarantee-seal-inner {
+  animation: rotate 24s linear infinite reverse;
+  text-align: center;
+}
+.guarantee-seal-days {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 44px;
+  color: var(--gold);
+  line-height: 1;
+}
+.guarantee-seal-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-top: 4px;
+}
+.guarantee h2 {
+  font-family: var(--serif);
+  font-size: clamp(28px, 4vw, 40px);
+  margin-bottom: 24px;
+  line-height: 1.2;
+  color: var(--ink);
+}
+.guarantee h2 em { color: var(--gold); font-style: italic; }
+.guarantee p {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* URGENCY */
+.urgency {
+  background: var(--bg-base);
+  text-align: center;
+}
+.urgency-card {
+  max-width: 680px;
+  margin: 0 auto;
+}
+.urgency-eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--error);
+  margin-bottom: 20px;
+  padding: 8px 18px;
+  border: 1px solid var(--error);
+  border-radius: 999px;
+}
+.urgency h2 {
+  font-family: var(--serif);
+  font-size: clamp(28px, 4vw, 42px);
+  line-height: 1.2;
+  margin-bottom: 20px;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+.urgency h2 em { color: var(--gold); font-style: italic; }
+.urgency p {
+  font-size: 17px;
+  color: var(--ink-soft);
+  line-height: 1.6;
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+/* FAQ */
+.faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.faq-item {
+  border-bottom: 1px solid var(--line);
+}
+.faq-question {
+  width: 100%;
+  text-align: left;
+  padding: 24px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  font-family: var(--serif);
+  font-size: 19px;
+  font-weight: 400;
+  color: var(--ink);
+  cursor: pointer;
+  transition: color 0.3s var(--ease);
+}
+.faq-question:hover { color: var(--gold); }
+.faq-icon {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: var(--gold);
+  transition: transform 0.4s var(--ease), background 0.3s var(--ease);
+}
+.faq-item.open .faq-icon {
+  transform: rotate(45deg);
+  background: var(--gold);
+  color: var(--bg-darkest);
+  border-color: var(--gold);
+}
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s var(--ease), padding 0.5s var(--ease);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+.faq-item.open .faq-answer {
+  max-height: 400px;
+  padding: 0 0 28px;
+}
+
+/* CTA FINAL */
+.cta-final {
+  background: linear-gradient(180deg, var(--bg-darkest) 0%, var(--bg-base) 100%);
+  color: var(--ink);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.cta-final::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1000px;
+  height: 1000px;
+  background: radial-gradient(circle, rgba(229, 194, 133, 0.18) 0%, transparent 60%);
+  pointer-events: none;
+}
+.cta-final-content {
+  position: relative;
+  max-width: 720px;
+  margin: 0 auto;
+}
+.cta-final h2 {
+  font-family: var(--serif);
+  font-size: clamp(32px, 5vw, 52px);
+  line-height: 1.15;
+  margin-bottom: 24px;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+.cta-final h2 em { color: var(--gold); font-style: italic; }
+.cta-final p {
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--ink-soft);
+  margin-bottom: 16px;
+}
+.cta-final .btn-primary { margin: 32px 0 16px; }
+.cta-final-micro {
+  font-size: 13px;
+  color: var(--ink-mute);
+}
+
+/* PS */
+.ps {
+  background: var(--bg-base);
+  padding: clamp(60px, 8vw, 100px) 0;
+}
+.ps-card {
+  max-width: 680px;
+  margin: 0 auto;
+  background: var(--bg-card);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-l);
+  padding: clamp(32px, 5vw, 56px);
+  position: relative;
+  box-shadow: var(--shadow-2);
+}
+.ps-label {
+  position: absolute;
+  top: -16px;
+  left: 32px;
+  background: var(--gold);
+  color: var(--bg-darkest);
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 14px;
+  font-weight: 500;
+}
+.ps-card p {
+  font-family: var(--serif);
+  font-size: clamp(17px, 1.8vw, 19px);
+  line-height: 1.65;
+  color: var(--ink-soft);
+  margin-bottom: 18px;
+}
+.ps-card p:last-of-type { margin-bottom: 28px; }
+.ps-card p.highlight { color: var(--gold); font-weight: 500; }
+.ps-sig {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+.ps-sig-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: var(--bg-darkest);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 18px;
+  font-weight: 600;
+}
+.ps-sig-name {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 17px;
+  color: var(--ink);
+}
+.ps-sig-role {
+  font-size: 13px;
+  color: var(--ink-mute);
+  letter-spacing: 0.04em;
+}
+
+/* FOOTER */
+.footer {
+  background: var(--bg-darkest);
+  color: var(--ink-mute);
+  padding: 40px 0 32px;
+  font-size: 13px;
+  text-align: center;
+  border-top: 1px solid var(--line-soft);
+}
+.footer a { color: var(--ink-soft); text-decoration: underline; text-underline-offset: 3px; }
+.footer a:hover { color: var(--gold); }
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+.footer-brand {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+.footer-disclaimer {
+  font-size: 11px;
+  color: var(--ink-dim);
+  max-width: 600px;
+  margin: 16px auto 0;
+  line-height: 1.5;
+}
+
+/* REVEAL ANIMATION */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+::selection { background: var(--gold); color: var(--bg-darkest); }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .guarantee-seal, .guarantee-seal-inner { animation: none; }
+  .hero-tag .dot { animation: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="container nav-inner">
+    <div class="brand">
+      INFRAME
+      <small>POLAROID</small>
+    </div>
+    <a href="#oferta" class="nav-cta">Quero o curso</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-text reveal">
+        <div class="hero-tag">
+          <span class="dot"></span>
+          Curso Inframe . lançamento aberto
+        </div>
+        <h1>
+          O método que estamos usando pra faturar <em>R$ 3.900</em> por casamento em Florianópolis.
+        </h1>
+        <p class="hero-sub">
+          Com câmera de R$ 550 e sem agência. 30 aulas, lançadas em tempo real, à medida que a Inframe cresce.
+        </p>
+        <div class="hero-cta-row">
+          <a href="#oferta" class="btn btn-primary btn-large">
+            Quero acesso ao curso
+            <span class="arrow">→</span>
+          </a>
+          <a href="#beneficios" class="btn btn-secondary">Ver o que tem dentro</a>
+        </div>
+        <div class="hero-microcopy">
+          <span><span class="check">✓</span> Acesso imediato</span>
+          <span><span class="check">✓</span> 7 dias de garantia</span>
+          <span><span class="check">✓</span> Em até 12x</span>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal">
+        <img src="assets/hero-inframe.jpeg" alt="Stand Inframe Polaroid em casamento com guestbook e fotos instantâneas" loading="eager">
+        <div class="hero-badge">
+          <div class="hero-badge-label">Lançamento</div>
+          <div class="hero-badge-value">R$ 167 nos 15 primeiros dias</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<section class="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat reveal">
+        <div class="stat-value"><em>+150</em></div>
+        <div class="stat-label">cópias do ebook<br>vendidas no orgânico</div>
+      </div>
+      <div class="stat reveal">
+        <div class="stat-value"><em>8 mil</em></div>
+        <div class="stat-label">views no vídeo<br>sobre o negócio</div>
+      </div>
+      <div class="stat reveal">
+        <div class="stat-value"><em>R$ 1,75</em></div>
+        <div class="stat-label">custo por lead<br>em campanha real</div>
+      </div>
+      <div class="stat reveal">
+        <div class="stat-value"><em>R$ 5 mil</em></div>
+        <div class="stat-label">no primeiro contrato<br>fechado pela Inframe</div>
+      </div>
+      <div class="stat reveal">
+        <div class="stat-value"><em>30</em></div>
+        <div class="stat-label">aulas no curso<br>(14 já disponíveis)</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAIN -->
+<section class="section pain">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="eyebrow">Se você tá lendo até aqui</div>
+      <h2>Provavelmente <em>se reconhece</em> em pelo menos uma dessas situações.</h2>
+    </div>
+    <ul class="pain-list reveal">
+      <li class="pain-item">Quer ter uma renda extra de fim de semana, mas não sabe por onde começar de verdade.</li>
+      <li class="pain-item">Olha pro mercado de casamentos e acha que precisa de R$ 30 mil em equipamento.</li>
+      <li class="pain-item">Já tentou vender foto na rua e travou na hora de cobrar, abordar e fechar.</li>
+      <li class="pain-item">Tem talento pra criar, mas não sabe montar pacote, precificar e fechar contrato.</li>
+      <li class="pain-item">Vê outros casais e fotógrafos faturando bem em evento e não entende como chegaram lá.</li>
+      <li class="pain-item">Comprou curso bonito antes, abriu uma vez, fechou e nunca aplicou nada.</li>
+    </ul>
+    <p class="pain-close reveal">
+      A gente já esteve nesse lugar. A diferença foi parar de procurar fórmula e começar a testar.
+    </p>
+  </div>
+</section>
+
+<!-- SOLUTION -->
+<section class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="eyebrow">A solução</div>
+      <h2>Não é teoria. É o que tá <em>dando certo</em>, exatamente como tá dando certo.</h2>
+    </div>
+    <div class="solution-grid">
+      <div class="solution-body reveal">
+        <p>
+          Quando a gente montou a Inframe, o plano era simples: testar de verdade, anotar tudo e mostrar o que funciona. <strong>Sem agência, sem mentor caro, sem fórmula mágica.</strong>
+        </p>
+        <p>
+          Em poucos dias de empresa, fechamos o primeiro contrato acima de R$ 5 mil. Em menos de uma semana de campanha no Meta Ads, geramos 92 leads a R$ 1,75 cada um. Em poucos meses, viralizamos no Instagram com um vídeo que passou de 8 mil views.
+        </p>
+        <p>
+          Esse curso é o passo a passo do que a gente fez. Não uma versão romantizada. <strong>A versão real</strong>, com print da campanha, com link dos fornecedores, com a planilha que usamos.
+        </p>
+        <p>
+          E como o negócio continua crescendo, novas aulas continuam sendo lançadas ao longo do ano. Quem entra agora não compra um produto fechado. <strong>Acompanha o jogo enquanto ele acontece.</strong>
+        </p>
+      </div>
+      <aside class="solution-numbers reveal">
+        <div class="solution-num-item">
+          <div class="solution-num-value">R$ 550</div>
+          <div class="solution-num-label">Câmera Instax que usamos. Totalmente automática, sem foco profissional.</div>
+        </div>
+        <div class="solution-num-item">
+          <div class="solution-num-value">14 + 16</div>
+          <div class="solution-num-label">Aulas já gravadas, mais novas aulas mensais ao longo do ano.</div>
+        </div>
+        <div class="solution-num-item">
+          <div class="solution-num-value">1 ano</div>
+          <div class="solution-num-label">De suporte direto com Lucas e Manu, em horário comercial.</div>
+        </div>
+        <div class="solution-num-item">
+          <div class="solution-num-value">vitalício</div>
+          <div class="solution-num-label">Acesso a todas as atualizações futuras do curso, sem custo extra.</div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="section benefits" id="beneficios">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="eyebrow">O que muda na sua vida</div>
+      <h2>Depois das 30 aulas, você <em>passa a fazer</em> coisas que antes pareciam complicadas demais.</h2>
+    </div>
+    <div class="benefits-list">
+      <div class="benefit reveal">
+        <div class="benefit-num">01</div>
+        <div class="benefit-text">Sai do <strong>"não sei por onde começar"</strong> com um stand pronto pra rodar no primeiro fim de semana.</div>
+      </div>
+      <div class="benefit reveal">
+        <div class="benefit-num">02</div>
+        <div class="benefit-text">Para de chutar preço e passa a ter <strong>pacotes estruturados</strong>, com margem clara e posicionamento premium.</div>
+      </div>
+      <div class="benefit reveal">
+        <div class="benefit-num">03</div>
+        <div class="benefit-text">Aprende a abordar cerimonialista e <strong>fechar parceria recorrente</strong>, em vez de depender só de tráfego pago.</div>
+      </div>
+      <div class="benefit reveal">
+        <div class="benefit-num">04</div>
+        <div class="benefit-text">Roda campanha no Meta Ads do zero, com <strong>copia e cola</strong> das nossas próprias campanhas.</div>
+      </div>
+      <div class="benefit reveal">
+        <div class="benefit-num">05</div>
+        <div class="benefit-text">Entende venda consignada e passa a <strong>ganhar duas vezes em cada evento</strong> (no contrato e na venda direta).</div>
+      </div>
+      <div class="benefit reveal">
+        <div class="benefit-num">06</div>
+        <div class="benefit-text">Vira a câmera pra dentro do próprio negócio e <strong>transforma cada evento em semanas de conteúdo orgânico</strong>.</div>
+      </div>
+      <div class="benefit reveal">
+        <div class="benefit-num">07</div>
+        <div class="benefit-text">Tem <strong>clareza de margem, fornecedor e logística</strong> pra crescer sem se enrolar.</div>
+      </div>
+      <div class="benefit reveal">
+        <div class="benefit-num">08</div>
+        <div class="benefit-text">Acompanha em tempo real um negócio que tá faturando, em vez de <strong>comprar um curso que parou em 2022</strong>.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CARROSSEL 1: FEEDBACKS (slots verticais 9:16) -->
+<section class="section carousel-section">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="eyebrow">O que dizem quem já comprou</div>
+      <h2>Mais de 150 pessoas compraram o ebook só no orgânico. <em>Esse é o tipo de retorno</em> que a gente recebe toda semana.</h2>
+    </div>
+  </div>
+  <div class="container">
+    <div class="carousel-header">
+      <h3>Feedbacks reais de quem aplicou o método</h3>
+      <div class="carousel-controls">
+        <button class="carousel-btn" data-carousel="proof" data-dir="prev" aria-label="Anterior">←</button>
+        <button class="carousel-btn" data-carousel="proof" data-dir="next" aria-label="Próximo">→</button>
+      </div>
+    </div>
+  </div>
+  <div class="carousel feedback" data-carousel-id="proof">
+    <div class="carousel-track">
+      <div class="carousel-slide">
+        <div class="feedback-slot">
+          <div class="feedback-slot-num">01</div>
+          <div class="feedback-slot-label">Inserir print</div>
+        </div>
+      </div>
+      <div class="carousel-slide">
+        <div class="feedback-slot">
+          <div class="feedback-slot-num">02</div>
+          <div class="feedback-slot-label">Inserir print</div>
+        </div>
+      </div>
+      <div class="carousel-slide">
+        <div class="feedback-slot">
+          <div class="feedback-slot-num">03</div>
+          <div class="feedback-slot-label">Inserir print</div>
+        </div>
+      </div>
+      <div class="carousel-slide">
+        <div class="feedback-slot">
+          <div class="feedback-slot-num">04</div>
+          <div class="feedback-slot-label">Inserir print</div>
+        </div>
+      </div>
+      <div class="carousel-slide">
+        <div class="feedback-slot">
+          <div class="feedback-slot-num">05</div>
+          <div class="feedback-slot-label">Inserir print</div>
+        </div>
+      </div>
+      <div class="carousel-slide">
+        <div class="feedback-slot">
+          <div class="feedback-slot-num">06</div>
+          <div class="feedback-slot-label">Inserir print</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="carousel-dots" data-dots-for="proof"></div>
+  </div>
+</section>
+
+<!-- CARROSSEL 2: FOTOS DE GUESTBOOK -->
+<section class="section carousel-section" style="background: var(--bg-elevated);">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="eyebrow">O nível de entrega</div>
+      <h2>Esse é o tipo de stand que <em>você vai aprender a montar</em>. Sem câmera profissional, sem fotógrafo no time.</h2>
+    </div>
+  </div>
+  <div class="container">
+    <div class="carousel-header">
+      <h3>Da composição ao posicionamento premium</h3>
+      <div class="carousel-controls">
+        <button class="carousel-btn" data-carousel="photos" data-dir="prev" aria-label="Anterior">←</button>
+        <button class="carousel-btn" data-carousel="photos" data-dir="next" aria-label="Próximo">→</button>
+      </div>
+    </div>
+    <div class="carousel photos" data-carousel-id="photos">
+      <div class="carousel-track">
+        <div class="carousel-slide">
+          <div class="photo-card">
+            <img src="assets/hero-inframe.jpeg" alt="Stand Inframe Polaroid em casamento real" loading="lazy">
+            <div class="photo-caption">
+              <span class="photo-caption-tag">Inframe Polaroid</span>
+              <div class="photo-caption-text">Posicionamento premium e ticket alto são parte do método.</div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-slide">
+          <div class="photo-card">
+            <img src="assets/guestbook-3.jpeg" alt="Setup minimalista com rosas brancas e câmera Instax" loading="lazy">
+            <div class="photo-caption">
+              <span class="photo-caption-tag">Setup elegante</span>
+              <div class="photo-caption-text">Decoração impecável com pouco investimento. Você aprende do zero.</div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-slide">
+          <div class="photo-card">
+            <img src="assets/guestbook-2.jpeg" alt="Composição com flores e mini sabonetes" loading="lazy">
+            <div class="photo-caption">
+              <span class="photo-caption-tag">Composição</span>
+              <div class="photo-caption-text">Valoriza o stand sem inflar custo. Lista de fornecedores no curso.</div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-slide">
+          <div class="photo-card">
+            <img src="assets/guestbook-1.jpeg" alt="Guestbook preto com fotos instantâneas coladas" loading="lazy">
+            <div class="photo-caption">
+              <span class="photo-caption-tag">Lembrança</span>
+              <div class="photo-caption-text">O guestbook que vira lembrança. O detalhe que justifica o ticket alto.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-dots" data-dots-for="photos"></div>
+    </div>
+  </div>
+</section>
+
+<!-- CARROSSEL 3: DEPOIMENTOS (slots verticais 9:16) -->
+<section class="section carousel-section">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="eyebrow">Depoimentos</div>
+      <h2>Conversa direta com quem <em>aplicou</em> o que a gente ensina.</h2>
+    </div>
+  </div>
+  <div class="container">
+    <div class="carousel-header">
+      <h3>Histórias de quem testou o método antes do curso completo</h3>
+      <div class="carousel-controls">
+        <button class="carousel-btn" data-carousel="testi" data-dir="prev" aria-label="Anterior">←</button>
+        <button class="carousel-btn" data-carousel="testi" data-dir="next" aria-label="Próximo">→</button>
+      </div>
+    </div>
+  </div>
+  <div class="carousel feedback" data-carousel-id="testi">
+    <div class="carousel-track">
+      <div class="carousel-slide">
+        <div class="feedback-slot">
+          <div class="feedback-slot-num">01</div>
+          <div class="feedback-slot-label">Inserir depoimento</div>
+        </div>
+      </div>
+      <div class="carousel-slide">
+        <div class="feedback-slot">
+          <div class="feedback-slot-num">02</div>
+          <div class="feedback-slot-label">Inserir depoimento</div>
+        </div>
+      </div>
+      <div class="carousel-slide">
+        <div class="feedback-slot">
+          <div class="feedback-slot-num">03</div>
+          <div class="feedback-slot-label">Inserir depoimento</div>
+        </div>
+      </div>
+      <div class="carousel-slide">
+        <div class="feedback-slot">
+          <div class="feedback-slot-num">04</div>
+          <div class="feedback-slot-label">Inserir depoimento</div>
+        </div>
+      </div>
+      <div class="carousel-slide">
+        <div class="feedback-slot">
+          <div class="feedback-slot-num">05</div>
+          <div class="feedback-slot-label">Inserir depoimento</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="carousel-dots" data-dots-for="testi"></div>
+  </div>
+</section>
+
+<!-- OFFER -->
+<section class="section offer" id="oferta">
+  <div class="container">
+    <div class="section-header center reveal">
+      <div class="eyebrow">Tudo que tá incluso</div>
+      <h2>A oferta completa <em>quando você entra hoje</em>.</h2>
+    </div>
+
+    <div class="offer-card reveal">
+      <ul class="offer-stack">
+        <li class="offer-item">
+          <div class="offer-item-check">✓</div>
+          <div>
+            <div class="offer-item-title">Curso completo com 30 aulas</div>
+            <div class="offer-item-desc">14 já disponíveis. Novas aulas mensais. Acesso vitalício às atualizações.</div>
+          </div>
+          <div class="offer-item-value">R$ 1.500</div>
+        </li>
+        <li class="offer-item">
+          <div class="offer-item-check">✓</div>
+          <div>
+            <div class="offer-item-title">Bônus 1 . Campanha Meta Ads copia e cola</div>
+            <div class="offer-item-desc">Print de cada etapa da nossa campanha que gerou 92 leads a R$ 1,75. Você duplica e adapta.</div>
+          </div>
+          <div class="offer-item-value">R$ 397</div>
+        </li>
+        <li class="offer-item">
+          <div class="offer-item-check">✓</div>
+          <div>
+            <div class="offer-item-title">Bônus 2 . Pack de estrutura comercial</div>
+            <div class="offer-item-desc">Planilha de leads, modelo de orçamento, contrato, agenda de eventos. Tudo o que a gente usa.</div>
+          </div>
+          <div class="offer-item-value">R$ 297</div>
+        </li>
+        <li class="offer-item">
+          <div class="offer-item-check">✓</div>
+          <div>
+            <div class="offer-item-title">Bônus 3 . Suporte por 1 ano</div>
+            <div class="offer-item-desc">Dúvida travou? A gente responde direto, sem ticket. Por 12 meses inteiros, em horário comercial.</div>
+          </div>
+          <div class="offer-item-value">R$ 597</div>
+        </li>
+        <li class="offer-item">
+          <div class="offer-item-check">✓</div>
+          <div>
+            <div class="offer-item-title">Bônus 4 . Comunidade no WhatsApp</div>
+            <div class="offer-item-desc">Grupo fechado pra fazer network. Troca de evento, fornecedor, parceria entre cidades.</div>
+          </div>
+          <div class="offer-item-value">R$ 297</div>
+        </li>
+        <li class="offer-item">
+          <div class="offer-item-check">✓</div>
+          <div>
+            <div class="offer-item-title">Bônus 5 . Mentoria mensal com Lucas e Manu</div>
+            <div class="offer-item-desc">Encontro fechado por vídeo chamada, uma vez por mês. Você traz seu caso, a gente responde.</div>
+          </div>
+          <div class="offer-item-value">R$ 1.200</div>
+        </li>
+      </ul>
+
+      <div class="offer-total">
+        <div class="offer-total-label">Valor total separado</div>
+        <div class="offer-total-value">R$ 4.288</div>
+      </div>
+
+      <div class="offer-price">
+        <span class="offer-price-tag">Lançamento . 15 dias</span>
+        <div class="offer-price-main"><span class="currency">R$</span>167</div>
+        <div class="offer-price-installment">ou <strong>12x no cartão</strong></div>
+        <div class="offer-price-after">Depois sobe pra R$ 297 e fica.</div>
+        <div class="offer-platforms">
+          <span>💳 Cartão</span>
+          <span>⚡ Pix</span>
+          <span>🧾 Boleto</span>
+        </div>
+      </div>
+
+      <a href="#" class="btn btn-primary btn-large btn-full">
+        Garantir meu acesso por R$ 167
+        <span class="arrow">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- OBJECTIONS -->
+<section class="section">
+  <div class="container">
+    <div class="section-header center reveal">
+      <div class="eyebrow">Talvez bateu uma dessas</div>
+      <h2>As perguntas que <em>todo mundo faz</em> antes de entrar.</h2>
+    </div>
+    <div class="obj-list">
+      <div class="obj-item reveal">
+        <div class="obj-question">"Já tem muita gente fazendo isso."</div>
+        <div class="obj-answer">
+          Na verdade não. Em São Paulo e Rio o mercado começou a ficar quente. <strong>Fora desses dois polos, o Brasil inteiro tá em estágio inicial.</strong> A gente atende Florianópolis e ainda tem demanda sobrando todo fim de semana. A janela tá aberta. Em 2 ou 3 anos não vai mais estar.
+        </div>
+      </div>
+      <div class="obj-item reveal">
+        <div class="obj-question">"Preciso de muito capital pra começar."</div>
+        <div class="obj-answer">
+          A câmera que a gente usa custa <strong>R$ 550</strong>. O resto do stand a gente lista item por item no curso, com link dos fornecedores e preço atualizado. Você começa por menos de R$ 1.500 no investimento total e recupera no segundo evento.
+        </div>
+      </div>
+      <div class="obj-item reveal">
+        <div class="obj-question">"Não sei fotografar."</div>
+        <div class="obj-answer">
+          A câmera Instax é <strong>totalmente automática</strong>. Não tem ajuste manual, não tem foco profissional, não tem lente que troca. O cliente vai te contratar pela experiência que você cria, não pela técnica fotográfica. O curso ensina exatamente como construir essa experiência.
+        </div>
+      </div>
+      <div class="obj-item reveal">
+        <div class="obj-question">"Não tenho clientes."</div>
+        <div class="obj-answer">
+          Ninguém começa com cliente. A gente também começou no zero, sem rede, sem indicação, sem dinheiro pra agência. O curso tem <strong>módulo completo de aquisição</strong>: tráfego pago do zero (com a campanha de R$ 1,75 por lead pra copiar), conteúdo orgânico em Reels e parceria com cerimonialista.
+        </div>
+      </div>
+      <div class="obj-item reveal">
+        <div class="obj-question">"R$ 167 ainda é caro pra mim."</div>
+        <div class="obj-answer">
+          A gente entende. Mas faz a conta: <strong>o lucro de uma foto consignada em um evento</strong>, no preço médio que ensinamos a praticar, paga o curso inteiro. Se você for aplicar de verdade, esse valor vai parecer pequeno depois do primeiro mês.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GUARANTEE -->
+<section class="section guarantee">
+  <div class="container">
+    <div class="guarantee-card reveal">
+      <div class="guarantee-seal">
+        <div class="guarantee-seal-inner">
+          <div class="guarantee-seal-days">7</div>
+          <div class="guarantee-seal-label">dias . garantia</div>
+        </div>
+      </div>
+      <h2>O risco fica com a gente. <em>Você só fica se acreditar</em> que vale.</h2>
+      <p>
+        Entra, assiste as primeiras aulas, baixa os materiais, testa a planilha. Se em 7 dias você sentir que não é pra você, manda um email e a gente devolve 100% do valor. Sem pergunta, sem formulário cansativo, sem "tentar te segurar".
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- URGENCY -->
+<section class="section urgency">
+  <div class="container">
+    <div class="urgency-card reveal">
+      <span class="urgency-eyebrow">Atenção . lançamento por tempo limitado</span>
+      <h2>R$ 167 só nos <em>primeiros 15 dias</em>.</h2>
+      <p>
+        Depois desse período, o preço sobe pra R$ 297 e fica nesse valor. Quem entra agora trava o menor preço e ainda recebe todas as aulas novas, lançadas ao longo do ano, sem custo extra.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section">
+  <div class="container">
+    <div class="section-header center reveal">
+      <div class="eyebrow">Perguntas frequentes</div>
+      <h2>Tudo que você precisa saber <em>antes de entrar</em>.</h2>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Quanto tempo eu preciso pra concluir o curso?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">As 14 aulas já gravadas dão pra assistir em um fim de semana. Mas o curso continua sendo expandido ao longo do ano, com aulas novas liberadas mensalmente. Você acompanha no seu ritmo.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Serve pra quem nunca trabalhou com fotografia ou evento?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">Sim, é exatamente pra esse perfil. A maior parte dos nossos alunos começou do zero. O curso parte do "qual câmera comprar" e vai até "como fechar o primeiro contrato".</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Serve pra quem já é fotógrafo profissional?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">Sim. Se você já é fotógrafo, vai usar o curso pra agregar uma nova linha de receita (guestbook em casamento e venda em evento público) sem competir com o seu serviço principal. Muitos fotógrafos cobrem o investimento só no aporte extra de fim de semana.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Como funciona o acesso?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">Tudo pela Kiwify. Você compra, recebe email com login e senha, e já entra na primeira aula. Funciona em qualquer celular, tablet ou computador.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>E se eu não gostar?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">Você tem 7 dias de garantia incondicional. Manda um email, a gente devolve 100% do valor. Sem desculpa, sem fricção.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Tem suporte se eu travar?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">Tem. Suporte por 1 ano em horário comercial, direto com a gente. E a comunidade no WhatsApp pra trocar com outros alunos.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Como funciona a mentoria mensal?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">Encontro fechado por vídeo chamada, com Lucas e Manu, uma vez por mês. Você traz dúvida, caso real, dificuldade. A gente responde olho no olho.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Quais formas de pagamento?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">Cartão de crédito (em até 12x), Pix e boleto. Acesso liberado na hora pelo cartão e pelo Pix. Boleto libera após compensação.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="section cta-final">
+  <div class="container">
+    <div class="cta-final-content reveal">
+      <h2>A gente não pode prometer que você vai faturar exatamente o que a gente fatura.</h2>
+      <p>Cada cidade, cada esforço, cada postura comercial gera um resultado diferente.</p>
+      <p>O que a gente pode prometer é o seguinte: <em style="font-family: var(--serif); font-style: italic; color: var(--gold);">tudo o que tá no curso é o que a gente fez de verdade</em>, com os números na mão, com o stand montado, com o contrato assinado.</p>
+      <p style="color: var(--gold); font-family: var(--serif); font-style: italic; font-size: 20px; margin-top: 32px;">Se você quer parar de procurar fórmula e começar a colocar a mão no negócio, o material tá pronto e tá aqui.</p>
+      <a href="#oferta" class="btn btn-primary btn-large">
+        Garantir acesso por R$ 167
+        <span class="arrow">→</span>
+      </a>
+      <div class="cta-final-micro">Acesso imediato . 7 dias de garantia . Preço de lançamento por tempo limitado</div>
+    </div>
+  </div>
+</section>
+
+<!-- PS -->
+<section class="ps">
+  <div class="container">
+    <div class="ps-card reveal">
+      <span class="ps-label">PS.</span>
+      <p>
+        A gente sabe como é começar do zero, sem ter a quem perguntar e com medo de gastar dinheiro errado em câmera, fornecedor ou anúncio.
+      </p>
+      <p>
+        Por isso esse curso existe. É o que a gente teria pago caro pra ter dois anos atrás.
+      </p>
+      <p class="highlight">
+        R$ 167 nos primeiros 15 dias. Depois sobe pra R$ 297 e fica.
+      </p>
+      <div class="ps-sig">
+        <div class="ps-sig-avatar">LM</div>
+        <div>
+          <div class="ps-sig-name">Lucas e Manuela</div>
+          <div class="ps-sig-role">Fundadores . Inframe Polaroid</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-brand">Inframe Polaroid</div>
+    <div class="footer-links">
+      <a href="#">Política de privacidade</a>
+      <a href="#">Termos de uso</a>
+      <a href="mailto:contato@inframepolaroid.com">Contato</a>
+    </div>
+    <div>© 2026 Inframe Polaroid . Florianópolis, SC . Todos os direitos reservados</div>
+    <p class="footer-disclaimer">
+      Os resultados mencionados nesta página referem-se ao desempenho real de Lucas e Manuela Rosa Dias na Inframe Polaroid. Resultados individuais variam conforme dedicação, mercado local e aplicação do conteúdo. Não há garantia de faturamento específico para os alunos.
+    </p>
+  </div>
+</footer>
+
+<script>
+// CARROSSEL
+document.querySelectorAll('.carousel').forEach(carousel => {
+  const id = carousel.dataset.carouselId;
+  const track = carousel.querySelector('.carousel-track');
+  const slides = track.querySelectorAll('.carousel-slide');
+  const prevBtn = document.querySelector(`[data-carousel="${id}"][data-dir="prev"]`);
+  const nextBtn = document.querySelector(`[data-carousel="${id}"][data-dir="next"]`);
+  const dotsContainer = document.querySelector(`[data-dots-for="${id}"]`);
+
+  if (!dotsContainer) return;
+
+  // Criar dots
+  slides.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'dot';
+    dot.setAttribute('aria-label', `Ir para slide ${i + 1}`);
+    if (i === 0) {
+      dot.classList.add('active');
+      slides[0].classList.add('is-active');
+    }
+    dot.addEventListener('click', () => {
+      const slide = slides[i];
+      const trackRect = track.getBoundingClientRect();
+      const slideRect = slide.getBoundingClientRect();
+      const offset = slide.offsetLeft - (track.clientWidth - slide.clientWidth) / 2;
+      track.scrollTo({ left: offset, behavior: 'smooth' });
+    });
+    dotsContainer.appendChild(dot);
+  });
+
+  const dots = dotsContainer.querySelectorAll('.dot');
+
+  // Atualizar dot ativo no scroll
+  function updateActive() {
+    const trackCenter = track.scrollLeft + track.clientWidth / 2;
+    let closestIdx = 0;
+    let closestDist = Infinity;
+    slides.forEach((slide, i) => {
+      const slideCenter = slide.offsetLeft + slide.clientWidth / 2;
+      const dist = Math.abs(slideCenter - trackCenter);
+      if (dist < closestDist) {
+        closestDist = dist;
+        closestIdx = i;
+      }
+    });
+    dots.forEach((d, i) => d.classList.toggle('active', i === closestIdx));
+    slides.forEach((s, i) => s.classList.toggle('is-active', i === closestIdx));
+    if (prevBtn) prevBtn.disabled = closestIdx === 0;
+    if (nextBtn) nextBtn.disabled = closestIdx === slides.length - 1;
+  }
+
+  let rafId;
+  track.addEventListener('scroll', () => {
+    cancelAnimationFrame(rafId);
+    rafId = requestAnimationFrame(updateActive);
+  });
+
+  // Setas
+  function scrollByOne(dir) {
+    const slide = slides[0];
+    const slideWidth = slide.offsetWidth + 20;
+    track.scrollBy({ left: dir * slideWidth, behavior: 'smooth' });
+  }
+  prevBtn?.addEventListener('click', () => scrollByOne(-1));
+  nextBtn?.addEventListener('click', () => scrollByOne(1));
+
+  updateActive();
+});
+
+// FAQ
+document.querySelectorAll('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faq-item');
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  });
+});
+
+// REVEAL ON SCROLL
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+reveals.forEach(el => observer.observe(el));
+
+// Hero visible imediato
+document.querySelectorAll('.hero .reveal').forEach(el => {
+  setTimeout(() => el.classList.add('visible'), 100);
+});
+</script>
+
+</body>
+</html>
