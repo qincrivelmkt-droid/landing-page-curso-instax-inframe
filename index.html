@@ -1323,6 +1323,118 @@ a { color: inherit; text-decoration: none; }
   transform: translateY(0);
 }
 
+/* AULAS */
+.aulas { background: var(--bg-darkest); }
+.aulas-intro {
+  text-align: center;
+  font-size: 15px;
+  color: var(--ink-soft);
+  max-width: 560px;
+  margin: 0 auto 48px;
+  line-height: 1.6;
+}
+.aulas-intro strong { color: var(--gold); font-weight: 600; }
+.aulas-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.aula-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-m);
+  transition: border-color 0.3s var(--ease), transform 0.3s var(--ease);
+}
+.aula-item::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--gold);
+  flex-shrink: 0;
+  margin-top: 7px;
+}
+.aula-item.disponivel:hover {
+  border-color: var(--accent);
+  transform: translateX(4px);
+}
+.aula-item.em-breve { opacity: 0.45; }
+.aula-item.em-breve::before { background: var(--ink-dim); box-shadow: none; }
+.aula-num { display: none; }
+.aula-content { flex: 1; }
+.aula-nome {
+  font-size: 14px;
+  color: var(--ink);
+  line-height: 1.5;
+  margin-bottom: 8px;
+  font-weight: 400;
+}
+.aula-badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 999px;
+}
+.aula-badge.ok {
+  background: rgba(123, 168, 110, 0.12);
+  color: var(--success);
+  border: 1px solid rgba(123, 168, 110, 0.25);
+}
+.aula-badge.breve {
+  background: rgba(90, 85, 80, 0.15);
+  color: var(--ink-dim);
+  border: 1px solid var(--line);
+}
+@media (max-width: 720px) {
+  .aulas-grid { grid-template-columns: 1fr; }
+}
+
+/* OFFER BRIDGE */
+.offer-bridge {
+  text-align: center;
+  padding: clamp(40px, 5vw, 64px) 0 0;
+}
+.offer-bridge p {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(20px, 2.5vw, 26px);
+  color: var(--gold);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.4;
+}
+
+/* OFFER CONTACT */
+.offer-contact {
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+.offer-contact p {
+  font-size: 14px;
+  color: var(--ink-mute);
+  margin-bottom: 8px;
+}
+.offer-contact a {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--gold);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.3s var(--ease);
+}
+.offer-contact a:hover { color: var(--gold-bright); }
+
 ::selection { background: var(--gold); color: var(--bg-darkest); }
 
 /* CREATORS */
@@ -1514,7 +1626,7 @@ a { color: inherit; text-decoration: none; }
         <div class="stat-label">cópias do ebook<br>vendidas no orgânico</div>
       </div>
       <div class="stat reveal">
-        <div class="stat-value"><em>8 mil</em></div>
+        <div class="stat-value"><em>327 mil</em></div>
         <div class="stat-label">views no vídeo<br>sobre o negócio</div>
       </div>
       <div class="stat reveal">
@@ -1567,7 +1679,7 @@ a { color: inherit; text-decoration: none; }
           Quando a gente montou a Inframe, o plano era simples: testar de verdade, anotar tudo e mostrar o que funciona. <strong>Sem agência, sem mentor caro, sem fórmula mágica.</strong>
         </p>
         <p>
-          Em poucos dias de empresa, fechamos o primeiro contrato acima de R$ 5 mil. Em menos de uma semana de campanha no Meta Ads, geramos 92 leads a R$ 1,75 cada um. Em poucos meses, viralizamos no Instagram com um vídeo que passou de 8 mil views.
+          Em poucos dias de empresa, fechamos o primeiro contrato acima de R$ 5 mil. Em menos de uma semana de campanha no Meta Ads, geramos 92 leads a R$ 1,75 cada um. Em poucos meses, viralizamos no Instagram com um vídeo que passou de <strong>327 mil views</strong>.
         </p>
         <p>
           Esse curso é o passo a passo do que a gente fez. Não uma versão romantizada. <strong>A versão real</strong>, com print da campanha, com link dos fornecedores, com a planilha que usamos.
@@ -1637,6 +1749,145 @@ a { color: inherit; text-decoration: none; }
       <div class="benefit reveal">
         <div class="benefit-num">08</div>
         <div class="benefit-text">Acompanha em tempo real um negócio que tá faturando, em vez de <strong>comprar um curso que parou em 2022</strong>.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AULAS -->
+<section class="section aulas" id="aulas">
+  <div class="container">
+    <div class="section-header center reveal">
+      <div class="eyebrow">O que você vai aprender</div>
+      <h2>21 aulas. Do equipamento ao <em>primeiro contrato fechado</em>.</h2>
+    </div>
+    <p class="aulas-intro reveal"><strong>14 aulas disponíveis agora</strong>, no momento da compra. As demais são liberadas ao longo do ano, à medida que a Inframe cresce e testa coisas novas.</p>
+    <div class="aulas-grid reveal">
+      <div class="aula-item disponivel">
+        <div class="aula-content">
+          <div class="aula-nome">Como trabalhar com guestbook em eventos</div>
+          <span class="aula-badge ok">Disponível agora</span>
+        </div>
+      </div>
+      <div class="aula-item disponivel">
+        <div class="aula-content">
+          <div class="aula-nome">Qual câmera Instax comprar: comparativo Mini 11, Mini 12, Mini Evo, Wide, Square e Mini Link 3</div>
+          <span class="aula-badge ok">Disponível agora</span>
+        </div>
+      </div>
+      <div class="aula-item disponivel">
+        <div class="aula-content">
+          <div class="aula-nome">Custo por foto: quanto cada câmera gasta por evento e onde comprar mais barato</div>
+          <span class="aula-badge ok">Disponível agora</span>
+        </div>
+      </div>
+      <div class="aula-item disponivel">
+        <div class="aula-content">
+          <div class="aula-nome">O stand completo: lista de acessórios essenciais com links de fornecedores</div>
+          <span class="aula-badge ok">Disponível agora</span>
+        </div>
+      </div>
+      <div class="aula-item disponivel">
+        <div class="aula-content">
+          <div class="aula-nome">Cantoneiras, guestbooks e canetas: onde comprar, prazo e custo por evento</div>
+          <span class="aula-badge ok">Disponível agora</span>
+        </div>
+      </div>
+      <div class="aula-item disponivel">
+        <div class="aula-content">
+          <div class="aula-nome">A regra dos 70%: como calcular o custo real por evento sem sair no prejuízo</div>
+          <span class="aula-badge ok">Disponível agora</span>
+        </div>
+      </div>
+      <div class="aula-item disponivel">
+        <div class="aula-content">
+          <div class="aula-nome">Montando seus pacotes do zero: nome, posicionamento e preço certo</div>
+          <span class="aula-badge ok">Disponível agora</span>
+        </div>
+      </div>
+      <div class="aula-item disponivel">
+        <div class="aula-content">
+          <div class="aula-nome">Como espaçar seus pacotes pra vender o do meio</div>
+          <span class="aula-badge ok">Disponível agora</span>
+        </div>
+      </div>
+      <div class="aula-item disponivel">
+        <div class="aula-content">
+          <div class="aula-nome">Venda consignada: o que é, como funciona e como cobrar</div>
+          <span class="aula-badge ok">Disponível agora</span>
+        </div>
+      </div>
+      <div class="aula-item disponivel">
+        <div class="aula-content">
+          <div class="aula-nome">Como definir o limite máximo de fotos no consignado</div>
+          <span class="aula-badge ok">Disponível agora</span>
+        </div>
+      </div>
+      <div class="aula-item disponivel">
+        <div class="aula-content">
+          <div class="aula-nome">Como vender foto na rua: o script de abordagem completo</div>
+          <span class="aula-badge ok">Disponível agora</span>
+        </div>
+      </div>
+      <div class="aula-item disponivel">
+        <div class="aula-content">
+          <div class="aula-nome">Precificação e logística pra eventos públicos e feiras</div>
+          <span class="aula-badge ok">Disponível agora</span>
+        </div>
+      </div>
+      <div class="aula-item disponivel">
+        <div class="aula-content">
+          <div class="aula-nome">Posicionamento premium: como cobrar mais e ser percebido diferente</div>
+          <span class="aula-badge ok">Disponível agora</span>
+        </div>
+      </div>
+      <div class="aula-item disponivel">
+        <div class="aula-content">
+          <div class="aula-nome">Aplicando as cantoneiras no guestbook</div>
+          <span class="aula-badge ok">Disponível agora</span>
+        </div>
+      </div>
+      <div class="aula-item em-breve">
+        <div class="aula-content">
+          <div class="aula-nome">Edição no CapCut: como transformar um evento em semanas de conteúdo</div>
+          <span class="aula-badge breve">Em breve</span>
+        </div>
+      </div>
+      <div class="aula-item em-breve">
+        <div class="aula-content">
+          <div class="aula-nome">Atendimento no WhatsApp: do primeiro contato ao fechamento</div>
+          <span class="aula-badge breve">Em breve</span>
+        </div>
+      </div>
+      <div class="aula-item em-breve">
+        <div class="aula-content">
+          <div class="aula-nome">Como enviar proposta e fazer follow-up sem parecer chato</div>
+          <span class="aula-badge breve">Em breve</span>
+        </div>
+      </div>
+      <div class="aula-item em-breve">
+        <div class="aula-content">
+          <div class="aula-nome">Meta Ads do zero: criando a campanha de captação de leads</div>
+          <span class="aula-badge breve">Em breve</span>
+        </div>
+      </div>
+      <div class="aula-item em-breve">
+        <div class="aula-content">
+          <div class="aula-nome">Copia e cola: a configuração exata que gerou 92 leads a R$ 1,75</div>
+          <span class="aula-badge breve">Em breve</span>
+        </div>
+      </div>
+      <div class="aula-item em-breve">
+        <div class="aula-content">
+          <div class="aula-nome">Planilha de leads e agenda de eventos</div>
+          <span class="aula-badge breve">Em breve</span>
+        </div>
+      </div>
+      <div class="aula-item em-breve">
+        <div class="aula-content">
+          <div class="aula-nome">Modelo de orçamento e contrato profissional</div>
+          <span class="aula-badge breve">Em breve</span>
+        </div>
       </div>
     </div>
   </div>
@@ -1800,6 +2051,9 @@ a { color: inherit; text-decoration: none; }
 <!-- OFFER -->
 <section class="section offer" id="oferta">
   <div class="container">
+    <div class="offer-bridge reveal">
+      <p>Tudo que você viu acima você aprende a executar no curso.</p>
+    </div>
     <div class="section-header center reveal">
       <div class="eyebrow">Tudo que tá incluso</div>
       <h2>A oferta completa <em>quando você entra hoje</em>.</h2>
@@ -1878,6 +2132,11 @@ a { color: inherit; text-decoration: none; }
         Garantir meu acesso por R$ 167
         <span class="arrow">→</span>
       </a>
+
+      <div class="offer-contact">
+        <p>Tem dúvida antes de comprar?</p>
+        <a href="https://wa.me/5548996733855" target="_blank" rel="noopener">Fala com a gente pelo WhatsApp →</a>
+      </div>
     </div>
   </div>
 </section>
@@ -1936,7 +2195,7 @@ a { color: inherit; text-decoration: none; }
       </div>
       <h2>O risco fica com a gente. <em>Você só fica se acreditar</em> que vale.</h2>
       <p>
-        Entra, assiste as primeiras aulas, baixa os materiais, testa a planilha. Se em 7 dias você sentir que não é pra você, manda um email pra <strong style="color: var(--gold);">[seuemail@inframe.com]</strong> e a gente devolve 100% do valor. Sem pergunta, sem formulário cansativo, sem "tentar te segurar".
+        Entra, assiste as primeiras aulas, baixa os materiais, testa a planilha. Se em 7 dias você sentir que não é pra você, manda um email pra <strong style="color: var(--gold);">qincrivel.mkt@gmail.com</strong> e a gente devolve 100% do valor. Sem pergunta, sem formulário cansativo, sem "tentar te segurar".
       </p>
     </div>
   </div>
