@@ -1325,6 +1325,126 @@ a { color: inherit; text-decoration: none; }
 
 ::selection { background: var(--gold); color: var(--bg-darkest); }
 
+/* CREATORS */
+.creators { background: var(--bg-elevated); }
+.creators-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(24px, 4vw, 48px);
+}
+.creator-card {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-l);
+  overflow: hidden;
+  transition: border-color 0.3s var(--ease), transform 0.3s var(--ease);
+}
+.creator-card:hover { border-color: var(--accent); transform: translateY(-4px); }
+.creator-photo {
+  width: 100%;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+}
+.creator-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  transition: transform 0.6s var(--ease);
+}
+.creator-card:hover .creator-photo img { transform: scale(1.04); }
+.creator-info { padding: 28px; }
+.creator-name {
+  font-family: var(--serif);
+  font-size: 26px;
+  font-weight: 400;
+  color: var(--ink);
+  margin-bottom: 4px;
+  letter-spacing: -0.01em;
+}
+.creator-role {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 18px;
+}
+.creator-bio {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--ink-soft);
+  margin-bottom: 20px;
+}
+.creator-skills {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+.creator-skills li {
+  font-size: 14px;
+  color: var(--ink-soft);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.creator-skills li::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 8px rgba(229,194,133,0.5);
+  flex-shrink: 0;
+}
+@media (max-width: 720px) {
+  .creators-grid { grid-template-columns: 1fr; }
+}
+
+/* CTA STICKY MOBILE */
+.sticky-cta {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 40;
+  background: rgba(15, 14, 17, 0.96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid var(--line-strong);
+  padding: 12px 20px calc(12px + env(safe-area-inset-bottom)) 20px;
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  transform: translateY(100%);
+  transition: transform 0.4s var(--ease);
+}
+.sticky-cta.visible { transform: translateY(0); }
+.sticky-cta-price { display: flex; flex-direction: column; }
+.sticky-cta-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+.sticky-cta-value {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 24px;
+  color: var(--gold);
+  line-height: 1;
+}
+.sticky-cta .btn { flex-shrink: 0; padding: 14px 22px; font-size: 14px; }
+@media (max-width: 768px) {
+  .sticky-cta { display: flex; }
+  body { padding-bottom: 80px; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }
   .guarantee-seal, .guarantee-seal-inner { animation: none; }
@@ -1522,6 +1642,50 @@ a { color: inherit; text-decoration: none; }
   </div>
 </section>
 
+<!-- CRIADORES -->
+<section class="section creators">
+  <div class="container">
+    <div class="section-header center reveal">
+      <div class="eyebrow">Quem criou o método</div>
+      <h2>Um casal que <em>construiu do zero</em> e agora documenta cada passo.</h2>
+    </div>
+    <div class="creators-grid">
+      <div class="creator-card reveal">
+        <div class="creator-photo">
+          <img src="manuela.jpeg" alt="Manuela Rosa Dias, cofundadora da Inframe Polaroid">
+        </div>
+        <div class="creator-info">
+          <h3 class="creator-name">Manuela Rosa Dias</h3>
+          <p class="creator-role">Cofundadora . Inframe Polaroid</p>
+          <p class="creator-bio">Empreende desde os 17 anos. Criou uma empresa de estética aos 20 e faturou R$ 60 mil no primeiro ano. Com formação em competência corporativa, é especialista em vendas, atendimento e criação de conteúdo. Já formou dezenas de alunas que faturam hoje na estética.</p>
+          <ul class="creator-skills">
+            <li>Vendas e atendimento consultivo</li>
+            <li>Criação de conteúdo e edição</li>
+            <li>Prospecção e autoridade</li>
+            <li>Formação de times comerciais</li>
+          </ul>
+        </div>
+      </div>
+      <div class="creator-card reveal">
+        <div class="creator-photo">
+          <img src="foto-lucas.jpeg" alt="Lucas Rosa Dias, cofundador da Inframe Polaroid">
+        </div>
+        <div class="creator-info">
+          <h3 class="creator-name">Lucas Rosa Dias</h3>
+          <p class="creator-role">Cofundador . Inframe Polaroid</p>
+          <p class="creator-bio">Formado em Marketing pela Universidade CESUSC, especialista em estratégia corporativa, tráfego pago, criação de sites e landing pages. Desenvolve e lança infoprodutos e é especialista em inteligência artificial aplicada a negócios.</p>
+          <ul class="creator-skills">
+            <li>Tráfego pago e Meta Ads</li>
+            <li>Criação de sites e landing pages</li>
+            <li>Lançamento de infoprodutos</li>
+            <li>Inteligência artificial aplicada</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- CARROSSEL 1: FEEDBACKS (slots verticais 9:16) -->
 <section class="section carousel-section">
   <div class="container">
@@ -1630,62 +1794,6 @@ a { color: inherit; text-decoration: none; }
       </div>
       <div class="carousel-dots" data-dots-for="photos"></div>
     </div>
-  </div>
-</section>
-
-<!-- CARROSSEL 3: DEPOIMENTOS (slots verticais 9:16) -->
-<section class="section carousel-section">
-  <div class="container">
-    <div class="section-header reveal">
-      <div class="eyebrow">Depoimentos</div>
-      <h2>Conversa direta com quem <em>aplicou</em> o que a gente ensina.</h2>
-    </div>
-  </div>
-  <div class="container">
-    <div class="carousel-header">
-      <h3>Histórias de quem testou o método antes do curso completo</h3>
-      <div class="carousel-controls">
-        <button class="carousel-btn" data-carousel="testi" data-dir="prev" aria-label="Anterior">←</button>
-        <button class="carousel-btn" data-carousel="testi" data-dir="next" aria-label="Próximo">→</button>
-      </div>
-    </div>
-  </div>
-  <div class="carousel feedback" data-carousel-id="testi">
-    <div class="carousel-track">
-      <div class="carousel-slide">
-        <div class="feedback-slot">
-          <div class="feedback-slot-num">01</div>
-          <div class="feedback-slot-label">Inserir depoimento</div>
-        </div>
-      </div>
-      <div class="carousel-slide">
-        <div class="feedback-slot">
-          <div class="feedback-slot-num">02</div>
-          <div class="feedback-slot-label">Inserir depoimento</div>
-        </div>
-      </div>
-      <div class="carousel-slide">
-        <div class="feedback-slot">
-          <div class="feedback-slot-num">03</div>
-          <div class="feedback-slot-label">Inserir depoimento</div>
-        </div>
-      </div>
-      <div class="carousel-slide">
-        <div class="feedback-slot">
-          <div class="feedback-slot-num">04</div>
-          <div class="feedback-slot-label">Inserir depoimento</div>
-        </div>
-      </div>
-      <div class="carousel-slide">
-        <div class="feedback-slot">
-          <div class="feedback-slot-num">05</div>
-          <div class="feedback-slot-label">Inserir depoimento</div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="container">
-    <div class="carousel-dots" data-dots-for="testi"></div>
   </div>
 </section>
 
@@ -1957,6 +2065,17 @@ a { color: inherit; text-decoration: none; }
   </div>
 </section>
 
+<!-- STICKY CTA MOBILE -->
+<div class="sticky-cta" id="stickyCta">
+  <div class="sticky-cta-price">
+    <span class="sticky-cta-label">Lançamento</span>
+    <span class="sticky-cta-value">R$ 167</span>
+  </div>
+  <a href="#oferta" class="btn btn-primary">
+    Garantir acesso →
+  </a>
+</div>
+
 <!-- FOOTER -->
 <footer class="footer">
   <div class="container">
@@ -2064,6 +2183,19 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 reveals.forEach(el => observer.observe(el));
+
+// STICKY CTA MOBILE
+const stickyCta = document.getElementById('stickyCta');
+if (stickyCta) {
+  const hero = document.querySelector('.hero');
+  window.addEventListener('scroll', () => {
+    if (hero && window.scrollY > hero.offsetHeight) {
+      stickyCta.classList.add('visible');
+    } else {
+      stickyCta.classList.remove('visible');
+    }
+  }, { passive: true });
+}
 
 // Hero visible imediato
 document.querySelectorAll('.hero .reveal').forEach(el => {
