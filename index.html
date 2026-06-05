@@ -1435,6 +1435,86 @@ a { color: inherit; text-decoration: none; }
 }
 .offer-contact a:hover { color: var(--gold-bright); }
 
+/* TOGGLE AULAS */
+.aulas-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--gold);
+  background: transparent;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.3s var(--ease);
+}
+.aulas-toggle-btn:hover {
+  background: rgba(212,172,110,0.08);
+}
+
+/* PARA QUEM É */
+.paraquem { background: var(--bg-elevated); }
+.paraquem-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(20px, 4vw, 40px);
+  max-width: 900px;
+  margin: 0 auto;
+}
+.paraquem-col {
+  background: var(--bg-card);
+  border-radius: var(--radius-l);
+  padding: 32px;
+  border: 1px solid var(--line);
+}
+.paraquem-col.sim { border-top: 3px solid var(--success); }
+.paraquem-col.nao { border-top: 3px solid var(--error); }
+.paraquem-col-title {
+  font-family: var(--serif);
+  font-size: 18px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.paraquem-col.sim .paraquem-col-title { color: var(--success); }
+.paraquem-col.nao .paraquem-col-title { color: var(--error); }
+.paraquem-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.paraquem-list li {
+  font-size: 15px;
+  color: var(--ink-soft);
+  line-height: 1.5;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+.paraquem-list li::before {
+  flex-shrink: 0;
+  margin-top: 3px;
+  font-size: 13px;
+  font-weight: 700;
+}
+.paraquem-col.sim .paraquem-list li::before {
+  content: '✓';
+  color: var(--success);
+}
+.paraquem-col.nao .paraquem-list li::before {
+  content: '✕';
+  color: var(--error);
+}
+@media (max-width: 640px) {
+  .paraquem-grid { grid-template-columns: 1fr; }
+}
+
 ::selection { background: var(--gold); color: var(--bg-darkest); }
 
 /* CREATORS */
@@ -1587,7 +1667,7 @@ a { color: inherit; text-decoration: none; }
           Curso Inframe . lançamento aberto
         </div>
         <h1>
-          Como fizemos para faturar <em>R$ 3.900</em> por evento com <em>guestbook</em> numa câmera Instax que custa R$ 550.
+          Como fizemos pra faturar <em>R$ 3.900</em> por evento usando uma câmera de <em>R$ 550</em>.
         </h1>
         <p class="hero-sub">
           Sem precisar de equipamentos caros ou agências. Descubra como transformar guestbooks em um negócio altamente lucrativo através de 30 aulas gravadas em tempo real, direto dos bastidores da Inframe.
@@ -1597,7 +1677,7 @@ a { color: inherit; text-decoration: none; }
             Garantir acesso por R$ 167
             <span class="arrow">→</span>
           </a>
-          <a href="#beneficios" class="btn btn-secondary">Ver o que tem dentro</a>
+          <a href="#aulas" class="btn btn-secondary">Ver o que tem dentro</a>
         </div>
         <div class="hero-microcopy">
           <span><span class="check">✓</span> Acesso imediato</span>
@@ -1638,8 +1718,8 @@ a { color: inherit; text-decoration: none; }
         <div class="stat-label">no primeiro contrato<br>fechado pela Inframe</div>
       </div>
       <div class="stat reveal">
-        <div class="stat-value"><em>30</em></div>
-        <div class="stat-label">aulas no curso<br>(14 já disponíveis)</div>
+        <div class="stat-value"><em>92</em></div>
+        <div class="stat-label">leads em menos<br>de uma semana</div>
       </div>
     </div>
   </div>
@@ -1754,140 +1834,33 @@ a { color: inherit; text-decoration: none; }
   </div>
 </section>
 
-<!-- AULAS -->
-<section class="section aulas" id="aulas">
+<!-- PARA QUEM É -->
+<section class="section paraquem">
   <div class="container">
     <div class="section-header center reveal">
-      <div class="eyebrow">O que você vai aprender</div>
-      <h2>21 aulas. Do equipamento ao <em>primeiro contrato fechado</em>.</h2>
+      <div class="eyebrow">Antes de comprar</div>
+      <h2>Esse curso <em>é pra você</em>. E tem casos em que não é.</h2>
     </div>
-    <p class="aulas-intro reveal"><strong>14 aulas disponíveis agora</strong>, no momento da compra. As demais são liberadas ao longo do ano, à medida que a Inframe cresce e testa coisas novas.</p>
-    <div class="aulas-grid reveal">
-      <div class="aula-item disponivel">
-        <div class="aula-content">
-          <div class="aula-nome">Como trabalhar com guestbook em eventos</div>
-          <span class="aula-badge ok">Disponível agora</span>
-        </div>
+    <div class="paraquem-grid reveal">
+      <div class="paraquem-col sim">
+        <div class="paraquem-col-title">É pra você se</div>
+        <ul class="paraquem-list">
+          <li>Quer ter renda extra nos finais de semana sem depender de um chefe</li>
+          <li>Tá disposto a montar um stand e comparecer a eventos</li>
+          <li>Quer aprender com quem tá fazendo na prática, não em teoria</li>
+          <li>Prefere começar com pouco investimento e escalar com o que funciona</li>
+          <li>Aceita testar, ajustar e crescer junto com o curso</li>
+        </ul>
       </div>
-      <div class="aula-item disponivel">
-        <div class="aula-content">
-          <div class="aula-nome">Qual câmera Instax comprar: comparativo Mini 11, Mini 12, Mini Evo, Wide, Square e Mini Link 3</div>
-          <span class="aula-badge ok">Disponível agora</span>
-        </div>
-      </div>
-      <div class="aula-item disponivel">
-        <div class="aula-content">
-          <div class="aula-nome">Custo por foto: quanto cada câmera gasta por evento e onde comprar mais barato</div>
-          <span class="aula-badge ok">Disponível agora</span>
-        </div>
-      </div>
-      <div class="aula-item disponivel">
-        <div class="aula-content">
-          <div class="aula-nome">O stand completo: lista de acessórios essenciais com links de fornecedores</div>
-          <span class="aula-badge ok">Disponível agora</span>
-        </div>
-      </div>
-      <div class="aula-item disponivel">
-        <div class="aula-content">
-          <div class="aula-nome">Cantoneiras, guestbooks e canetas: onde comprar, prazo e custo por evento</div>
-          <span class="aula-badge ok">Disponível agora</span>
-        </div>
-      </div>
-      <div class="aula-item disponivel">
-        <div class="aula-content">
-          <div class="aula-nome">A regra dos 70%: como calcular o custo real por evento sem sair no prejuízo</div>
-          <span class="aula-badge ok">Disponível agora</span>
-        </div>
-      </div>
-      <div class="aula-item disponivel">
-        <div class="aula-content">
-          <div class="aula-nome">Montando seus pacotes do zero: nome, posicionamento e preço certo</div>
-          <span class="aula-badge ok">Disponível agora</span>
-        </div>
-      </div>
-      <div class="aula-item disponivel">
-        <div class="aula-content">
-          <div class="aula-nome">Como espaçar seus pacotes pra vender o do meio</div>
-          <span class="aula-badge ok">Disponível agora</span>
-        </div>
-      </div>
-      <div class="aula-item disponivel">
-        <div class="aula-content">
-          <div class="aula-nome">Venda consignada: o que é, como funciona e como cobrar</div>
-          <span class="aula-badge ok">Disponível agora</span>
-        </div>
-      </div>
-      <div class="aula-item disponivel">
-        <div class="aula-content">
-          <div class="aula-nome">Como definir o limite máximo de fotos no consignado</div>
-          <span class="aula-badge ok">Disponível agora</span>
-        </div>
-      </div>
-      <div class="aula-item disponivel">
-        <div class="aula-content">
-          <div class="aula-nome">Como vender foto na rua: o script de abordagem completo</div>
-          <span class="aula-badge ok">Disponível agora</span>
-        </div>
-      </div>
-      <div class="aula-item disponivel">
-        <div class="aula-content">
-          <div class="aula-nome">Precificação e logística pra eventos públicos e feiras</div>
-          <span class="aula-badge ok">Disponível agora</span>
-        </div>
-      </div>
-      <div class="aula-item disponivel">
-        <div class="aula-content">
-          <div class="aula-nome">Posicionamento premium: como cobrar mais e ser percebido diferente</div>
-          <span class="aula-badge ok">Disponível agora</span>
-        </div>
-      </div>
-      <div class="aula-item disponivel">
-        <div class="aula-content">
-          <div class="aula-nome">Aplicando as cantoneiras no guestbook</div>
-          <span class="aula-badge ok">Disponível agora</span>
-        </div>
-      </div>
-      <div class="aula-item em-breve">
-        <div class="aula-content">
-          <div class="aula-nome">Edição no CapCut: como transformar um evento em semanas de conteúdo</div>
-          <span class="aula-badge breve">Em breve</span>
-        </div>
-      </div>
-      <div class="aula-item em-breve">
-        <div class="aula-content">
-          <div class="aula-nome">Atendimento no WhatsApp: do primeiro contato ao fechamento</div>
-          <span class="aula-badge breve">Em breve</span>
-        </div>
-      </div>
-      <div class="aula-item em-breve">
-        <div class="aula-content">
-          <div class="aula-nome">Como enviar proposta e fazer follow-up sem parecer chato</div>
-          <span class="aula-badge breve">Em breve</span>
-        </div>
-      </div>
-      <div class="aula-item em-breve">
-        <div class="aula-content">
-          <div class="aula-nome">Meta Ads do zero: criando a campanha de captação de leads</div>
-          <span class="aula-badge breve">Em breve</span>
-        </div>
-      </div>
-      <div class="aula-item em-breve">
-        <div class="aula-content">
-          <div class="aula-nome">Copia e cola: a configuração exata que gerou 92 leads a R$ 1,75</div>
-          <span class="aula-badge breve">Em breve</span>
-        </div>
-      </div>
-      <div class="aula-item em-breve">
-        <div class="aula-content">
-          <div class="aula-nome">Planilha de leads e agenda de eventos</div>
-          <span class="aula-badge breve">Em breve</span>
-        </div>
-      </div>
-      <div class="aula-item em-breve">
-        <div class="aula-content">
-          <div class="aula-nome">Modelo de orçamento e contrato profissional</div>
-          <span class="aula-badge breve">Em breve</span>
-        </div>
+      <div class="paraquem-col nao">
+        <div class="paraquem-col-title">Não é pra você se</div>
+        <ul class="paraquem-list">
+          <li>Espera enriquecer sem precisar trabalhar</li>
+          <li>Não tem disponibilidade nos finais de semana</li>
+          <li>Busca uma fórmula mágica que funciona sem nenhum esforço</li>
+          <li>Não está disposto a investir nem R$ 550 numa câmera</li>
+          <li>Quer resultado garantido antes de colocar a mão na massa</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -1985,6 +1958,155 @@ a { color: inherit; text-decoration: none; }
   </div>
   <div class="container">
     <div class="carousel-dots" data-dots-for="proof"></div>
+  </div>
+</section>
+
+<!-- AULAS -->
+<section class="section aulas" id="aulas">
+  <div class="container">
+    <div class="section-header center reveal">
+      <div class="eyebrow">O que você vai aprender</div>
+      <h2>21 aulas. Do equipamento ao <em>primeiro contrato fechado</em>.</h2>
+    </div>
+    <p class="aulas-intro reveal"><strong>14 aulas disponíveis agora</strong>, no momento da compra. As demais são liberadas ao longo do ano, à medida que a Inframe cresce e testa coisas novas.</p>
+    <div class="aulas-grid reveal" id="aulasGrid">
+      <div class="aula-item disponivel">
+        <div class="aula-content">
+          <div class="aula-nome">Como trabalhar com guestbook em eventos</div>
+          <span class="aula-badge ok">Disponível agora</span>
+        </div>
+      </div>
+      <div class="aula-item disponivel">
+        <div class="aula-content">
+          <div class="aula-nome">Qual câmera Instax comprar: comparativo Mini 11, Mini 12, Mini Evo, Wide, Square e Mini Link 3</div>
+          <span class="aula-badge ok">Disponível agora</span>
+        </div>
+      </div>
+      <div class="aula-item disponivel">
+        <div class="aula-content">
+          <div class="aula-nome">Custo por foto: quanto cada câmera gasta por evento e onde comprar mais barato</div>
+          <span class="aula-badge ok">Disponível agora</span>
+        </div>
+      </div>
+      <div class="aula-item disponivel">
+        <div class="aula-content">
+          <div class="aula-nome">O stand completo: lista de acessórios essenciais com links de fornecedores</div>
+          <span class="aula-badge ok">Disponível agora</span>
+        </div>
+      </div>
+      <div class="aula-item disponivel">
+        <div class="aula-content">
+          <div class="aula-nome">Cantoneiras, guestbooks e canetas: onde comprar, prazo e custo por evento</div>
+          <span class="aula-badge ok">Disponível agora</span>
+        </div>
+      </div>
+      <div class="aula-item disponivel">
+        <div class="aula-content">
+          <div class="aula-nome">A regra dos 70%: como calcular o custo real por evento sem sair no prejuízo</div>
+          <span class="aula-badge ok">Disponível agora</span>
+        </div>
+      </div>
+      <div class="aula-item disponivel">
+        <div class="aula-content">
+          <div class="aula-nome">Montando seus pacotes do zero: nome, posicionamento e preço certo</div>
+          <span class="aula-badge ok">Disponível agora</span>
+        </div>
+      </div>
+      <div class="aula-item disponivel">
+        <div class="aula-content">
+          <div class="aula-nome">Como espaçar seus pacotes pra vender o do meio</div>
+          <span class="aula-badge ok">Disponível agora</span>
+        </div>
+      </div>
+
+      <!-- AULAS EXPANDIDAS -->
+      <div id="aulasExtras" style="display:contents; visibility:hidden; opacity:0; transition: opacity 0.4s ease;">
+        <div class="aula-item disponivel">
+          <div class="aula-content">
+            <div class="aula-nome">Venda consignada: o que é, como funciona e como cobrar</div>
+            <span class="aula-badge ok">Disponível agora</span>
+          </div>
+        </div>
+        <div class="aula-item disponivel">
+          <div class="aula-content">
+            <div class="aula-nome">Como definir o limite máximo de fotos no consignado</div>
+            <span class="aula-badge ok">Disponível agora</span>
+          </div>
+        </div>
+        <div class="aula-item disponivel">
+          <div class="aula-content">
+            <div class="aula-nome">Como vender foto na rua: o script de abordagem completo</div>
+            <span class="aula-badge ok">Disponível agora</span>
+          </div>
+        </div>
+        <div class="aula-item disponivel">
+          <div class="aula-content">
+            <div class="aula-nome">Precificação e logística pra eventos públicos e feiras</div>
+            <span class="aula-badge ok">Disponível agora</span>
+          </div>
+        </div>
+        <div class="aula-item disponivel">
+          <div class="aula-content">
+            <div class="aula-nome">Posicionamento premium: como cobrar mais e ser percebido diferente</div>
+            <span class="aula-badge ok">Disponível agora</span>
+          </div>
+        </div>
+        <div class="aula-item disponivel">
+          <div class="aula-content">
+            <div class="aula-nome">Aplicando as cantoneiras no guestbook</div>
+            <span class="aula-badge ok">Disponível agora</span>
+          </div>
+        </div>
+        <div class="aula-item em-breve">
+          <div class="aula-content">
+            <div class="aula-nome">Edição no CapCut: como transformar um evento em semanas de conteúdo</div>
+            <span class="aula-badge breve">Em breve</span>
+          </div>
+        </div>
+        <div class="aula-item em-breve">
+          <div class="aula-content">
+            <div class="aula-nome">Atendimento no WhatsApp: do primeiro contato ao fechamento</div>
+            <span class="aula-badge breve">Em breve</span>
+          </div>
+        </div>
+        <div class="aula-item em-breve">
+          <div class="aula-content">
+            <div class="aula-nome">Como enviar proposta e fazer follow-up sem parecer chato</div>
+            <span class="aula-badge breve">Em breve</span>
+          </div>
+        </div>
+        <div class="aula-item em-breve">
+          <div class="aula-content">
+            <div class="aula-nome">Meta Ads do zero: criando a campanha de captação de leads</div>
+            <span class="aula-badge breve">Em breve</span>
+          </div>
+        </div>
+        <div class="aula-item em-breve">
+          <div class="aula-content">
+            <div class="aula-nome">Copia e cola: a configuração exata que gerou 92 leads a R$ 1,75</div>
+            <span class="aula-badge breve">Em breve</span>
+          </div>
+        </div>
+        <div class="aula-item em-breve">
+          <div class="aula-content">
+            <div class="aula-nome">Planilha de leads e agenda de eventos</div>
+            <span class="aula-badge breve">Em breve</span>
+          </div>
+        </div>
+        <div class="aula-item em-breve">
+          <div class="aula-content">
+            <div class="aula-nome">Modelo de orçamento e contrato profissional</div>
+            <span class="aula-badge breve">Em breve</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center; margin-top: 32px;">
+      <button class="aulas-toggle-btn" id="aulasToggle" onclick="toggleAulas()">
+        Ver todas as 21 aulas <span id="aulasToggleIcon">↓</span>
+      </button>
+    </div>
   </div>
 </section>
 
@@ -2282,23 +2404,6 @@ a { color: inherit; text-decoration: none; }
   </div>
 </section>
 
-<!-- CTA FINAL -->
-<section class="section cta-final">
-  <div class="container">
-    <div class="cta-final-content reveal">
-      <h2>Cada cidade tem seu tempo. <em>Cada pessoa tem seu ritmo.</em></h2>
-      <p>O que a gente pode garantir é que tudo nesse curso foi testado de verdade, com os números na mão, com o stand montado, com o contrato assinado.</p>
-      <p>Cada cidade, cada esforço, cada postura comercial gera um resultado diferente. Mas o caminho tá documentado aqui, passo a passo.</p>
-      <p style="color: var(--gold); font-family: var(--serif); font-style: italic; font-size: 20px; margin-top: 32px;">Se você quer parar de procurar fórmula e começar a colocar a mão no negócio, o material tá pronto e tá aqui.</p>
-      <a href="#oferta" class="btn btn-primary btn-large">
-        Garantir acesso por R$ 167
-        <span class="arrow">→</span>
-      </a>
-      <div class="cta-final-micro">Acesso imediato . 7 dias de garantia . Preço de lançamento por tempo limitado</div>
-    </div>
-  </div>
-</section>
-
 <!-- PS -->
 <section class="ps">
   <div class="container">
@@ -2320,6 +2425,23 @@ a { color: inherit; text-decoration: none; }
           <div class="ps-sig-role">Fundadores . Inframe Polaroid</div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="section cta-final">
+  <div class="container">
+    <div class="cta-final-content reveal">
+      <h2>Cada cidade tem seu tempo. <em>Cada pessoa tem seu ritmo.</em></h2>
+      <p>O que a gente pode garantir é que tudo nesse curso foi testado de verdade, com os números na mão, com o stand montado, com o contrato assinado.</p>
+      <p>Cada cidade, cada esforço, cada postura comercial gera um resultado diferente. Mas o caminho tá documentado aqui, passo a passo.</p>
+      <p style="color: var(--gold); font-family: var(--serif); font-style: italic; font-size: 20px; margin-top: 32px;">Se você quer parar de procurar fórmula e começar a colocar a mão no negócio, o material tá pronto e tá aqui.</p>
+      <a href="#oferta" class="btn btn-primary btn-large">
+        Garantir acesso por R$ 167
+        <span class="arrow">→</span>
+      </a>
+      <div class="cta-final-micro">Acesso imediato . 7 dias de garantia . Preço de lançamento por tempo limitado</div>
     </div>
   </div>
 </section>
@@ -2420,6 +2542,29 @@ document.querySelectorAll('.carousel').forEach(carousel => {
 
   updateActive();
 });
+
+// TOGGLE AULAS
+function toggleAulas() {
+  const extras = document.getElementById('aulasExtras');
+  const btn = document.getElementById('aulasToggle');
+  const icon = document.getElementById('aulasToggleIcon');
+  const isHidden = extras.style.visibility === 'hidden';
+  if (isHidden) {
+    extras.style.visibility = 'visible';
+    extras.style.opacity = '1';
+    btn.textContent = '';
+    icon.textContent = '↑';
+    btn.prepend(document.createTextNode('Ver menos '));
+    btn.appendChild(icon);
+  } else {
+    extras.style.visibility = 'hidden';
+    extras.style.opacity = '0';
+    btn.textContent = '';
+    icon.textContent = '↓';
+    btn.prepend(document.createTextNode('Ver todas as 21 aulas '));
+    btn.appendChild(icon);
+  }
+}
 
 // FAQ
 document.querySelectorAll('.faq-question').forEach(btn => {
