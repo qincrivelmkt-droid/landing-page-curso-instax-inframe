@@ -2020,7 +2020,7 @@ a { color: inherit; text-decoration: none; }
       </div>
 
       <!-- AULAS EXPANDIDAS -->
-      <div id="aulasExtras" style="display:contents; visibility:hidden; opacity:0; transition: opacity 0.4s ease;">
+      <div id="aulasExtras" style="display:none; contents: none;">
         <div class="aula-item disponivel">
           <div class="aula-content">
             <div class="aula-nome">Venda consignada: o que é, como funciona e como cobrar</div>
@@ -2104,7 +2104,7 @@ a { color: inherit; text-decoration: none; }
 
     <div style="text-align:center; margin-top: 32px;">
       <button class="aulas-toggle-btn" id="aulasToggle" onclick="toggleAulas()">
-        Ver todas as 21 aulas <span id="aulasToggleIcon">↓</span>
+        Ver todas as aulas <span id="aulasToggleIcon">↓</span>
       </button>
     </div>
   </div>
@@ -2546,23 +2546,17 @@ document.querySelectorAll('.carousel').forEach(carousel => {
 // TOGGLE AULAS
 function toggleAulas() {
   const extras = document.getElementById('aulasExtras');
-  const btn = document.getElementById('aulasToggle');
   const icon = document.getElementById('aulasToggleIcon');
-  const isHidden = extras.style.visibility === 'hidden';
+  const btn = document.getElementById('aulasToggle');
+  const isHidden = extras.style.display === 'none';
   if (isHidden) {
-    extras.style.visibility = 'visible';
-    extras.style.opacity = '1';
-    btn.textContent = '';
+    extras.style.display = 'contents';
     icon.textContent = '↑';
-    btn.prepend(document.createTextNode('Ver menos '));
-    btn.appendChild(icon);
+    btn.childNodes[0].textContent = 'Ver menos ';
   } else {
-    extras.style.visibility = 'hidden';
-    extras.style.opacity = '0';
-    btn.textContent = '';
+    extras.style.display = 'none';
     icon.textContent = '↓';
-    btn.prepend(document.createTextNode('Ver todas as 21 aulas '));
-    btn.appendChild(icon);
+    btn.childNodes[0].textContent = 'Ver todas as aulas ';
   }
 }
 
