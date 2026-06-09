@@ -1642,6 +1642,220 @@ a { color: inherit; text-decoration: none; }
   .guarantee-seal, .guarantee-seal-inner { animation: none; }
   .hero-tag .dot { animation: none; }
 }
+/* COUNTDOWN HERO */
+.countdown-hero {
+  background: var(--bg-darkest);
+  padding: clamp(56px, 8vw, 96px) 0;
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.cdh-inner {
+  max-width: 680px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.cdh-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 20px;
+  border: 1px solid rgba(229, 194, 133, 0.35);
+  border-radius: 999px;
+  background: rgba(229, 194, 133, 0.07);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--gold);
+  margin-bottom: 28px;
+}
+
+.cdh-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 8px var(--gold);
+  animation: pulse 2s infinite;
+  flex-shrink: 0;
+}
+
+.cdh-title {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(28px, 4vw, 42px);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 12px;
+}
+
+.cdh-sub {
+  font-size: 16px;
+  color: var(--ink-mute);
+  margin-bottom: 36px;
+}
+
+.cdh-sub s {
+  color: var(--ink-dim);
+  text-decoration-color: var(--error);
+}
+
+.cdh-timer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(8px, 2vw, 20px);
+  margin-bottom: 40px;
+}
+
+.cdh-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-card);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-m);
+  padding: clamp(16px, 3vw, 24px) clamp(20px, 4vw, 36px);
+  min-width: clamp(72px, 12vw, 110px);
+}
+
+.cdh-num {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(36px, 6vw, 60px);
+  color: var(--gold);
+  line-height: 1;
+  letter-spacing: -0.01em;
+}
+
+.cdh-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--ink-mute);
+  text-transform: uppercase;
+}
+
+.cdh-sep {
+  font-family: var(--serif);
+  font-size: clamp(28px, 4vw, 44px);
+  color: var(--accent-deep);
+  line-height: 1;
+  margin-top: -12px;
+}
+
+.cdh-offer-card {
+  background: var(--bg-card);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-xl);
+  padding: clamp(28px, 4vw, 44px);
+  position: relative;
+}
+
+.cdh-offer-card::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: var(--radius-xl);
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(229, 194, 133, 0.35) 0%, transparent 40%, transparent 60%, rgba(229, 194, 133, 0.15) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.cdh-offer-tag {
+  display: inline-block;
+  padding: 5px 14px;
+  background: rgba(229, 194, 133, 0.12);
+  border: 1px solid rgba(229, 194, 133, 0.3);
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--gold);
+  margin-bottom: 20px;
+}
+
+.cdh-price-row {
+  margin-bottom: 16px;
+}
+
+.cdh-price-label {
+  font-size: 14px;
+  color: var(--ink-mute);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.cdh-price-main {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(52px, 9vw, 80px);
+  line-height: 1;
+  color: var(--ink);
+  letter-spacing: -0.03em;
+  margin-bottom: 10px;
+  text-shadow: 0 0 40px rgba(229, 194, 133, 0.12);
+}
+
+.cdh-price-avista {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.cdh-price-avista strong {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--gold);
+}
+
+.cdh-price-avista-txt {
+  font-size: 15px;
+  color: var(--ink-soft);
+}
+
+.cdh-checklist {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--ink-mute);
+  flex-wrap: wrap;
+  margin: 20px 0 24px;
+  padding: 14px;
+  background: var(--bg-warm-card);
+  border-radius: var(--radius-m);
+  border: 1px solid var(--line);
+}
+
+.cdh-sep-dot {
+  color: var(--line-strong);
+}
+
+.cdh-btn {
+  margin-bottom: 16px;
+}
+
+.cdh-guarantee {
+  font-size: 13px;
+  color: var(--ink-dim);
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  .cdh-timer { gap: 6px; }
+  .cdh-unit { min-width: 64px; padding: 14px 10px; }
+  .cdh-sep { font-size: 24px; }
+}
+
 </style>
 </head>
 <body>
@@ -1653,7 +1867,7 @@ a { color: inherit; text-decoration: none; }
       INFRAME
       <small>POLAROID</small>
     </div>
-    <a href="#oferta" class="nav-cta">Garantir R$ 167</a>
+    <a href="#oferta" class="nav-cta">Garantir R$ 99,90</a>
   </div>
 </nav>
 
@@ -1674,7 +1888,7 @@ a { color: inherit; text-decoration: none; }
         </p>
         <div class="hero-cta-row">
           <a href="#oferta" class="btn btn-primary btn-large">
-            Garantir acesso por R$ 167
+            Garantir acesso por R$ 99,90
             <span class="arrow">→</span>
           </a>
           <a href="#aulas" class="btn btn-secondary">Ver o que tem dentro</a>
@@ -1690,8 +1904,66 @@ a { color: inherit; text-decoration: none; }
         <img src="guestbook-principal.jpeg" alt="Stand Inframe Polaroid em casamento com guestbook e fotos instantâneas" loading="eager">
         <div class="hero-badge">
           <div class="hero-badge-label">Lançamento</div>
-          <div class="hero-badge-value">R$ 167 nos 15 primeiros dias</div>
+          <div class="hero-badge-value">R$ 99,90 até dia 20/06</div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COUNTDOWN HERO -->
+<section class="countdown-hero">
+  <div class="container">
+    <div class="cdh-inner reveal">
+      <div class="cdh-badge">
+        <span class="cdh-dot"></span>
+        PREÇO DE LANÇAMENTO — ACABA DIA 20/06
+      </div>
+      <h3 class="cdh-title">Garanta agora pelo menor preço</h3>
+      <p class="cdh-sub">Após o dia 20, o valor sobe para <s>R$ 197,90</s> e não volta.</p>
+      <div class="cdh-timer" id="cdh-timer">
+        <div class="cdh-unit">
+          <span class="cdh-num" id="cdh-d">00</span>
+          <span class="cdh-label">DIAS</span>
+        </div>
+        <span class="cdh-sep">:</span>
+        <div class="cdh-unit">
+          <span class="cdh-num" id="cdh-h">00</span>
+          <span class="cdh-label">HORAS</span>
+        </div>
+        <span class="cdh-sep">:</span>
+        <div class="cdh-unit">
+          <span class="cdh-num" id="cdh-m">00</span>
+          <span class="cdh-label">MIN</span>
+        </div>
+        <span class="cdh-sep">:</span>
+        <div class="cdh-unit">
+          <span class="cdh-num" id="cdh-s">00</span>
+          <span class="cdh-label">SEG</span>
+        </div>
+      </div>
+      <div class="cdh-offer-card">
+        <span class="cdh-offer-tag">✦ OFERTA DE LANÇAMENTO</span>
+        <div class="cdh-price-row">
+          <span class="cdh-price-label">ou 12x de</span>
+          <div class="cdh-price-main">R$10,33</div>
+          <div class="cdh-price-avista">
+            <strong>R$99,90</strong>
+            <span class="cdh-price-avista-txt">à vista no Pix ou cartão</span>
+          </div>
+        </div>
+        <div class="cdh-checklist">
+          <span>✓ Acesso imediato</span>
+          <span class="cdh-sep-dot">·</span>
+          <span>Aulas liberadas dia 20/06</span>
+          <span class="cdh-sep-dot">·</span>
+          <span>Atualizações inclusas</span>
+        </div>
+        <a href="https://pay.kiwify.com.br/rHuVikL" class="btn btn-primary btn-large btn-full cdh-btn">
+          Garantir meu acesso por R$ 99,90
+          <span class="arrow">→</span>
+        </a>
+        <p class="cdh-guarantee">7 dias de garantia incondicional. Não gostou, devolvemos 100%.</p>
       </div>
     </div>
   </div>
@@ -2239,10 +2511,11 @@ a { color: inherit; text-decoration: none; }
       </div>
 
       <div class="offer-price">
-        <span class="offer-price-tag">Lançamento . 15 dias</span>
-        <div class="offer-price-main"><span class="currency">R$</span>167</div>
-        <div class="offer-price-installment">ou <strong>12x no cartão</strong></div>
-        <div class="offer-price-after">Depois sobe pra R$ 297 e fica.</div>
+        <span class="offer-price-tag">Pré-lançamento</span>
+        <div style="font-size:13px; color:var(--ink-mute); margin-bottom:4px; letter-spacing:0.05em;">12 vezes de</div>
+        <div class="offer-price-main"><span class="currency">R$</span>10,33</div>
+        <div class="offer-price-installment">ou <strong>R$ 99,90 à vista</strong></div>
+        <div class="offer-price-after">No dia 20/06 o valor sobe para R$ 197,90</div>
         <div class="offer-platforms">
           <span>💳 Cartão</span>
           <span>⚡ Pix</span>
@@ -2250,8 +2523,19 @@ a { color: inherit; text-decoration: none; }
         </div>
       </div>
 
-      <a href="#" class="btn btn-primary btn-large btn-full">
-        Garantir meu acesso por R$ 167
+      <!-- CRONOMETRO -->
+      <div id="countdown" style="text-align:center; margin: 20px 0 12px;">
+        <p style="font-size:12px; letter-spacing:0.15em; text-transform:uppercase; color:var(--ink-mute); margin-bottom:8px;">Preço de pré-lançamento encerra em</p>
+        <div id="timer" style="font-family:var(--serif); font-size:38px; color:var(--gold); letter-spacing:0.05em; font-style:italic;"></div>
+      </div>
+
+      <!-- ESCASSEZ -->
+      <p style="text-align:center; font-size:13px; color:var(--ink-mute); margin-bottom:20px; line-height:1.5;">
+        Após o dia 20/06, o acesso estará disponível apenas por R$ 197,90.
+      </p>
+
+      <a href="https://pay.kiwify.com.br/rHuVikL" class="btn btn-primary btn-large btn-full">
+        Garantir meu acesso por R$ 99,90
         <span class="arrow">→</span>
       </a>
 
@@ -2296,7 +2580,7 @@ a { color: inherit; text-decoration: none; }
         </div>
       </div>
       <div class="obj-item reveal">
-        <div class="obj-question">"R$ 167 ainda é caro pra mim."</div>
+        <div class="obj-question">"R$ 99,90 ainda é caro pra mim."</div>
         <div class="obj-answer">
           A gente entende. Mas faz a conta: <strong>o lucro de uma foto consignada em um evento</strong>, no preço médio que ensinamos a praticar, paga o curso inteiro. Se você for aplicar de verdade, esse valor vai parecer pequeno depois do primeiro mês.
         </div>
@@ -2327,10 +2611,10 @@ a { color: inherit; text-decoration: none; }
 <section class="section urgency">
   <div class="container">
     <div class="urgency-card reveal">
-      <span class="urgency-eyebrow">Oferta expira em 15 dias</span>
-      <h2>R$ 167 só nos <em>primeiros 15 dias</em>.</h2>
+      <span class="urgency-eyebrow">Oferta encerra dia 20/06</span>
+      <h2>R$ 99,90 só até o <em>dia 20 de junho</em>.</h2>
       <p>
-        Depois desse período, o preço sobe pra R$ 297 e fica nesse valor. Quem entra agora trava o menor preço e ainda recebe todas as aulas novas, lançadas ao longo do ano, sem custo extra.
+        Depois desse período, o preço sobe para R$ 197,90 e fica nesse valor. Quem entra agora trava o menor preço e ainda recebe todas as aulas novas, lançadas ao longo do ano, sem custo extra.
       </p>
     </div>
   </div>
@@ -2416,7 +2700,7 @@ a { color: inherit; text-decoration: none; }
         Por isso esse curso existe. É o que a gente teria pago caro pra ter dois anos atrás.
       </p>
       <p class="highlight">
-        R$ 167 nos primeiros 15 dias. Depois sobe pra R$ 297 e fica.
+        R$ 99,90 até o dia 20/06. Depois sobe para R$ 197,90 e fica.
       </p>
       <div class="ps-sig">
         <div class="ps-sig-avatar">LM</div>
@@ -2437,11 +2721,11 @@ a { color: inherit; text-decoration: none; }
       <p>O que a gente pode garantir é que tudo nesse curso foi testado de verdade, com os números na mão, com o stand montado, com o contrato assinado.</p>
       <p>Cada cidade, cada esforço, cada postura comercial gera um resultado diferente. Mas o caminho tá documentado aqui, passo a passo.</p>
       <p style="color: var(--gold); font-family: var(--serif); font-style: italic; font-size: 20px; margin-top: 32px;">Se você quer parar de procurar fórmula e começar a colocar a mão no negócio, o material tá pronto e tá aqui.</p>
-      <a href="#oferta" class="btn btn-primary btn-large">
-        Garantir acesso por R$ 167
+      <a href="https://pay.kiwify.com.br/rHuVikL" class="btn btn-primary btn-large">
+        Garantir acesso por R$ 99,90
         <span class="arrow">→</span>
       </a>
-      <div class="cta-final-micro">Acesso imediato . 7 dias de garantia . Preço de lançamento por tempo limitado</div>
+      <div class="cta-final-micro">Acesso imediato . 7 dias de garantia . Preço sobe dia 20/06</div>
     </div>
   </div>
 </section>
@@ -2449,10 +2733,10 @@ a { color: inherit; text-decoration: none; }
 <!-- STICKY CTA MOBILE -->
 <div class="sticky-cta" id="stickyCta">
   <div class="sticky-cta-price">
-    <span class="sticky-cta-label">Lançamento</span>
-    <span class="sticky-cta-value">R$ 167</span>
+    <span class="sticky-cta-label">Pré-lançamento</span>
+    <span class="sticky-cta-value">R$ 99,90</span>
   </div>
-  <a href="#oferta" class="btn btn-primary">
+  <a href="https://pay.kiwify.com.br/rHuVikL" class="btn btn-primary">
     Garantir acesso →
   </a>
 </div>
@@ -2599,6 +2883,52 @@ if (stickyCta) {
 document.querySelectorAll('.hero .reveal').forEach(el => {
   setTimeout(() => el.classList.add('visible'), 100);
 });
+
+// CRONOMETRO COUNTDOWN HERO
+(function() {
+  const deadline = new Date('2026-06-20T00:00:00-03:00');
+  function pad(n) { return String(n).padStart(2, '0'); }
+  const dEl = document.getElementById('cdh-d');
+  const hEl = document.getElementById('cdh-h');
+  const mEl = document.getElementById('cdh-m');
+  const sEl = document.getElementById('cdh-s');
+  if (!dEl) return;
+  function tick() {
+    const diff = deadline - new Date();
+    if (diff <= 0) {
+      dEl.textContent = hEl.textContent = mEl.textContent = sEl.textContent = '00';
+      return;
+    }
+    dEl.textContent = pad(Math.floor(diff / 86400000));
+    hEl.textContent = pad(Math.floor((diff % 86400000) / 3600000));
+    mEl.textContent = pad(Math.floor((diff % 3600000) / 60000));
+    sEl.textContent = pad(Math.floor((diff % 60000) / 1000));
+  }
+  tick();
+  setInterval(tick, 1000);
+})();
+
+// CRONOMETRO PRE-LANCAMENTO
+(function() {
+  const deadline = new Date('2026-06-20T00:00:00-03:00');
+  const timerEl = document.getElementById('timer');
+  if (!timerEl) return;
+  function pad(n) { return String(n).padStart(2, '0'); }
+  function tick() {
+    const diff = deadline - new Date();
+    if (diff <= 0) {
+      timerEl.textContent = 'Oferta encerrada';
+      return;
+    }
+    const d = Math.floor(diff / 86400000);
+    const h = Math.floor((diff % 86400000) / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    const s = Math.floor((diff % 60000) / 1000);
+    timerEl.textContent = pad(d) + 'd ' + pad(h) + 'h ' + pad(m) + 'm ' + pad(s) + 's';
+  }
+  tick();
+  setInterval(tick, 1000);
+})();
 </script>
 
 </body>
