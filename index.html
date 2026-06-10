@@ -1856,6 +1856,44 @@ a { color: inherit; text-decoration: none; }
   .cdh-sep { font-size: 24px; }
 }
 
+/* MODULOS CONDENSADO */
+.modulos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 12px;
+  margin-top: 40px;
+}
+
+.modulo-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-m);
+  transition: border-color 0.2s;
+}
+
+.modulo-item:hover {
+  border-color: var(--gold);
+}
+
+.modulo-num {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 22px;
+  color: var(--gold);
+  min-width: 28px;
+  line-height: 1;
+}
+
+.modulo-nome {
+  font-size: 14px;
+  color: var(--ink-soft);
+  line-height: 1.4;
+}
+
 </style>
 </head>
 <body>
@@ -1997,187 +2035,27 @@ a { color: inherit; text-decoration: none; }
   </div>
 </section>
 
-<!-- PAIN -->
-<section class="section pain">
-  <div class="container">
-    <div class="section-header reveal">
-      <div class="eyebrow">Se você tá lendo até aqui</div>
-      <h2>Provavelmente <em>se reconhece</em> em pelo menos uma dessas situações.</h2>
-    </div>
-    <ul class="pain-list reveal">
-      <li class="pain-item">Quer ter uma renda extra de fim de semana, mas não sabe por onde começar de verdade.</li>
-      <li class="pain-item">Olha pro mercado de casamentos e acha que precisa de R$ 30 mil em equipamento.</li>
-      <li class="pain-item">Já tentou vender foto na rua e travou na hora de cobrar, abordar e fechar.</li>
-      <li class="pain-item">Tem talento pra criar, mas não sabe montar pacote, precificar e fechar contrato.</li>
-      <li class="pain-item">Vê outros casais e fotógrafos faturando bem em evento e não entende como chegaram lá.</li>
-      <li class="pain-item">Comprou curso bonito antes, abriu uma vez, fechou e nunca aplicou nada.</li>
-    </ul>
-    <p class="pain-close reveal">
-      A gente já esteve nesse lugar. A diferença foi parar de procurar fórmula e começar a testar.
-    </p>
-  </div>
-</section>
 
-<!-- SOLUTION -->
-<section class="section">
-  <div class="container">
-    <div class="section-header reveal">
-      <div class="eyebrow">A solução</div>
-      <h2>Não é teoria. É o que tá <em>dando certo</em>, documentado em tempo real.</h2>
-    </div>
-    <div class="solution-grid">
-      <div class="solution-body reveal">
-        <p>
-          Quando a gente montou a Inframe, o plano era simples: testar de verdade, anotar tudo e mostrar o que funciona. <strong>Sem agência, sem mentor caro, sem fórmula mágica.</strong>
-        </p>
-        <p>
-          Em poucos dias de empresa, fechamos o primeiro contrato acima de R$ 5 mil. Em menos de uma semana de campanha no Meta Ads, geramos 92 leads a R$ 1,75 cada um. Em poucos meses, viralizamos no Instagram com um vídeo que passou de <strong>327 mil views</strong>.
-        </p>
-        <p>
-          Esse curso é o passo a passo do que a gente fez. Não uma versão romantizada. <strong>A versão real</strong>, com print da campanha, com link dos fornecedores, com a planilha que usamos.
-        </p>
-        <p>
-          E como o negócio continua crescendo, novas aulas continuam sendo lançadas ao longo do ano. Quem entra agora não compra um produto fechado. <strong>Acompanha o jogo enquanto ele acontece.</strong>
-        </p>
-      </div>
-      <aside class="solution-numbers reveal">
-        <div class="solution-num-item">
-          <div class="solution-num-value">R$ 550</div>
-          <div class="solution-num-label">Câmera Instax que usamos. Totalmente automática, sem foco profissional.</div>
-        </div>
-        <div class="solution-num-item">
-          <div class="solution-num-value">14 + 16</div>
-          <div class="solution-num-label">Aulas já gravadas, mais novas aulas mensais ao longo do ano.</div>
-        </div>
-        <div class="solution-num-item">
-          <div class="solution-num-value">1 ano</div>
-          <div class="solution-num-label">De suporte direto com Lucas e Manu, em horário comercial.</div>
-        </div>
-        <div class="solution-num-item">
-          <div class="solution-num-value">vitalício</div>
-          <div class="solution-num-label">Acesso a todas as atualizações futuras do curso, sem custo extra.</div>
-        </div>
-      </aside>
-    </div>
-  </div>
-</section>
-
-<!-- BENEFITS -->
-<section class="section benefits" id="beneficios">
-  <div class="container">
-    <div class="section-header reveal">
-      <div class="eyebrow">O que muda na sua vida</div>
-      <h2>Depois das 30 aulas, você <em>passa a fechar contratos</em>, montar pacotes e rodar tráfego sem travar em nenhuma etapa.</h2>
-    </div>
-    <div class="benefits-list">
-      <div class="benefit reveal">
-        <div class="benefit-num">01</div>
-        <div class="benefit-text">Sai do <strong>"não sei por onde começar"</strong> com um stand pronto pra rodar no primeiro fim de semana.</div>
-      </div>
-      <div class="benefit reveal">
-        <div class="benefit-num">02</div>
-        <div class="benefit-text">Para de chutar preço e passa a ter <strong>pacotes estruturados</strong>, com margem clara e posicionamento premium.</div>
-      </div>
-      <div class="benefit reveal">
-        <div class="benefit-num">03</div>
-        <div class="benefit-text">Aprende a abordar cerimonialista e <strong>fechar parceria recorrente</strong>, em vez de depender só de tráfego pago.</div>
-      </div>
-      <div class="benefit reveal">
-        <div class="benefit-num">04</div>
-        <div class="benefit-text">Roda campanha no Meta Ads do zero, com <strong>copia e cola</strong> das nossas próprias campanhas.</div>
-      </div>
-      <div class="benefit reveal">
-        <div class="benefit-num">05</div>
-        <div class="benefit-text">Entende venda consignada e passa a <strong>ganhar duas vezes em cada evento</strong> (no contrato e na venda direta).</div>
-      </div>
-      <div class="benefit reveal">
-        <div class="benefit-num">06</div>
-        <div class="benefit-text">Vira a câmera pra dentro do próprio negócio e <strong>transforma cada evento em semanas de conteúdo orgânico</strong>.</div>
-      </div>
-      <div class="benefit reveal">
-        <div class="benefit-num">07</div>
-        <div class="benefit-text">Tem <strong>clareza de margem, fornecedor e logística</strong> pra crescer sem se enrolar.</div>
-      </div>
-      <div class="benefit reveal">
-        <div class="benefit-num">08</div>
-        <div class="benefit-text">Acompanha em tempo real um negócio que tá faturando, em vez de <strong>comprar um curso que parou em 2022</strong>.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PARA QUEM É -->
-<section class="section paraquem">
+<!-- MODULOS -->
+<section class="section modulos" id="aulas">
   <div class="container">
     <div class="section-header center reveal">
-      <div class="eyebrow">Antes de comprar</div>
-      <h2>Esse curso <em>é pra você</em>. E tem casos em que não é.</h2>
+      <div class="eyebrow">O que você vai aprender</div>
+      <h2>12 módulos. Do equipamento ao <em>primeiro contrato fechado</em>.</h2>
     </div>
-    <div class="paraquem-grid reveal">
-      <div class="paraquem-col sim">
-        <div class="paraquem-col-title">É pra você se</div>
-        <ul class="paraquem-list">
-          <li>Quer ter renda extra nos finais de semana sem depender de um chefe</li>
-          <li>Tá disposto a montar um stand e comparecer a eventos</li>
-          <li>Quer aprender com quem tá fazendo na prática, não em teoria</li>
-          <li>Prefere começar com pouco investimento e escalar com o que funciona</li>
-          <li>Aceita testar, ajustar e crescer junto com o curso</li>
-        </ul>
-      </div>
-      <div class="paraquem-col nao">
-        <div class="paraquem-col-title">Não é pra você se</div>
-        <ul class="paraquem-list">
-          <li>Espera enriquecer sem precisar trabalhar</li>
-          <li>Não tem disponibilidade nos finais de semana</li>
-          <li>Busca uma fórmula mágica que funciona sem nenhum esforço</li>
-          <li>Não está disposto a investir nem R$ 550 numa câmera</li>
-          <li>Quer resultado garantido antes de colocar a mão na massa</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CRIADORES -->
-<section class="section creators">
-  <div class="container">
-    <div class="section-header center reveal">
-      <div class="eyebrow">Quem criou o método</div>
-      <h2>Um casal que <em>construiu do zero</em> e agora documenta cada passo.</h2>
-    </div>
-    <div class="creators-grid">
-      <div class="creator-card reveal">
-        <div class="creator-photo">
-          <img src="manuela.jpeg" alt="Manuela Rosa Dias, cofundadora da Inframe Polaroid">
-        </div>
-        <div class="creator-info">
-          <h3 class="creator-name">Manuela Rosa Dias</h3>
-          <p class="creator-role">Cofundadora . Inframe Polaroid</p>
-          <p class="creator-bio">Empreende desde os 17 anos. Criou uma empresa de estética aos 20 e faturou R$ 60 mil no primeiro ano. Com formação em competência corporativa, é especialista em vendas, atendimento e criação de conteúdo. Já formou dezenas de alunas que faturam hoje na estética.</p>
-          <ul class="creator-skills">
-            <li>Vendas e atendimento consultivo</li>
-            <li>Criação de conteúdo e edição</li>
-            <li>Prospecção e autoridade</li>
-            <li>Formação de times comerciais</li>
-          </ul>
-        </div>
-      </div>
-      <div class="creator-card reveal">
-        <div class="creator-photo">
-          <img src="foto-lucas.jpeg" alt="Lucas Rosa Dias, cofundador da Inframe Polaroid">
-        </div>
-        <div class="creator-info">
-          <h3 class="creator-name">Lucas Rosa Dias</h3>
-          <p class="creator-role">Cofundador . Inframe Polaroid</p>
-          <p class="creator-bio">Formado em Marketing pela Universidade CESUSC, especialista em estratégia corporativa, tráfego pago, criação de sites e landing pages. Desenvolve e lança infoprodutos e é especialista em inteligência artificial aplicada a negócios.</p>
-          <ul class="creator-skills">
-            <li>Tráfego pago e Meta Ads</li>
-            <li>Criação de sites e landing pages</li>
-            <li>Lançamento de infoprodutos</li>
-            <li>Inteligência artificial aplicada</li>
-          </ul>
-        </div>
-      </div>
+    <div class="modulos-grid reveal">
+      <div class="modulo-item"><span class="modulo-num">01</span><span class="modulo-nome">Introdução: quem somos e como chegamos aqui</span></div>
+      <div class="modulo-item"><span class="modulo-num">02</span><span class="modulo-nome">Câmeras Instax: qual comprar e custo por foto</span></div>
+      <div class="modulo-item"><span class="modulo-num">03</span><span class="modulo-nome">Insumos e fornecedores: onde comprar mais barato</span></div>
+      <div class="modulo-item"><span class="modulo-num">04</span><span class="modulo-nome">Precificação: a regra dos 70% e como montar pacotes</span></div>
+      <div class="modulo-item"><span class="modulo-num">05</span><span class="modulo-nome">Operação no evento: do stand à entrega do álbum</span></div>
+      <div class="modulo-item"><span class="modulo-num">06</span><span class="modulo-nome">Venda na rua: script de abordagem em eventos públicos</span></div>
+      <div class="modulo-item"><span class="modulo-num">07</span><span class="modulo-nome">Ativação de marca: guestbook para empresas</span></div>
+      <div class="modulo-item"><span class="modulo-num">08</span><span class="modulo-nome">Marketing e posicionamento premium</span></div>
+      <div class="modulo-item"><span class="modulo-num">09</span><span class="modulo-nome">Criação de conteúdo: Reels e CapCut</span></div>
+      <div class="modulo-item"><span class="modulo-num">10</span><span class="modulo-nome">Atendimento e vendas: WhatsApp ao fechamento</span></div>
+      <div class="modulo-item"><span class="modulo-num">11</span><span class="modulo-nome">Meta Ads do zero: 92 leads a R$ 1,75 (copia e cola)</span></div>
+      <div class="modulo-item"><span class="modulo-num">12</span><span class="modulo-nome">Estrutura e gestão: planilha, contrato e agenda</span></div>
     </div>
   </div>
 </section>
@@ -2233,211 +2111,30 @@ a { color: inherit; text-decoration: none; }
   </div>
 </section>
 
-<!-- AULAS -->
-<section class="section aulas" id="aulas">
+<!-- CRIADORES -->
+<section class="section creators">
   <div class="container">
-    <div class="section-header center reveal">
-      <div class="eyebrow">O que você vai aprender</div>
-      <h2>21 aulas. Do equipamento ao <em>primeiro contrato fechado</em>.</h2>
-    </div>
-    <p class="aulas-intro reveal"><strong>14 aulas disponíveis agora</strong>, no momento da compra. As demais são liberadas ao longo do ano, à medida que a Inframe cresce e testa coisas novas.</p>
-    <div class="aulas-grid reveal" id="aulasGrid">
-      <div class="aula-item disponivel">
-        <div class="aula-content">
-          <div class="aula-nome">Como trabalhar com guestbook em eventos</div>
-          <span class="aula-badge ok">Disponível agora</span>
+    <div class="creators-grid">
+      <div class="creator-card reveal">
+        <div class="creator-photo">
+          <img src="manuela.jpeg" alt="Manuela Rosa Dias, cofundadora da Inframe Polaroid">
+        </div>
+        <div class="creator-info">
+          <h3 class="creator-name">Manuela Rosa Dias</h3>
+          <p class="creator-role">Cofundadora . Inframe Polaroid</p>
+          <p class="creator-bio">Empreende desde os 17 anos. Especialista em vendas, atendimento e conteúdo. Formou dezenas de alunas que faturam na área de estética.</p>
         </div>
       </div>
-      <div class="aula-item disponivel">
-        <div class="aula-content">
-          <div class="aula-nome">Qual câmera Instax comprar: comparativo Mini 11, Mini 12, Mini Evo, Wide, Square e Mini Link 3</div>
-          <span class="aula-badge ok">Disponível agora</span>
+      <div class="creator-card reveal">
+        <div class="creator-photo">
+          <img src="foto-lucas.jpeg" alt="Lucas Rosa Dias, cofundador da Inframe Polaroid">
+        </div>
+        <div class="creator-info">
+          <h3 class="creator-name">Lucas Rosa Dias</h3>
+          <p class="creator-role">Cofundador . Inframe Polaroid</p>
+          <p class="creator-bio">Formado em Marketing pela CESUSC. Especialista em tráfego pago, Meta Ads e lançamento de infoprodutos.</p>
         </div>
       </div>
-      <div class="aula-item disponivel">
-        <div class="aula-content">
-          <div class="aula-nome">Custo por foto: quanto cada câmera gasta por evento e onde comprar mais barato</div>
-          <span class="aula-badge ok">Disponível agora</span>
-        </div>
-      </div>
-      <div class="aula-item disponivel">
-        <div class="aula-content">
-          <div class="aula-nome">O stand completo: lista de acessórios essenciais com links de fornecedores</div>
-          <span class="aula-badge ok">Disponível agora</span>
-        </div>
-      </div>
-      <div class="aula-item disponivel">
-        <div class="aula-content">
-          <div class="aula-nome">Cantoneiras, guestbooks e canetas: onde comprar, prazo e custo por evento</div>
-          <span class="aula-badge ok">Disponível agora</span>
-        </div>
-      </div>
-      <div class="aula-item disponivel">
-        <div class="aula-content">
-          <div class="aula-nome">A regra dos 70%: como calcular o custo real por evento sem sair no prejuízo</div>
-          <span class="aula-badge ok">Disponível agora</span>
-        </div>
-      </div>
-      <div class="aula-item disponivel">
-        <div class="aula-content">
-          <div class="aula-nome">Montando seus pacotes do zero: nome, posicionamento e preço certo</div>
-          <span class="aula-badge ok">Disponível agora</span>
-        </div>
-      </div>
-      <div class="aula-item disponivel">
-        <div class="aula-content">
-          <div class="aula-nome">Como espaçar seus pacotes pra vender o do meio</div>
-          <span class="aula-badge ok">Disponível agora</span>
-        </div>
-      </div>
-
-      <!-- AULAS EXPANDIDAS -->
-      <div id="aulasExtras" style="display:none; contents: none;">
-        <div class="aula-item disponivel">
-          <div class="aula-content">
-            <div class="aula-nome">Venda consignada: o que é, como funciona e como cobrar</div>
-            <span class="aula-badge ok">Disponível agora</span>
-          </div>
-        </div>
-        <div class="aula-item disponivel">
-          <div class="aula-content">
-            <div class="aula-nome">Como definir o limite máximo de fotos no consignado</div>
-            <span class="aula-badge ok">Disponível agora</span>
-          </div>
-        </div>
-        <div class="aula-item disponivel">
-          <div class="aula-content">
-            <div class="aula-nome">Como vender foto na rua: o script de abordagem completo</div>
-            <span class="aula-badge ok">Disponível agora</span>
-          </div>
-        </div>
-        <div class="aula-item disponivel">
-          <div class="aula-content">
-            <div class="aula-nome">Precificação e logística pra eventos públicos e feiras</div>
-            <span class="aula-badge ok">Disponível agora</span>
-          </div>
-        </div>
-        <div class="aula-item disponivel">
-          <div class="aula-content">
-            <div class="aula-nome">Posicionamento premium: como cobrar mais e ser percebido diferente</div>
-            <span class="aula-badge ok">Disponível agora</span>
-          </div>
-        </div>
-        <div class="aula-item disponivel">
-          <div class="aula-content">
-            <div class="aula-nome">Aplicando as cantoneiras no guestbook</div>
-            <span class="aula-badge ok">Disponível agora</span>
-          </div>
-        </div>
-        <div class="aula-item em-breve">
-          <div class="aula-content">
-            <div class="aula-nome">Edição no CapCut: como transformar um evento em semanas de conteúdo</div>
-            <span class="aula-badge breve">Em breve</span>
-          </div>
-        </div>
-        <div class="aula-item em-breve">
-          <div class="aula-content">
-            <div class="aula-nome">Atendimento no WhatsApp: do primeiro contato ao fechamento</div>
-            <span class="aula-badge breve">Em breve</span>
-          </div>
-        </div>
-        <div class="aula-item em-breve">
-          <div class="aula-content">
-            <div class="aula-nome">Como enviar proposta e fazer follow-up sem parecer chato</div>
-            <span class="aula-badge breve">Em breve</span>
-          </div>
-        </div>
-        <div class="aula-item em-breve">
-          <div class="aula-content">
-            <div class="aula-nome">Meta Ads do zero: criando a campanha de captação de leads</div>
-            <span class="aula-badge breve">Em breve</span>
-          </div>
-        </div>
-        <div class="aula-item em-breve">
-          <div class="aula-content">
-            <div class="aula-nome">Copia e cola: a configuração exata que gerou 92 leads a R$ 1,75</div>
-            <span class="aula-badge breve">Em breve</span>
-          </div>
-        </div>
-        <div class="aula-item em-breve">
-          <div class="aula-content">
-            <div class="aula-nome">Planilha de leads e agenda de eventos</div>
-            <span class="aula-badge breve">Em breve</span>
-          </div>
-        </div>
-        <div class="aula-item em-breve">
-          <div class="aula-content">
-            <div class="aula-nome">Modelo de orçamento e contrato profissional</div>
-            <span class="aula-badge breve">Em breve</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div style="text-align:center; margin-top: 32px;">
-      <button class="aulas-toggle-btn" id="aulasToggle" onclick="toggleAulas()">
-        Ver todas as aulas <span id="aulasToggleIcon">↓</span>
-      </button>
-    </div>
-  </div>
-</section>
-
-<!-- CARROSSEL 2: FOTOS DE GUESTBOOK -->
-<section class="section carousel-section" style="background: var(--bg-elevated);">
-  <div class="container">
-    <div class="section-header reveal">
-      <div class="eyebrow">O nível de entrega</div>
-      <h2>Esse é o tipo de stand que <em>você vai aprender a montar</em>. Sem câmera profissional, sem fotógrafo no time.</h2>
-    </div>
-  </div>
-  <div class="container">
-    <div class="carousel-header">
-      <h3>Da composição ao posicionamento premium</h3>
-      <div class="carousel-controls">
-        <button class="carousel-btn" data-carousel="photos" data-dir="prev" aria-label="Anterior">←</button>
-        <button class="carousel-btn" data-carousel="photos" data-dir="next" aria-label="Próximo">→</button>
-      </div>
-    </div>
-    <div class="carousel photos" data-carousel-id="photos">
-      <div class="carousel-track">
-        <div class="carousel-slide">
-          <div class="photo-card">
-            <img src="guestbook-principal.jpeg" alt="Stand Inframe Polaroid em casamento real" loading="lazy">
-            <div class="photo-caption">
-              <span class="photo-caption-tag">Inframe Polaroid</span>
-              <div class="photo-caption-text">Posicionamento premium e ticket alto são parte do método.</div>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-slide">
-          <div class="photo-card">
-            <img src="ref6.jpg.jpeg" alt="Setup minimalista com rosas brancas e câmera Instax" loading="lazy">
-            <div class="photo-caption">
-              <span class="photo-caption-tag">Setup elegante</span>
-              <div class="photo-caption-text">Decoração impecável com pouco investimento. Você aprende do zero.</div>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-slide">
-          <div class="photo-card">
-            <img src="ref4.jpg.jpeg" alt="Composição com flores e mini sabonetes" loading="lazy">
-            <div class="photo-caption">
-              <span class="photo-caption-tag">Composição</span>
-              <div class="photo-caption-text">Valoriza o stand sem inflar custo. Lista de fornecedores no curso.</div>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-slide">
-          <div class="photo-card">
-            <img src="ref3.jpg.jpeg" alt="Guestbook preto com fotos instantâneas coladas" loading="lazy">
-            <div class="photo-caption">
-              <span class="photo-caption-tag">Lembrança</span>
-              <div class="photo-caption-text">O guestbook que vira lembrança. O detalhe que justifica o ticket alto.</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="carousel-dots" data-dots-for="photos"></div>
     </div>
   </div>
 </section>
@@ -2536,48 +2233,6 @@ a { color: inherit; text-decoration: none; }
   </div>
 </section>
 
-<!-- OBJECTIONS -->
-<section class="section">
-  <div class="container">
-    <div class="section-header center reveal">
-      <div class="eyebrow">Talvez bateu uma dessas</div>
-      <h2>As perguntas que <em>todo mundo faz</em> antes de entrar.</h2>
-    </div>
-    <div class="obj-list">
-      <div class="obj-item reveal">
-        <div class="obj-question">"Já tem muita gente fazendo isso."</div>
-        <div class="obj-answer">
-          Na verdade não. Em São Paulo e Rio o mercado começou a ficar quente. <strong>Fora desses dois polos, o Brasil inteiro tá em estágio inicial.</strong> A gente atende Florianópolis e ainda tem demanda sobrando todo fim de semana. A janela tá aberta. Em 2 ou 3 anos não vai mais estar.
-        </div>
-      </div>
-      <div class="obj-item reveal">
-        <div class="obj-question">"Preciso de muito capital pra começar."</div>
-        <div class="obj-answer">
-          A câmera que a gente usa custa <strong>R$ 550</strong>. O resto do stand a gente lista item por item no curso, com link dos fornecedores e preço atualizado. Você começa por menos de R$ 1.500 no investimento total e recupera no segundo evento.
-        </div>
-      </div>
-      <div class="obj-item reveal">
-        <div class="obj-question">"Não sei fotografar."</div>
-        <div class="obj-answer">
-          A câmera Instax é <strong>totalmente automática</strong>. Não tem ajuste manual, não tem foco profissional, não tem lente que troca. O cliente vai te contratar pela experiência que você cria, não pela técnica fotográfica. O curso ensina exatamente como construir essa experiência.
-        </div>
-      </div>
-      <div class="obj-item reveal">
-        <div class="obj-question">"Não tenho clientes."</div>
-        <div class="obj-answer">
-          Ninguém começa com cliente. A gente também começou no zero, sem rede, sem indicação, sem dinheiro pra agência. O curso tem <strong>módulo completo de aquisição</strong>: tráfego pago do zero (com a campanha de R$ 1,75 por lead pra copiar), conteúdo orgânico em Reels e parceria com cerimonialista.
-        </div>
-      </div>
-      <div class="obj-item reveal">
-        <div class="obj-question">"R$ 99,90 ainda é caro pra mim."</div>
-        <div class="obj-answer">
-          A gente entende. Mas faz a conta: <strong>o lucro de uma foto consignada em um evento</strong>, no preço médio que ensinamos a praticar, paga o curso inteiro. Se você for aplicar de verdade, esse valor vai parecer pequeno depois do primeiro mês.
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- GUARANTEE -->
 <section class="section guarantee">
   <div class="container">
@@ -2592,112 +2247,6 @@ a { color: inherit; text-decoration: none; }
       <p>
         Entra, assiste as primeiras aulas, baixa os materiais, testa a planilha. Se em 7 dias você sentir que não é pra você, manda um email pra <strong style="color: var(--gold);">qincrivel.mkt@gmail.com</strong> e a gente devolve 100% do valor. Sem pergunta, sem formulário cansativo, sem "tentar te segurar".
       </p>
-    </div>
-  </div>
-</section>
-
-<!-- URGENCY -->
-<section class="section urgency">
-  <div class="container">
-    <div class="urgency-card reveal">
-      <span class="urgency-eyebrow">Oferta encerra dia 20/06</span>
-      <h2>R$ 99,90 só até o <em>dia 20 de junho</em>.</h2>
-      <p>
-        Depois desse período, o preço sobe para R$ 197,90 e fica nesse valor. Quem entra agora trava o menor preço e ainda recebe todas as aulas novas, lançadas ao longo do ano, sem custo extra.
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section class="section">
-  <div class="container">
-    <div class="section-header center reveal">
-      <div class="eyebrow">Perguntas frequentes</div>
-      <h2>Tudo que você precisa saber <em>antes de entrar</em>.</h2>
-    </div>
-    <div class="faq-list reveal">
-      <div class="faq-item">
-        <button class="faq-question">
-          <span>Quanto tempo eu preciso pra concluir o curso?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">As 14 aulas já gravadas dão pra assistir em um fim de semana. Mas o curso continua sendo expandido ao longo do ano, com aulas novas liberadas mensalmente. Você acompanha no seu ritmo.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">
-          <span>Serve pra quem nunca trabalhou com fotografia ou evento?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">Sim, é exatamente pra esse perfil. A maior parte dos nossos alunos começou do zero. O curso parte do "qual câmera comprar" e vai até "como fechar o primeiro contrato".</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">
-          <span>Serve pra quem já é fotógrafo profissional?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">Sim. Se você já é fotógrafo, vai usar o curso pra agregar uma nova linha de receita (guestbook em casamento e venda em evento público) sem competir com o seu serviço principal. Muitos fotógrafos cobrem o investimento só no aporte extra de fim de semana.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">
-          <span>Como funciona o acesso?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">Tudo pela Kiwify. Você compra, recebe email com login e senha, e já entra na primeira aula. Funciona em qualquer celular, tablet ou computador.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">
-          <span>E se eu não gostar?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">Você tem 7 dias de garantia incondicional. Manda um email, a gente devolve 100% do valor. Sem desculpa, sem fricção.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">
-          <span>Tem suporte se eu travar?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">Tem. Suporte por 1 ano em horário comercial, direto com a gente. E a comunidade no WhatsApp pra trocar com outros alunos.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">
-          <span>Como funciona a mentoria mensal?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">Encontro fechado por vídeo chamada, com Lucas e Manu, uma vez por mês. Você traz dúvida, caso real, dificuldade. A gente responde olho no olho.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">
-          <span>Quais formas de pagamento?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">Cartão de crédito (em até 12x), Pix e boleto. Acesso liberado na hora pelo cartão e pelo Pix. Boleto libera após compensação.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PS -->
-<section class="ps">
-  <div class="container">
-    <div class="ps-card reveal">
-      <span class="ps-label">PS.</span>
-      <p>
-        A gente sabe como é começar do zero, sem ter a quem perguntar e com medo de gastar dinheiro errado em câmera, fornecedor ou anúncio.
-      </p>
-      <p>
-        Por isso esse curso existe. É o que a gente teria pago caro pra ter dois anos atrás.
-      </p>
-      <p class="highlight">
-        R$ 99,90 até o dia 20/06. Depois sobe para R$ 197,90 e fica.
-      </p>
-      <div class="ps-sig">
-        <div class="ps-sig-avatar">LM</div>
-        <div>
-          <div class="ps-sig-name">Lucas e Manuela</div>
-          <div class="ps-sig-role">Fundadores . Inframe Polaroid</div>
-        </div>
-      </div>
     </div>
   </div>
 </section>
