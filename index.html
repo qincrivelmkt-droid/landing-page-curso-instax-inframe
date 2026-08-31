@@ -244,7 +244,13 @@ footer a.zap{color:var(--gold2);font-weight:700}
 .urg-band p{color:var(--muted);font-size:.96rem}
 .urg-band b{color:var(--cream)}
 .offer-urg{color:var(--gold2);font-size:.86rem;font-weight:700;margin-bottom:16px;display:inline-flex;align-items:center;gap:8px;justify-content:center}
-@media(max-width:600px){.urg-band{flex-direction:column;text-align:center;padding:24px 20px}}
+.urg-main{flex:1}
+.countdown{display:flex;gap:10px;margin-top:16px}
+.cd-b{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:11px 0;min-width:62px;text-align:center;flex:1;max-width:84px}
+.cd-n{display:block;font-family:'Fraunces',serif;font-size:1.7rem;font-weight:600;color:var(--gold2);line-height:1}
+.cd-l{display:block;font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted2);margin-top:5px}
+.cd-msg{color:var(--gold2);font-weight:700;font-size:.98rem;margin-top:6px}
+@media(max-width:600px){.urg-band{flex-direction:column;text-align:center;padding:24px 20px}.countdown{justify-content:center}}
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}
 .reveal.in{opacity:1;transform:none}
 </style>
@@ -421,7 +427,15 @@ footer a.zap{color:var(--gold2);font-weight:700}
   <div class="wrap">
     <div class="urg-band reveal">
       <div class="ic">!</div>
-      <p><b>Este é o valor de lançamento.</b> Conforme novas aulas entram no curso, o preço sobe para <b>R$ 340</b>. Ao entrar agora, você trava a condição de lançamento e recebe todas as atualizações futuras sem pagar a mais.</p>
+      <div class="urg-main">
+        <p><b>Condição de lançamento.</b> No dia <b>4 de setembro</b> o valor sobe para <b>R$ 340</b>. Entre agora, trave o preço de lançamento e receba todas as atualizações futuras sem pagar a mais.</p>
+        <div class="countdown" id="cd" data-deadline="2026-09-04T03:00:00Z">
+          <div class="cd-b"><span class="cd-n" id="cd-d">00</span><span class="cd-l">dias</span></div>
+          <div class="cd-b"><span class="cd-n" id="cd-h">00</span><span class="cd-l">horas</span></div>
+          <div class="cd-b"><span class="cd-n" id="cd-m">00</span><span class="cd-l">min</span></div>
+          <div class="cd-b"><span class="cd-n" id="cd-s">00</span><span class="cd-l">seg</span></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -561,6 +575,24 @@ function wireVideo(vid,oid){
 }
 wireVideo('vmain','vover-main');
 wireVideo('vport1','vover-port');
+
+// countdown
+(function(){
+  var cd=document.getElementById('cd');if(!cd)return;
+  var dl=new Date(cd.getAttribute('data-deadline')).getTime();
+  var d=document.getElementById('cd-d'),h=document.getElementById('cd-h'),m=document.getElementById('cd-m'),s=document.getElementById('cd-s'),t;
+  function pad(n){return (n<10?'0':'')+n;}
+  function tick(){
+    var diff=dl-Date.now();
+    if(diff<=0){cd.innerHTML='<div class="cd-msg">Condição de lançamento encerrada. Valor atual: R$ 340.</div>';clearInterval(t);return;}
+    var x=Math.floor(diff/1000);
+    d.textContent=pad(Math.floor(x/86400));
+    h.textContent=pad(Math.floor(x%86400/3600));
+    m.textContent=pad(Math.floor(x%3600/60));
+    s.textContent=pad(x%60);
+  }
+  tick();t=setInterval(tick,1000);
+})();
 </script>
 </body>
 </html>
