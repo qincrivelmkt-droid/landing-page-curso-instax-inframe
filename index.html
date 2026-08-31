@@ -236,6 +236,15 @@ footer a.zap{color:var(--gold2);font-weight:700}
 .mbar .btn{padding:13px 20px;font-size:.9rem;white-space:nowrap}
 @media(max-width:860px){.mbar{display:flex}}
 
+.launch-flag{display:inline-flex;align-items:center;gap:9px;background:rgba(201,161,90,.1);border:1px solid rgba(201,161,90,.4);color:var(--gold2);font-weight:700;font-size:.8rem;letter-spacing:.02em;padding:8px 15px;border-radius:40px;margin-bottom:2px}
+.dotpulse{width:8px;height:8px;border-radius:50%;background:var(--gold2);box-shadow:0 0 0 0 rgba(235,203,132,.6);animation:pulse 1.8s infinite;flex-shrink:0}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(235,203,132,.55)}70%{box-shadow:0 0 0 9px rgba(235,203,132,0)}100%{box-shadow:0 0 0 0 rgba(235,203,132,0)}}
+.urg-band{max-width:760px;margin:0 auto;background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid rgba(201,161,90,.4);border-radius:16px;padding:22px 26px;display:flex;gap:20px;align-items:center;box-shadow:var(--shadow)}
+.urg-band .ic{width:46px;height:46px;border-radius:12px;flex-shrink:0;background:linear-gradient(135deg,var(--gold-deep),var(--gold2));display:grid;place-items:center;color:#221806;font-family:'Fraunces',serif;font-weight:600;font-size:1.5rem}
+.urg-band p{color:var(--muted);font-size:.96rem}
+.urg-band b{color:var(--cream)}
+.offer-urg{color:var(--gold2);font-size:.86rem;font-weight:700;margin-bottom:16px;display:inline-flex;align-items:center;gap:8px;justify-content:center}
+@media(max-width:600px){.urg-band{flex-direction:column;text-align:center;padding:24px 20px}}
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}
 .reveal.in{opacity:1;transform:none}
 </style>
@@ -259,6 +268,7 @@ footer a.zap{color:var(--gold2);font-weight:700}
         <div class="avs"><div class="a">◉</div><div class="a">◉</div><div class="a">◉</div><div class="a">+</div></div>
         <div class="pt"><b>+250 pessoas</b> já aprendendo com o método</div>
       </div>
+      <div class="launch-flag"><span class="dotpulse"></span> Condição de lançamento por tempo limitado</div>
       <div class="price-tag">
         <span class="from">De R$ 340</span>
         <span class="x">12x <b>R$ 23,79</b></span>
@@ -407,7 +417,16 @@ footer a.zap{color:var(--gold2);font-weight:700}
   </div>
 </section>
 
-<section class="offer sec">
+<section class="sec" style="padding:20px 0 6px">
+  <div class="wrap">
+    <div class="urg-band reveal">
+      <div class="ic">!</div>
+      <p><b>Este é o valor de lançamento.</b> Conforme novas aulas entram no curso, o preço sobe para <b>R$ 340</b>. Ao entrar agora, você trava a condição de lançamento e recebe todas as atualizações futuras sem pagar a mais.</p>
+    </div>
+  </div>
+</section>
+
+<section class="offer sec" style="padding-top:44px">
   <div class="wrap">
     <div class="center reveal">
       <span class="eyebrow c">A oferta completa</span>
@@ -428,6 +447,7 @@ footer a.zap{color:var(--gold2);font-weight:700}
           <div class="anchor">De <s>R$ 340</s> por</div>
           <div class="big">12x <b>R$ 23,79</b></div>
           <div class="cashline">ou R$ 230,00 à vista</div>
+          <div class="offer-urg"><span class="dotpulse"></span> Valor de lançamento. Depois sobe para R$ 340.</div>
           <a href="https://pay.kiwify.com.br/auJqmnG" class="btn block">Garantir meu acesso agora <span class="ar">→</span></a>
           <div class="pay"><span>💳 Cartão em até 12x</span><span>· Pix</span><span>· Boleto</span></div>
         </div>
