@@ -44,7 +44,7 @@ h2.h{font-size:clamp(1.75rem,5vw,2.6rem);line-height:1.12;font-weight:800;letter
 .micro.c{justify-content:center}
 .micro b{color:var(--muted);font-weight:600}
 
-nav{position:fixed;top:32px;left:0;right:0;z-index:60;transition:.3s;padding:16px 0}
+nav{position:fixed;top:0;left:0;right:0;z-index:60;transition:.3s;padding:16px 0}
 nav.solid{background:rgba(10,8,6,.92);backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--line);padding:11px 0}
 nav .wrap{display:flex;align-items:center;justify-content:space-between}
 .brand{display:flex;align-items:center;gap:11px;font-weight:800}
@@ -54,7 +54,7 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between}
 .nav-cta{padding:10px 20px;font-size:.85rem}
 @media(max-width:620px){.nav-cta{display:none}}
 
-.hero{position:relative;padding:132px 0 46px;overflow:hidden}
+.hero{position:relative;padding:116px 0 46px;overflow:hidden}
 .hero::after{content:"";position:absolute;inset:0;background:radial-gradient(780px 480px at 84% 6%,rgba(201,161,90,.15),transparent 60%);pointer-events:none;z-index:0}
 .hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.12fr .88fr;gap:48px;align-items:center}
 .hero-copy{max-width:600px}
@@ -81,7 +81,7 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between}
 .price-tag .cash{color:var(--muted);font-size:.92rem;width:100%}
 .hero-cta{margin-top:20px}
 @media(max-width:860px){
-  .hero{padding-top:120px;text-align:center}
+  .hero{padding-top:104px;text-align:center}
   .hero .wrap{grid-template-columns:1fr;gap:30px}
   .hero-copy{max-width:none;order:2}
   .hero-media{order:1;max-width:360px;margin:0 auto;width:100%}
@@ -265,8 +265,6 @@ footer a.zap{color:var(--gold2);font-weight:700}
 </head>
 <body>
 
-<div class="topbar"><span class="dt"></span> Preço de lançamento sobe em <b class="mini-cd" aria-hidden="true">--</b></div>
-
 <nav id="nav">
   <div class="wrap">
     <div class="brand"><div class="mark">IN</div><div><span>INFRAME</span><small>Guestbook</small></div></div>
@@ -284,11 +282,9 @@ footer a.zap{color:var(--gold2);font-weight:700}
         <div class="avs"><div class="a">◉</div><div class="a">◉</div><div class="a">◉</div><div class="a">+</div></div>
         <div class="pt"><b>+250 pessoas</b> já aprendendo com o método</div>
       </div>
-      <div class="launch-flag"><span class="dotpulse"></span> Condição de lançamento por tempo limitado</div>
       <div class="price-tag">
-        <span class="from">De R$ 340</span>
-        <span class="x">12x <b>R$ 23,79</b></span>
-        <span class="cash">ou R$ 230,00 à vista</span>
+        <span class="x">12x <b>R$ 35,17</b></span>
+        <span class="cash">ou R$ 340,00 à vista</span>
       </div>
       <div class="hero-cta">
         <a href="https://pay.kiwify.com.br/auJqmnG" class="btn">Quero começar agora <span class="ar">→</span></a>
@@ -433,24 +429,7 @@ footer a.zap{color:var(--gold2);font-weight:700}
   </div>
 </section>
 
-<section class="sec" style="padding:20px 0 6px">
-  <div class="wrap">
-    <div class="urg-band reveal">
-      <div class="ic">!</div>
-      <div class="urg-main">
-        <p><b>Condição de lançamento.</b> No dia <b>4 de setembro</b> o valor sobe para <b>R$ 340</b>. Entre agora, trave o preço de lançamento e receba todas as atualizações futuras sem pagar a mais.</p>
-        <div class="countdown" id="cd" data-deadline="2026-09-04T03:00:00Z" aria-hidden="true">
-          <div class="cd-b"><span class="cd-n" id="cd-d">00</span><span class="cd-l">dias</span></div>
-          <div class="cd-b"><span class="cd-n" id="cd-h">00</span><span class="cd-l">horas</span></div>
-          <div class="cd-b"><span class="cd-n" id="cd-m">00</span><span class="cd-l">min</span></div>
-          <div class="cd-b"><span class="cd-n" id="cd-s">00</span><span class="cd-l">seg</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="offer sec" style="padding-top:44px">
+<section class="offer sec">
   <div class="wrap">
     <div class="center reveal">
       <span class="eyebrow c">A oferta completa</span>
@@ -460,7 +439,7 @@ footer a.zap{color:var(--gold2);font-weight:700}
       <div class="top">Acesso imediato · Vitalício</div>
       <div class="in">
         <ul class="stack">
-          <li><span class="ck">✓</span><div class="tx"><b>Curso completo, mais de 35 aulas</b><small>6 módulos, do equipamento ao contrato assinado</small></div><span class="val">R$ 340</span></li>
+          <li><span class="ck">✓</span><div class="tx"><b>Curso completo, mais de 35 aulas</b><small>6 módulos, do equipamento ao contrato assinado</small></div><span class="val" style="text-decoration:none">Incluso</span></li>
           <li><span class="ck">✓</span><div class="tx"><b>Bônus: PDF Como montar seu guestbook</b><small>material de apoio para consultar sempre</small></div><span class="val">Brinde</span></li>
           <li><span class="ck">✓</span><div class="tx"><b>Bônus: PDF Como vender na rua</b><small>a abordagem para faturar em eventos públicos</small></div><span class="val">Brinde</span></li>
           <li><span class="ck">✓</span><div class="tx"><b>Bônus: Modelo de contrato pronto</b><small>é só preencher e enviar para o seu cliente</small></div><span class="val">Brinde</span></li>
@@ -468,10 +447,8 @@ footer a.zap{color:var(--gold2);font-weight:700}
           <li><span class="ck">✓</span><div class="tx"><b>Suporte em horário comercial</b><small>tire suas dúvidas com quem vive disso</small></div><span class="val">Brinde</span></li>
         </ul>
         <div class="pb">
-          <div class="anchor">De <s>R$ 340</s> por</div>
-          <div class="big">12x <b>R$ 23,79</b></div>
-          <div class="cashline">ou R$ 230,00 à vista</div>
-          <div class="offer-urg"><span class="dotpulse"></span> Valor de lançamento. Sobe para R$ 340 em <b class="mini-cd" aria-hidden="true">--</b></div>
+          <div class="big">12x <b>R$ 35,17</b></div>
+          <div class="cashline">ou R$ 340,00 à vista</div>
           <a href="https://pay.kiwify.com.br/auJqmnG" class="btn block">Garantir meu acesso agora <span class="ar">→</span></a>
           <div class="pay"><span>💳 Cartão em até 12x</span><span>· Pix</span><span>· Boleto</span></div>
         </div>
@@ -516,7 +493,7 @@ footer a.zap{color:var(--gold2);font-weight:700}
       <div class="ai"><button class="aq">O acesso é vitalício?<span class="pl">+</span></button><div class="aa"><p>Sim. Você assiste quantas vezes quiser, no seu ritmo, e ainda recebe as novas aulas que entram no curso.</p></div></div>
       <div class="ai"><button class="aq">Quanto preciso investir para começar na prática?<span class="pl">+</span></button><div class="aa"><p>Dá para começar com uma câmera de entrada em torno de R$ 550. Dentro do curso mostramos exatamente qual comprar e onde encontrar os insumos mais baratos.</p></div></div>
       <div class="ai"><button class="aq">Tem suporte se eu travar?<span class="pl">+</span></button><div class="aa"><p>Tem. Você conta com suporte em horário comercial e com o grupo no WhatsApp, onde a comunidade e a gente trocamos experiências todos os dias.</p></div></div>
-      <div class="ai"><button class="aq">Quais as formas de pagamento?<span class="pl">+</span></button><div class="aa"><p>Cartão de crédito em até 12x, Pix ou boleto. À vista sai por R$ 230,00.</p></div></div>
+      <div class="ai"><button class="aq">Quais as formas de pagamento?<span class="pl">+</span></button><div class="aa"><p>Cartão de crédito em até 12x, Pix ou boleto. À vista sai por R$ 340,00.</p></div></div>
       <div class="ai"><button class="aq">Já trabalho com eventos. Vale a pena?<span class="pl">+</span></button><div class="aa"><p>Vale. Além do operacional, o método aprofunda precificação, posicionamento premium e captação de clientes, que é onde a maioria trava para escalar.</p></div></div>
     </div>
   </div>
@@ -528,7 +505,7 @@ footer a.zap{color:var(--gold2);font-weight:700}
     <h2 class="h" style="margin-top:16px">Enquanto você pensa, alguém na sua cidade já está <span class="gold">fechando o próximo evento</span></h2>
     <p class="lead center" style="margin:0 auto 26px">O método já está pronto e liberado. O primeiro passo é seu.</p>
     <a href="https://pay.kiwify.com.br/auJqmnG" class="btn">Quero começar agora <span class="ar">→</span></a>
-    <div class="micro c" style="justify-content:center"><span>✓ <b>Acesso imediato</b></span><span>✓ <b>12x de R$ 23,79</b></span><span>✓ <b>Garantia de 7 dias</b></span></div>
+    <div class="micro c" style="justify-content:center"><span>✓ <b>Acesso imediato</b></span><span>✓ <b>12x de R$ 35,17</b></span><span>✓ <b>Garantia de 7 dias</b></span></div>
     <div class="ps"><b>P.S.</b> Você vai ter em mãos o mesmo passo a passo que a gente usa na Inframe, do primeiro equipamento ao contrato assinado. A diferença entre quem só olha e quem começa é ter o método na mão. Ele está aqui, com 7 dias de garantia. O risco é todo nosso.</div>
   </div>
 </section>
@@ -543,7 +520,7 @@ footer a.zap{color:var(--gold2);font-weight:700}
 </footer>
 
 <div class="mbar" id="mbar">
-  <div class="p"><b>12x R$ 23,79</b><small>ou R$ 230,00 à vista</small></div>
+  <div class="p"><b>12x R$ 35,17</b><small>ou R$ 340,00 à vista</small></div>
   <a href="https://pay.kiwify.com.br/auJqmnG" class="btn">Quero acesso</a>
 </div>
 
@@ -585,30 +562,6 @@ function wireVideo(vid,oid){
 }
 wireVideo('vmain','vover-main');
 wireVideo('vport1','vover-port');
-
-// countdown (big block + all compact .mini-cd near buttons + top bar)
-(function(){
-  var DEADLINE="2026-09-04T03:00:00Z"; // 4 de setembro, 00:00 horário de Brasília
-  var cd=document.getElementById('cd');
-  var dl=new Date((cd&&cd.getAttribute('data-deadline'))||DEADLINE).getTime();
-  var d=document.getElementById('cd-d'),h=document.getElementById('cd-h'),m=document.getElementById('cd-m'),s=document.getElementById('cd-s');
-  var minis=document.querySelectorAll('.mini-cd'),t;
-  function pad(n){return (n<10?'0':'')+n;}
-  function tick(){
-    var diff=dl-Date.now();
-    if(diff<=0){
-      if(cd){cd.innerHTML='<div class="cd-msg">Condição de lançamento encerrada. Valor atual: R$ 340.</div>';}
-      minis.forEach(function(e){e.textContent="R$ 340 (valor atual)";});
-      clearInterval(t);return;
-    }
-    var x=Math.floor(diff/1000);
-    var dd=Math.floor(x/86400),hh=Math.floor(x%86400/3600),mm=Math.floor(x%3600/60),ss=x%60;
-    if(d){d.textContent=pad(dd);h.textContent=pad(hh);m.textContent=pad(mm);s.textContent=pad(ss);}
-    var str=pad(dd)+"d "+pad(hh)+"h "+pad(mm)+"m "+pad(ss)+"s";
-    minis.forEach(function(e){e.textContent=str;});
-  }
-  tick();t=setInterval(tick,1000);
-})();
 </script>
 </body>
 </html>
