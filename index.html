@@ -62,7 +62,7 @@ h2.h{font-size:clamp(1.75rem,5vw,2.6rem);line-height:1.12;font-weight:800;letter
 .micro.c{justify-content:center}
 .micro b{color:var(--muted);font-weight:600}
 
-nav{position:fixed;top:0;left:0;right:0;z-index:60;transition:.3s;padding:16px 0}
+nav{position:fixed;top:40px;left:0;right:0;z-index:60;transition:.3s;padding:16px 0}
 nav.solid{background:rgba(10,8,6,.92);backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--line);padding:11px 0}
 nav .wrap{display:flex;align-items:center;justify-content:space-between}
 .brand{display:flex;align-items:center;gap:11px;font-weight:800}
@@ -72,7 +72,7 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between}
 .nav-cta{padding:10px 20px;font-size:.85rem}
 @media(max-width:620px){.nav-cta{display:none}}
 
-.hero{position:relative;padding:116px 0 46px;overflow:hidden}
+.hero{position:relative;padding:156px 0 46px;overflow:hidden}
 .hero::after{content:"";position:absolute;inset:0;background:radial-gradient(780px 480px at 84% 6%,rgba(201,161,90,.15),transparent 60%);pointer-events:none;z-index:0}
 .hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.12fr .88fr;gap:48px;align-items:center}
 .hero-copy{max-width:600px}
@@ -97,17 +97,22 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between}
 .price-tag .x{font-family:'Fraunces',serif;font-size:clamp(2rem,5.6vw,2.7rem);font-weight:600;line-height:1}
 .price-tag .x b{color:var(--gold2)}
 .price-tag .cash{color:var(--muted);font-size:.92rem;width:100%}
-.qtd{font-family:'Manrope',sans-serif;font-size:.95rem;font-weight:700;color:var(--muted);margin-right:2px;vertical-align:middle}
+.qtd{font-family:'Manrope',sans-serif;font-size:1.08rem;font-weight:700;color:var(--cream);margin-right:2px;vertical-align:middle}
 .hero-cta{margin-top:20px}
 
-.cd-wrap{display:inline-flex;align-items:center;gap:9px;background:rgba(201,161,90,.1);border:1px solid rgba(201,161,90,.4);border-radius:40px;padding:8px 15px;margin-bottom:2px}
-.cd-wrap .cd-lab{color:var(--gold2);font-weight:700;font-size:.8rem;letter-spacing:.01em}
-.cd-wrap .cd-clock{display:flex;gap:5px;font-family:'Fraunces',serif;font-weight:600;color:var(--gold2);font-size:.92rem}
-.cd-wrap .cd-clock span{background:rgba(201,161,90,.16);border-radius:6px;padding:2px 6px;min-width:28px;text-align:center}
+.cd-wrap{display:inline-flex;align-items:center;gap:9px;background:rgba(224,74,68,.12);border:1px solid rgba(224,74,68,.5);border-radius:40px;padding:8px 15px;margin-bottom:2px}
+.cd-wrap .cd-lab{color:#F0655F;font-weight:700;font-size:.8rem;letter-spacing:.01em}
+.cd-wrap .cd-clock{display:flex;gap:5px;font-family:'Fraunces',serif;font-weight:600;color:#F0655F;font-size:.92rem}
+.cd-wrap .cd-clock span{background:rgba(224,74,68,.18);border-radius:6px;padding:2px 6px;min-width:28px;text-align:center}
 .cd-wrap.expired .cd-lab{color:var(--cream)}
 .cd-wrap.expired .cd-clock{display:none}
+
+.topbar{position:fixed;top:0;left:0;right:0;z-index:80;background:#1A0B0A;border-bottom:1px solid rgba(224,74,68,.45);padding:9px 16px;text-align:center}
+.topbar .cd-wrap{background:transparent;border:0;padding:0;margin:0}
+.topbar .cd-wrap .cd-lab{font-size:.78rem}
+@media(max-width:620px){.topbar .cd-lab{display:none}}
 @media(max-width:860px){
-  .hero{padding-top:104px;text-align:center}
+  .hero{padding-top:144px;text-align:center}
   .hero .wrap{grid-template-columns:1fr;gap:30px}
   .hero-copy{max-width:none;order:2}
   .hero-media{order:1;max-width:360px;margin:0 auto;width:100%}
@@ -277,11 +282,6 @@ footer a.zap{color:var(--gold2);font-weight:700}
 .cd-l{display:block;font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted2);margin-top:5px}
 .cd-msg{color:var(--gold2);font-weight:700;font-size:.98rem;margin-top:6px}
 @media(max-width:600px){.urg-band{flex-direction:column;text-align:center;padding:24px 20px}.countdown{justify-content:center}}
-.topbar{position:fixed;top:0;left:0;right:0;z-index:90;background:linear-gradient(90deg,var(--gold-deep),var(--gold) 50%,var(--gold2));color:#221806;display:flex;align-items:center;justify-content:center;gap:9px;padding:7px 14px;font-size:.8rem;font-weight:700;line-height:1.2;text-align:center}
-.topbar .dt{width:7px;height:7px;border-radius:50%;background:#221806;animation:pulse2 1.8s infinite;flex-shrink:0}
-@keyframes pulse2{0%{box-shadow:0 0 0 0 rgba(34,24,6,.5)}70%{box-shadow:0 0 0 7px rgba(34,24,6,0)}100%{box-shadow:0 0 0 0 rgba(34,24,6,0)}}
-.topbar b{font-variant-numeric:tabular-nums;white-space:nowrap}
-@media(max-width:480px){.topbar{font-size:.71rem;gap:7px;padding:6px 10px}}
 .cta-cd{margin-top:13px;color:var(--muted);font-size:.82rem;font-weight:600;display:inline-flex;align-items:center;gap:7px}
 .cta-cd .dt2{width:7px;height:7px;border-radius:50%;background:var(--gold2);animation:pulse 1.8s infinite;flex-shrink:0}
 .cta-cd b,.offer-urg b{color:var(--gold2);font-variant-numeric:tabular-nums}
@@ -290,6 +290,8 @@ footer a.zap{color:var(--gold2);font-weight:700}
 </style>
 </head>
 <body>
+
+<div class="topbar"><div class="cd-wrap" data-cd="top"><span class="cd-lab">Condição atual acaba em</span><span class="cd-clock"><span class="cd-d">00</span>d<span class="cd-h">00</span>h<span class="cd-m">00</span>m<span class="cd-s">00</span>s</span></div></div>
 
 <nav id="nav">
   <div class="wrap">
