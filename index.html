@@ -291,7 +291,7 @@ footer a.zap{color:var(--gold2);font-weight:700}
 </head>
 <body>
 
-<div class="topbar"><div class="cd-wrap" data-cd="top"><span class="cd-lab">Condição atual acaba em</span><span class="cd-clock"><span class="cd-d">00</span>d<span class="cd-h">00</span>h<span class="cd-m">00</span>m<span class="cd-s">00</span>s</span></div></div>
+
 
 <nav id="nav">
   <div class="wrap">
@@ -310,9 +310,7 @@ footer a.zap{color:var(--gold2);font-weight:700}
         <div class="avs"><div class="a">◉</div><div class="a">◉</div><div class="a">◉</div><div class="a">+</div></div>
         <div class="pt"><b>+250 pessoas</b> já aprendendo com o método</div>
       </div>
-      <div class="cd-wrap" data-cd="hero"><span class="cd-lab">Condição atual acaba em</span><span class="cd-clock"><span class="cd-d">00</span>d<span class="cd-h">00</span>h<span class="cd-m">00</span>m<span class="cd-s">00</span>s</span></div>
       <div class="price-tag">
-        <span class="from">De R$ 440,00</span>
         <span class="x"><span class="qtd">12x</span> <b>R$ 30,72</b></span>
         <span class="cash">ou R$ 297,00 à vista</span>
       </div>
@@ -477,8 +475,6 @@ footer a.zap{color:var(--gold2);font-weight:700}
           <li><span class="ck">✓</span><div class="tx"><b>Suporte em horário comercial</b><small>tire suas dúvidas com quem vive disso</small></div><span class="val">Brinde</span></li>
         </ul>
         <div class="pb">
-          <div class="cd-wrap" data-cd="offer" style="margin-bottom:14px"><span class="cd-lab">Condição atual acaba em</span><span class="cd-clock"><span class="cd-d">00</span>d<span class="cd-h">00</span>h<span class="cd-m">00</span>m<span class="cd-s">00</span>s</span></div>
-          <div class="anchor">De <s>R$ 440,00</s></div>
           <div class="big"><span class="qtd">12x</span> <b>R$ 30,72</b></div>
           <div class="cashline">ou R$ 297,00 à vista</div>
           <a href="https://pay.kiwify.com.br/auJqmnG" class="btn block">Garantir meu acesso agora <span class="ar">→</span></a>
@@ -535,7 +531,6 @@ footer a.zap{color:var(--gold2);font-weight:700}
     <span class="eyebrow c">Sua vez</span>
     <h2 class="h" style="margin-top:16px">Enquanto você pensa, alguém na sua cidade já está <span class="gold">fechando o próximo evento</span></h2>
     <p class="lead center" style="margin:0 auto 18px">O método já está pronto e liberado. O primeiro passo é seu.</p>
-    <div class="center" style="margin-bottom:22px"><div class="cd-wrap" data-cd="final"><span class="cd-lab">Condição atual acaba em</span><span class="cd-clock"><span class="cd-d">00</span>d<span class="cd-h">00</span>h<span class="cd-m">00</span>m<span class="cd-s">00</span>s</span></div></div>
     <a href="https://pay.kiwify.com.br/auJqmnG" class="btn">Quero começar agora <span class="ar">→</span></a>
     <div class="micro c" style="justify-content:center"><span>✓ <b>Acesso imediato</b></span><span>✓ <b>12x de R$ 30,72</b></span><span>✓ <b>Garantia de 7 dias</b></span></div>
     <div class="ps"><b>P.S.</b> Você vai ter em mãos o mesmo passo a passo que a gente usa na Inframe, do primeiro equipamento ao contrato assinado. A diferença entre quem só olha e quem começa é ter o método na mão. Ele está aqui, com 7 dias de garantia. O risco é todo nosso.</div>
@@ -601,35 +596,6 @@ document.querySelectorAll('a[href*="pay.kiwify.com.br"]').forEach(function(btn){
   });
 });
 
-(function(){
-  var deadline=new Date('2026-09-09T03:00:00Z').getTime();
-  var wraps=document.querySelectorAll('.cd-wrap');
-  var timer;
-  function pad(n){return String(n).padStart(2,'0');}
-  function tick(){
-    var diff=deadline-Date.now();
-    if(diff<=0){
-      wraps.forEach(function(w){
-        w.classList.add('expired');
-        w.querySelector('.cd-lab').textContent='Condição encerrada. Valor atual: R$ 440,00';
-      });
-      clearInterval(timer);
-      return;
-    }
-    var d=Math.floor(diff/86400000);
-    var h=Math.floor(diff%86400000/3600000);
-    var m=Math.floor(diff%3600000/60000);
-    var s=Math.floor(diff%60000/1000);
-    wraps.forEach(function(w){
-      w.querySelector('.cd-d').textContent=pad(d);
-      w.querySelector('.cd-h').textContent=pad(h);
-      w.querySelector('.cd-m').textContent=pad(m);
-      w.querySelector('.cd-s').textContent=pad(s);
-    });
-  }
-  tick();
-  timer=setInterval(tick,1000);
-})();
 </script>
 </body>
 </html>
