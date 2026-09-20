@@ -614,6 +614,20 @@ document.querySelectorAll('a[href*="pay.kiwify.com.br"]').forEach(function(btn){
   });
 });
 
+(function(){
+  var keys=['utm_source','utm_medium','utm_campaign','utm_content','utm_term','src','sck'];
+  var qs=new URLSearchParams(location.search),saved={};
+  try{saved=JSON.parse(sessionStorage.getItem('kw_utm')||'{}');}catch(e){}
+  keys.forEach(function(k){var v=qs.get(k);if(v)saved[k]=v;});
+  try{sessionStorage.setItem('kw_utm',JSON.stringify(saved));}catch(e){}
+  if(!Object.keys(saved).length)return;
+  document.querySelectorAll('a[href*="pay.kiwify.com.br"]').forEach(function(a){
+    var u=new URL(a.href);
+    Object.keys(saved).forEach(function(k){u.searchParams.set(k,saved[k]);});
+    a.href=u.toString();
+  });
+})();
+
 </script>
 </body>
 </html>
