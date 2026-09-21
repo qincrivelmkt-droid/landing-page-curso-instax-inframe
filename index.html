@@ -293,13 +293,24 @@ footer a.zap{color:var(--gold2);font-weight:700}
 .cta-cd b,.offer-urg b{color:var(--gold2);font-variant-numeric:tabular-nums}
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}
 .reveal.in{opacity:1;transform:none}
+.v-ad{display:none}
+html.from-ad .v-ad{display:block}
+html.from-ad .eyebrow.v-ad{display:inline-flex;letter-spacing:.16em;line-height:1.5;max-width:520px;text-wrap:balance}
+html.from-ad .v-org{display:none}
+html.from-ad .hero h1.v-ad{font-size:clamp(1.65rem,5vw,2.7rem)}
 </style>
+<script>
+(function(){try{var m=new URLSearchParams(location.search).get('utm_medium');if(m==='paid'||m==='cpc'){document.documentElement.classList.add('from-ad');}}catch(e){}})();
+</script>
 <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
         t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "ylwlsk0iif");
+</script>
+<script>
+try{clarity('set','lp_variant',document.documentElement.classList.contains('from-ad')?'anuncio_custo_lucro':'padrao');}catch(e){}
 </script>
 </head>
 <body>
@@ -316,10 +327,14 @@ footer a.zap{color:var(--gold2);font-weight:700}
 <section class="hero">
   <div class="wrap">
     <div class="hero-copy">
-      <span class="eyebrow">Método Inframe Guestbook</span>
-      <h1>Como faturamos <span class="gold">mais de R$ 15 mil</span> fazendo fotos Polaroid em guestbooks de casamento, nos últimos 3 meses</h1>
-      <p class="sub"><b>Único método brasileiro de guestbook com fotos instantâneas.</b> O curso completo, com mais de 35 aulas, do primeiro equipamento ao contrato assinado.</p>
-      <p class="claim-note">Resultado da nossa operação em Florianópolis, nos últimos 3 meses. Resultados variam conforme dedicação, região e aplicação do método.</p>
+      <span class="eyebrow v-org">Método Inframe Guestbook</span>
+      <span class="eyebrow v-ad">O único curso de guestbook com fotos Polaroid do Brasil</span>
+      <h1 class="v-org">Como faturamos <span class="gold">mais de R$ 15 mil</span> fazendo fotos Polaroid em guestbooks de casamento, nos últimos 3 meses</h1>
+      <h1 class="v-ad">Você viu o custo e o lucro. Agora veja <span class="gold">quanto cobrar</span> e como fechar seu primeiro casamento.</h1>
+      <p class="sub v-org"><b>Único método brasileiro de guestbook com fotos instantâneas.</b> O curso completo, com mais de 35 aulas, do primeiro equipamento ao contrato assinado.</p>
+      <p class="sub v-ad">Método completo em <b>6 módulos e mais de 35 aulas</b>: equipamento, técnica, orçamento, contrato e a conversa com a noiva.</p>
+      <p class="claim-note v-org">Resultado da nossa operação em Florianópolis, nos últimos 3 meses. Resultados variam conforme dedicação, região e aplicação do método.</p>
+      <p class="claim-note v-ad">Criado a partir da operação real da Inframe, em Florianópolis, que faturou mais de R$ 15 mil nos últimos 3 meses. Resultados variam conforme dedicação, região e aplicação do método.</p>
       <div class="proof-row">
         <div class="avs"><div class="a">◉</div><div class="a">◉</div><div class="a">◉</div><div class="a">+</div></div>
         <div class="pt"><b>+250 pessoas</b> já aprendendo com o método</div>
