@@ -300,6 +300,22 @@ html.from-ad .v-ad{display:block}
 html.from-ad .eyebrow.v-ad{display:inline-flex;letter-spacing:.16em;line-height:1.5;max-width:520px;text-wrap:balance}
 html.from-ad .v-org{display:none}
 html.from-ad .hero h1.v-ad{font-size:clamp(1.65rem,5vw,2.7rem)}
+
+/* preco: parcelamento em destaque, a vista secundario (so na variante de anuncio) */
+html.from-ad .price-tag-ad{display:flex;align-items:baseline}
+html.from-ad .price-tag-ad .x{font-size:clamp(2.3rem,6.4vw,3.1rem)}
+html.from-ad .price-tag-ad .qtd{font-size:.55em;font-weight:700;vertical-align:.32em}
+html.from-ad .price-tag-ad .cash-alt{color:var(--muted2);font-size:.82rem}
+/* .v-ad{display:block} generico (acima) sobrescreveria o display:flex destes dois
+   containers porque eles tambem levam a classe v-ad; reafirmar aqui, depois na cascata */
+html.from-ad .micro.v-ad{display:flex}
+
+/* faixa de garantia, logo abaixo do CTA, ainda na 1a tela (so anuncio) */
+.risk-band{display:none}
+html.from-ad .risk-band{display:flex;align-items:center;gap:12px;margin-top:16px;padding:12px 16px;border:1px solid var(--line);border-radius:12px;background:var(--panel2);max-width:460px;color:var(--muted);font-size:.86rem;line-height:1.35}
+html.from-ad .risk-band b{color:var(--cream)}
+html.from-ad .risk-band .seal{flex-shrink:0;width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--gold-deep),var(--gold2));color:#221806;font-family:'Fraunces',serif;font-weight:700;font-size:1.05rem;display:grid;place-items:center}
+@media(max-width:860px){html.from-ad .risk-band{margin-left:auto;margin-right:auto}}
 </style>
 <script>
 (function(){try{var m=new URLSearchParams(location.search).get('utm_medium');if(m==='paid'||m==='cpc'){document.documentElement.classList.add('from-ad');}}catch(e){}})();
@@ -341,13 +357,22 @@ try{clarity('set','lp_variant',document.documentElement.classList.contains('from
         <div class="avs"><div class="a">◉</div><div class="a">◉</div><div class="a">◉</div><div class="a">+</div></div>
         <div class="pt"><b>+250 pessoas</b> já aprendendo com o método</div>
       </div>
-      <div class="price-tag">
+      <div class="price-tag v-org">
         <span class="x"><span class="qtd">12x</span> <b>R$ 30,72</b></span>
         <span class="cash">ou R$ 297,00 à vista</span>
       </div>
+      <div class="price-tag price-tag-ad v-ad">
+        <span class="x"><span class="qtd">12x de</span> <b>R$ 30,72</b></span>
+        <span class="cash cash-alt">ou R$ 297,00 à vista</span>
+      </div>
       <div class="hero-cta">
         <a href="https://pay.kiwify.com.br/auJqmnG" class="btn">Quero começar agora <span class="ar">→</span></a>
-        <div class="micro"><span>✓ <b>Acesso imediato</b></span><span>✓ <b>Acesso vitalício</b></span><span>✓ <b>Garantia de 7 dias</b></span></div>
+        <div class="micro v-org"><span>✓ <b>Acesso imediato</b></span><span>✓ <b>Acesso vitalício</b></span><span>✓ <b>Garantia de 7 dias</b></span></div>
+        <div class="micro v-ad"><span>✓ <b>Acesso imediato</b></span><span>✓ <b>Acesso vitalício</b></span></div>
+        <div class="risk-band v-ad">
+          <div class="seal">7</div>
+          <div><b>Risco zero para você.</b> Não gostou nos primeiros 7 dias? Devolvemos 100% do valor, sem perguntas.</div>
+        </div>
       </div>
     </div>
     <div class="hero-media">
