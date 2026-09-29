@@ -180,6 +180,25 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between}
 @media(max-width:560px){.mod-grid{grid-template-columns:1fr}}
 .mod-note{margin-top:28px;text-align:center;color:var(--muted);font-size:.98rem}
 .mod-note b{color:var(--gold2)}
+.mcard[data-mod]{cursor:pointer}
+.mcard[data-mod]:focus-visible{outline:2px solid var(--gold2);outline-offset:3px}
+.mcard .more{display:inline-flex;align-items:center;gap:6px;margin-top:12px;color:var(--gold2);font-size:.84rem;font-weight:700}
+.mcard .more .ar{transition:transform .2s}
+.mcard:hover .more .ar{transform:translateX(4px)}
+.mcard .cov-txt{width:100%;height:100%;display:flex;flex-direction:column;justify-content:flex-end;padding:18px;background:radial-gradient(circle at 80% 20%,rgba(201,161,90,.22),transparent 60%),linear-gradient(160deg,var(--panel2),var(--bg))}
+.mcard .cov-txt b{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:600;color:var(--gold2);line-height:1.1}
+@media(min-width:861px){.mod-grid .mcard:last-child:nth-child(3n+1){grid-column:2}}
+.mmodal{position:fixed;inset:0;z-index:90;display:none;align-items:center;justify-content:center;padding:18px;background:rgba(6,4,2,.78);backdrop-filter:blur(6px)}
+.mmodal.open{display:flex}
+.mmodal .box{position:relative;width:100%;max-width:520px;max-height:86vh;overflow:auto;background:var(--panel);border:1px solid rgba(201,161,90,.4);border-radius:18px;padding:28px 26px 24px;box-shadow:var(--shadow)}
+.mmodal .x{position:absolute;top:12px;right:12px;width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:var(--panel2);color:var(--cream);font-size:1.3rem;line-height:1;cursor:pointer}
+.mmodal .mtag{color:var(--gold);font-size:.72rem;font-weight:800;letter-spacing:.18em}
+.mmodal h3{font-family:'Fraunces',serif;font-size:1.6rem;font-weight:600;margin:8px 40px 4px 0;line-height:1.15}
+.mmodal .cnt{color:var(--muted);font-size:.9rem;margin-bottom:16px}
+.mmodal ol{list-style:none;counter-reset:a;border-top:1px solid var(--line)}
+.mmodal li{counter-increment:a;display:flex;gap:14px;align-items:baseline;padding:11px 0;border-bottom:1px solid var(--line);font-size:.96rem}
+.mmodal li::before{content:counter(a,decimal-leading-zero);font-family:'Fraunces',serif;color:var(--gold);font-size:.95rem;min-width:24px}
+.mmodal .btn{margin-top:20px}
 
 .social{background:var(--bg2)}
 .sp-wrap{display:grid;grid-template-columns:1fr 340px;gap:40px;align-items:start;margin-top:36px}
@@ -330,7 +349,7 @@ footer a.zap{color:var(--gold2);font-weight:700}
   <div class="wrap">
     <div class="hero-copy">
       <h1>O único curso de <span class="gold">guestbook polaroid</span> do Brasil</h1>
-      <p class="sub">Método completo em <b>6 módulos e mais de 40 aulas</b>: equipamento, técnica, orçamento, contrato e a conversa com a noiva.</p>
+      <p class="sub">Método completo em <b>7 módulos e mais de 40 aulas</b>: equipamento, técnica, orçamento, contrato e a conversa com a noiva.</p>
       <p class="claim-note">Criado a partir da operação real da Inframe, em Florianópolis, que faturou mais de R$ 15 mil nos últimos 3 meses. Resultados variam conforme dedicação, região e aplicação do método.</p>
       <div class="proof-row">
         <div class="avs"><div class="a">◉</div><div class="a">◉</div><div class="a">◉</div><div class="a">+</div></div>
@@ -426,15 +445,27 @@ footer a.zap{color:var(--gold2);font-weight:700}
   <div class="wrap">
     <div class="mod-head reveal">
       <span class="eyebrow c">O que você vai aprender</span>
-      <h2 class="h" style="margin-top:12px">6 módulos, <span class="gold">mais de 40 aulas</span></h2>
+      <h2 class="h" style="margin-top:12px">7 módulos, <span class="gold">mais de 40 aulas</span></h2>
+      <p class="lead" style="margin:12px auto 0">Toque em um módulo para ver todas as aulas.</p>
     </div>
     <div class="mod-grid reveal">
-      <div class="mcard"><div class="cov"><span class="tag">MÓDULO 01</span><img src="modulo-01.jpg" alt="Captação de Portfólio" loading="lazy"></div><div class="bd"><h4>Captação de Portfólio</h4><p>Construa um portfólio que atrai clientes, mesmo começando do zero.</p></div></div>
-      <div class="mcard"><div class="cov"><span class="tag">MÓDULO 02</span><img src="modulo-02.jpg" alt="Curadoria do Guestbook" loading="lazy"></div><div class="bd"><h4>Curadoria do Guestbook</h4><p>A montagem do álbum que encanta os convidados e vira indicação.</p></div></div>
-      <div class="mcard"><div class="cov"><span class="tag">MÓDULO 03</span><img src="modulo-03.jpg" alt="Técnica Fotográfica" loading="lazy"></div><div class="bd"><h4>Técnica Fotográfica</h4><p>Luz, enquadramento e ajustes para fotos instantâneas impecáveis.</p></div></div>
-      <div class="mcard"><div class="cov"><span class="tag">MÓDULO 04</span><img src="https://qincrivelmkt-droid.github.io/landing-page-curso-instax-inframe/logistica-operacional.png" alt="Logística Operacional" loading="lazy"></div><div class="bd"><h4>Logística Operacional</h4><p>Equipamento, insumos, fornecedores e a operação do evento sem erro.</p></div></div>
-      <div class="mcard"><div class="cov"><span class="tag">MÓDULO 05</span><img src="modulo-05.jpg" alt="Conversa com a Noiva" loading="lazy"></div><div class="bd"><h4>Conversa com a Noiva</h4><p>O atendimento no WhatsApp e a abordagem que fecha o contrato.</p></div></div>
-      <div class="mcard"><div class="cov"><span class="tag">MÓDULO 06</span><img src="modulo-06.jpg" alt="Modelo de Orçamento" loading="lazy"></div><div class="bd"><h4>Modelo de Orçamento</h4><p>Precificação e proposta pronta para enviar e fechar mais rápido.</p></div></div>
+      <div class="mcard" data-mod="0" role="button" tabindex="0"><div class="cov"><span class="tag">MÓDULO 01</span><img src="modulo-01.jpg" alt="Captação de Portfólio" loading="lazy"></div><div class="bd"><h4>Captação de Portfólio</h4><p>Construa um portfólio que atrai clientes, mesmo começando do zero.</p><span class="more">Ver as 6 aulas <span class="ar">→</span></span></div></div>
+      <div class="mcard" data-mod="1" role="button" tabindex="0"><div class="cov"><span class="tag">MÓDULO 02</span><img src="modulo-02.jpg" alt="Curadoria do Guestbook" loading="lazy"></div><div class="bd"><h4>Curadoria do Guestbook</h4><p>A montagem do álbum que encanta os convidados e vira indicação.</p><span class="more">Ver as 10 aulas <span class="ar">→</span></span></div></div>
+      <div class="mcard" data-mod="2" role="button" tabindex="0"><div class="cov"><span class="tag">MÓDULO 03</span><img src="modulo-03.jpg" alt="Equipamentos e Técnicas Fotográficas" loading="lazy"></div><div class="bd"><h4>Equipamentos e Técnicas Fotográficas</h4><p>Qual câmera comprar, impressora, técnica e cuidados com o equipamento.</p><span class="more">Ver as 15 aulas <span class="ar">→</span></span></div></div>
+      <div class="mcard" data-mod="3" role="button" tabindex="0"><div class="cov"><span class="tag">MÓDULO 04</span><img src="https://qincrivelmkt-droid.github.io/landing-page-curso-instax-inframe/logistica-operacional.png" alt="Logística Operacional" loading="lazy"></div><div class="bd"><h4>Logística Operacional</h4><p>O stand, a condução dos convidados e a operação do evento sem erro.</p><span class="more">Ver as 8 aulas <span class="ar">→</span></span></div></div>
+      <div class="mcard" data-mod="4" role="button" tabindex="0"><div class="cov"><span class="tag">MÓDULO 05</span><img src="modulo-05.jpg" alt="Conversa com a Noiva" loading="lazy"></div><div class="bd"><h4>Conversa com a Noiva</h4><p>O atendimento e a abordagem que fecha o contrato.</p><span class="more">Ver as 2 aulas <span class="ar">→</span></span></div></div>
+      <div class="mcard" data-mod="5" role="button" tabindex="0"><div class="cov"><span class="tag">MÓDULO 06</span><img src="modulo-06.jpg" alt="Modelo de Orçamento" loading="lazy"></div><div class="bd"><h4>Modelo de Orçamento</h4><p>Precificação, orçamento e contrato prontos para fechar mais rápido.</p><span class="more">Ver as 4 aulas <span class="ar">→</span></span></div></div>
+      <div class="mcard" data-mod="6" role="button" tabindex="0"><div class="cov"><span class="tag">MÓDULO 07</span><div class="cov-txt"><b>Marketing e<br>Posicionamento</b></div></div><div class="bd"><h4>Marketing e Posicionamento</h4><p>Conteúdo para se posicionar e atrair clientes no Instagram.</p><span class="more">Ver a aula <span class="ar">→</span></span></div></div>
+    </div>
+    <div class="mmodal" id="mmodal" aria-hidden="true">
+      <div class="box" role="dialog" aria-modal="true" aria-labelledby="mm-title">
+        <button class="x" type="button" aria-label="Fechar">&times;</button>
+        <span class="mtag" id="mm-tag"></span>
+        <h3 id="mm-title"></h3>
+        <p class="cnt" id="mm-cnt"></p>
+        <ol id="mm-list"></ol>
+        <a href="https://pay.kiwify.com.br/auJqmnG" class="btn block">Quero acesso ao método <span class="ar">→</span></a>
+      </div>
     </div>
     <p class="mod-note">Mais de 40 aulas, com <b>Meta Ads copia e cola</b>, venda na rua e posicionamento premium.</p>
     <div class="center" style="margin-top:28px"><a href="https://pay.kiwify.com.br/auJqmnG" class="btn">Quero acesso ao método <span class="ar">→</span></a></div>
@@ -503,7 +534,7 @@ footer a.zap{color:var(--gold2);font-weight:700}
       <div class="top">Acesso imediato</div>
       <div class="in">
         <ul class="stack">
-          <li><span class="ck">✓</span><div class="tx"><b>Curso completo, mais de 40 aulas</b><small>6 módulos, do equipamento ao contrato assinado</small></div><span class="val" style="text-decoration:none">Incluso</span></li>
+          <li><span class="ck">✓</span><div class="tx"><b>Curso completo, mais de 40 aulas</b><small>7 módulos, do equipamento ao contrato assinado</small></div><span class="val" style="text-decoration:none">Incluso</span></li>
           <li><span class="ck">✓</span><div class="tx"><b>Acesso vitalício</b><small>entre quando quiser e assista quantas vezes precisar, sem prazo de expiração</small></div><span class="val">Incluso</span></li>
           <li><span class="ck">✓</span><div class="tx"><b>Bônus: PDF Como montar seu guestbook</b><small>material de apoio para consultar sempre</small></div><span class="val">Brinde</span></li>
           <li><span class="ck">✓</span><div class="tx"><b>Bônus: PDF Como vender na rua</b><small>a abordagem para faturar em eventos públicos</small></div><span class="val">Brinde</span></li>
@@ -621,6 +652,41 @@ document.querySelectorAll('.aq').forEach(function(q){
     if(!open){it.classList.add('open');a.style.maxHeight=a.scrollHeight+'px';}
   };
 });
+
+(function(){
+  var MODS=[
+    {t:'Captação de Portfólio',a:['Captação da primeira noiva','Apresentação do material para a noiva','Fase atual do mercado','Modelo de mensagem para a primeira noiva','Criação de conteúdo','Estruturando o perfil do Instagram']},
+    {t:'Curadoria do Guestbook',a:['Capa, aro e parte externa','Customização da capa','Gramatura das folhas','Quantidade de folhas','Cantoneiras','Alternativa para mais de 100 fotos','Aplicando as cantoneiras','Guestbooks para não usar','Elementos','Alinhamento com a noiva e o cerimonial']},
+    {t:'Equipamentos e Técnicas Fotográficas',a:['Qual câmera comprar?','Começar com câmera analógica ou impressora híbrida?','Instax Mini 11','Instax Mini 12','Lançamento: Instax Mini 13','Diferenças entre a Mini 11 e a Mini 12','Impressora Mini Link 3','Dazz Cam: deixando a foto da impressora com cara retrô','App Instax Biz e Mini Link 3','Como fazer molduras com a impressora','Técnicas fotográficas','Foto em ambiente escuro','Escaneando a foto','Limpeza da câmera','Itens que levamos ao evento']},
+    {t:'Logística Operacional',a:['Stand da marca','Onde não posicionar o stand','Decoração e vídeos','Testes com a câmera','Onde evitar fotografar','Conduzindo o convidado','Fotos com a impressora','Pedidos de convidados']},
+    {t:'Conversa com a Noiva',a:['Conduzindo um atendimento','Materiais de apoio']},
+    {t:'Modelo de Orçamento',a:['Modelo de orçamento','Modelo de contrato','Fotos em consignado','Precificação do orçamento']},
+    {t:'Marketing e Posicionamento',a:['Criando conteúdo']}
+  ];
+  var m=document.getElementById('mmodal');if(!m)return;
+  document.body.appendChild(m);
+  var tag=document.getElementById('mm-tag'),ttl=document.getElementById('mm-title'),cnt=document.getElementById('mm-cnt'),list=document.getElementById('mm-list'),last=null;
+  function open(i){
+    var d=MODS[i];if(!d)return;
+    tag.textContent='MÓDULO '+('0'+(i+1)).slice(-2);
+    ttl.textContent=d.t;
+    cnt.textContent=d.a.length+(d.a.length===1?' aula':' aulas');
+    list.innerHTML='';
+    d.a.forEach(function(x){var li=document.createElement('li');li.textContent=x;list.appendChild(li);});
+    last=document.activeElement;
+    m.classList.add('open');m.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';
+    m.querySelector('.box').scrollTop=0;m.querySelector('.x').focus();
+  }
+  function close(){m.classList.remove('open');m.setAttribute('aria-hidden','true');document.body.style.overflow='';if(last)last.focus();}
+  document.querySelectorAll('.mcard[data-mod]').forEach(function(c){
+    var i=parseInt(c.getAttribute('data-mod'),10);
+    c.addEventListener('click',function(){open(i);});
+    c.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();open(i);}});
+  });
+  m.querySelector('.x').addEventListener('click',close);
+  m.addEventListener('click',function(e){if(e.target===m)close();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&m.classList.contains('open'))close();});
+})();
 
 function wireVideo(vid,oid){
   var v=document.getElementById(vid),o=document.getElementById(oid);if(!v||!o)return;
