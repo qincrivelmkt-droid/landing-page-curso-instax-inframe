@@ -33,7 +33,7 @@ src="https://www.facebook.com/tr?id=3042384852613397&ev=PageView&noscript=1"
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="../grupo-print-1.jpg">
-<link rel="preload" as="image" href="../poster-hook.jpg">
+<link rel="preload" as="image" href="../grupo-print-thalita.jpg">
 <style>
 :root{
   --bg:#0A0806; --panel:#161009; --panel2:#1E160D; --line:#2E2417;
@@ -63,6 +63,7 @@ img{max-width:100%;display:block}
 .prints img{width:48%;border-radius:18px;border:1px solid var(--line);box-shadow:var(--shadow);object-fit:cover;object-position:top;aspect-ratio:9/13}
 .prints img:first-child{transform:rotate(-4deg) translateX(14px);z-index:1}
 .prints img:last-child{transform:rotate(4deg) translateX(-14px) translateY(24px)}
+.prints.solo img{width:min(80%,430px);height:100%;aspect-ratio:auto;object-fit:cover;object-position:center 18%;transform:none}
 
 /* Card das etapas */
 .card{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:22px;padding:28px 24px;box-shadow:var(--shadow)}
@@ -108,6 +109,7 @@ footer{color:var(--muted2);font-size:.72rem;text-align:center;margin-top:34px}
   .grid{grid-template-columns:1fr;gap:16px}
   .visual{height:31vh;min-height:200px;max-height:300px}
   .prints img{width:44%}
+  .prints.solo img{width:92%;object-position:center 22%}
   .vis .selo{font-size:.74rem;padding:8px 11px;left:10px;bottom:10px}
   .card{padding:22px 18px}
 }
@@ -124,8 +126,7 @@ footer{color:var(--muted2);font-size:.72rem;text-align:center;margin-top:34px}
         <div class="selo">Guestbook de fotos Polaroid <b>Inframe</b></div>
       </div>
       <div class="vis" data-vis="2">
-        <img class="foto" src="../poster-hook.jpg" alt="" style="object-position:center 30%" />
-        <div class="selo">Dicas e lives com a <b>Manu</b>, da Inframe</div>
+        <div class="prints solo"><img src="../grupo-print-thalita.jpg" alt="" /></div>
       </div>
       <div class="vis" data-vis="3">
         <div class="prints">
