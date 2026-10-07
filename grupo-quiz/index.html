@@ -31,34 +31,46 @@ src="https://www.facebook.com/tr?id=3042384852613397&ev=PageView&noscript=1"
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="../grupo-print-1.jpg">
 <link rel="preload" as="image" href="../grupo-print-thalita.jpg">
 <style>
 :root{
-  --bg:#0A0806; --panel:#161009; --panel2:#1E160D; --line:#2E2417;
-  --gold:#C9A15A; --gold2:#EBCB84; --gold-deep:#9C7838; --cream:#F2EBDD;
-  --muted:#AC9E85; --muted2:#9A8F78; --err:#F0655F;
-  --shadow:0 26px 64px -22px rgba(0,0,0,.8);
+  /* Paleta do WhatsApp (modo escuro) */
+  --bg:#0B141A; --panel:#111B21; --panel2:#202C33; --line:#222D34; --bolha:#005C4B; --campo:#2A3942;
+  --verde:#25D366; --azul:#53BDEB;
+  --txt:#E9EDEF; --muted:#8696A0; --err:#F15C6D;
+  --shadow:0 20px 50px -20px rgba(0,0,0,.7);
 }
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:var(--bg);color:var(--cream);font-family:'Manrope',system-ui,Arial,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden;min-height:100vh}
-body::before{content:"";position:fixed;inset:0;background:radial-gradient(700px 460px at 85% 0%,rgba(201,161,90,.16),transparent 60%);pointer-events:none}
+body{background:var(--bg);color:var(--txt);font-family:'Manrope',system-ui,Arial,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden;min-height:100vh}
+/* fundo com desenhos no estilo do WhatsApp, bem apagados */
+body::before{content:"";position:fixed;inset:0;opacity:.05;pointer-events:none;background-size:150px 150px;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150' fill='none' stroke='%23E9EDEF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='14' y='18' width='30' height='22' rx='4'/%3E%3Ccircle cx='29' cy='29' r='6'/%3E%3Cpath d='M98 20c6-6 16 0 10 8l-10 9-10-9c-6-8 4-14 10-8z'/%3E%3Cpath d='M20 104h22l-6 8v-8M20 96h28v16'/%3E%3Cpath d='M104 96l8 18 4-8 8-2z'/%3E%3Cpath d='M70 62l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z'/%3E%3Ccircle cx='128' cy='68' r='3'/%3E%3Ccircle cx='60' cy='132' r='3'/%3E%3C/svg%3E")}
 img{max-width:100%;display:block}
-.wrap{position:relative;max-width:1040px;margin:0 auto;padding:22px 16px 40px}
-.brand{display:flex;align-items:center;gap:11px;font-weight:800;margin-bottom:22px}
-.brand .mark{width:34px;height:34px;border:1.5px solid var(--gold);border-radius:9px;display:grid;place-items:center;color:var(--gold);font-family:'Fraunces',serif;font-size:1.05rem}
-.brand small{display:block;font-size:.56rem;letter-spacing:.34em;color:var(--muted2);text-transform:uppercase}
-.grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:44px;align-items:center}
-.gold{color:var(--gold)}
+.wrap{position:relative;max-width:1040px;margin:0 auto;padding:16px 16px 40px}
+
+/* cabeçalho no estilo de conversa de grupo */
+.topo{display:flex;align-items:center;gap:12px;background:var(--panel2);border:1px solid var(--line);border-radius:16px;padding:10px 14px;margin-bottom:18px}
+.topo .voltar-ico{color:var(--muted);font-size:1.6rem;line-height:1;margin-top:-3px}
+.topo .avatar{width:42px;height:42px;border-radius:50%;overflow:hidden;flex:none;border:2px solid var(--verde)}
+.topo .avatar img{width:100%;height:100%;object-fit:cover;object-position:center 75%}
+.topo b{display:block;font-size:1rem;font-weight:700}
+.topo small{display:block;color:var(--muted);font-size:.8rem}
+.topo small i{font-style:normal;color:var(--verde)}
+.topo .icones{margin-left:auto;display:flex;gap:16px;color:var(--muted)}
+.topo .icones svg{width:22px;height:22px}
+
+.grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:40px;align-items:center}
+.verde{color:var(--verde)}
 
 /* Imagem que muda a cada etapa */
 .visual{position:relative;height:560px}
 .vis{position:absolute;inset:0;opacity:0;transform:translateY(14px) scale(.98);transition:opacity .45s ease,transform .45s ease;pointer-events:none}
 .vis.on{opacity:1;transform:none}
-.vis .foto{width:100%;height:100%;object-fit:cover;border-radius:20px;border:1px solid var(--line);box-shadow:var(--shadow)}
-.vis .selo{position:absolute;left:16px;bottom:16px;background:rgba(10,8,6,.82);border:1px solid var(--line);border-radius:12px;padding:10px 14px;font-size:.82rem;color:var(--muted);backdrop-filter:blur(6px)}
-.vis .selo b{color:var(--gold2)}
+.vis .foto{width:100%;height:100%;object-fit:cover;border-radius:18px;border:1px solid var(--line);box-shadow:var(--shadow)}
+.vis .selo{position:absolute;left:14px;bottom:14px;background:var(--panel2);border-radius:10px 10px 10px 2px;padding:9px 13px;font-size:.82rem;color:var(--txt);box-shadow:0 4px 14px rgba(0,0,0,.35)}
+.vis .selo b{color:var(--verde)}
 .prints{display:flex;justify-content:center;align-items:center;height:100%;gap:0}
 .prints img{width:48%;border-radius:18px;border:1px solid var(--line);box-shadow:var(--shadow);object-fit:cover;object-position:top;aspect-ratio:9/13}
 .prints img:first-child{transform:rotate(-4deg) translateX(14px);z-index:1}
@@ -66,47 +78,65 @@ img{max-width:100%;display:block}
 .prints.solo img{width:min(80%,430px);height:100%;aspect-ratio:auto;object-fit:cover;object-position:center 18%;transform:none}
 
 /* Card das etapas */
-.card{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:22px;padding:28px 24px;box-shadow:var(--shadow)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:26px 22px;box-shadow:var(--shadow)}
 .progresso{display:flex;gap:6px;margin-bottom:20px}
-.progresso span{flex:1;height:4px;border-radius:4px;background:var(--line);transition:background .3s}
-.progresso span.on{background:var(--gold)}
+.progresso span{flex:1;height:4px;border-radius:4px;background:var(--campo);transition:background .3s}
+.progresso span.on{background:var(--verde)}
 .etapa{display:none;animation:entra .4s ease}
 .etapa.on{display:block}
 @keyframes entra{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
-.eyebrow{font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);font-weight:800}
-h1,h2{font-family:'Fraunces',Georgia,serif;font-weight:600;line-height:1.15;letter-spacing:-.01em}
-h1{font-size:clamp(1.65rem,5vw,2.3rem);margin:10px 0 8px;text-wrap:balance}
-h2{font-size:clamp(1.4rem,4.4vw,1.85rem);margin:6px 0 6px;text-wrap:balance}
-.sub{color:var(--muted);font-size:.98rem;margin-bottom:18px}
-.pergunta{font-weight:700;font-size:1.05rem;margin:4px 0 14px}
-.opcao{display:flex;align-items:center;gap:14px;width:100%;text-align:left;font:inherit;color:var(--cream);background:#0F0B07;border:1.5px solid var(--line);border-radius:14px;padding:16px 16px;margin-bottom:12px;cursor:pointer;transition:border-color .15s,transform .15s,background .15s}
-.opcao:hover{border-color:var(--gold-deep);transform:translateY(-1px)}
-.opcao:active,.opcao.marcada{border-color:var(--gold);background:rgba(201,161,90,.1)}
-.opcao .ico{flex:none;width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:rgba(201,161,90,.12);color:var(--gold2);font-size:1.2rem}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--verde);font-weight:800}
+.eyebrow svg{width:16px;height:16px}
+h1,h2{font-weight:800;line-height:1.18;letter-spacing:-.015em}
+h1{font-size:clamp(1.55rem,5vw,2.15rem);margin:10px 0 8px;text-wrap:balance}
+h2{font-size:clamp(1.35rem,4.4vw,1.75rem);margin:6px 0 6px;text-wrap:balance}
+.sub{color:var(--muted);font-size:.96rem;margin-bottom:18px}
+.pergunta{font-weight:700;font-size:1.05rem;margin:6px 0 14px}
+/* opções como balões de mensagem */
+.opcao{position:relative;display:flex;align-items:center;gap:14px;width:100%;text-align:left;font:inherit;color:var(--txt);background:var(--panel2);border:1px solid transparent;border-radius:14px 14px 14px 4px;padding:15px 16px;margin-bottom:12px;cursor:pointer;transition:background .15s,transform .15s,border-color .15s}
+.opcao:hover{border-color:rgba(37,211,102,.45);transform:translateY(-1px)}
+.opcao.marcada{background:var(--bolha);border-radius:14px 14px 4px 14px}
+.opcao.marcada::after{content:"✓✓";position:absolute;right:14px;bottom:8px;font-size:.72rem;letter-spacing:-.15em;color:var(--azul);font-weight:800}
+.opcao .ico{flex:none;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:rgba(37,211,102,.14);color:var(--verde);font-size:1.15rem}
+.opcao.marcada .ico{background:rgba(255,255,255,.12);color:#fff}
 .opcao b{display:block;font-size:1rem}
-.opcao small{display:block;color:var(--muted2);font-size:.82rem;margin-top:2px;line-height:1.35}
-.opcao .seta{margin-left:auto;color:var(--gold);font-size:1.2rem}
-.voltar{background:none;border:0;color:var(--muted2);font:inherit;font-size:.85rem;cursor:pointer;margin-top:4px;padding:4px 0}
-.recado{background:rgba(201,161,90,.08);border:1px solid rgba(201,161,90,.3);border-radius:12px;padding:12px 14px;color:var(--cream);font-size:.92rem;margin-bottom:14px}
-label{display:block;font-size:.82rem;font-weight:700;color:var(--muted);margin:12px 0 6px}
-input[type=text],input[type=tel],input[type=email]{width:100%;font:inherit;font-size:1rem;color:var(--cream);background:#0F0B07;border:1px solid var(--line);border-radius:12px;padding:14px 15px;outline:none;transition:border-color .15s}
-input:focus{border-color:var(--gold)}
+.opcao small{display:block;color:var(--muted);font-size:.82rem;margin-top:2px;line-height:1.35}
+.opcao.marcada small{color:#C4D7D2}
+.opcao .seta{margin-left:auto;color:var(--verde);font-size:1.2rem}
+.opcao.marcada .seta{opacity:0}
+.voltar{background:none;border:0;color:var(--muted);font:inherit;font-size:.85rem;cursor:pointer;margin-top:4px;padding:4px 0}
+/* recado como mensagem recebida */
+.recado{position:relative;background:var(--panel2);border-radius:4px 14px 14px 14px;padding:10px 14px 20px;color:var(--txt);font-size:.92rem;margin:4px 0 14px 8px}
+.recado::before{content:"";position:absolute;left:-8px;top:0;border-top:10px solid var(--panel2);border-left:8px solid transparent}
+.recado .quem{display:block;color:var(--verde);font-weight:800;font-size:.8rem;margin-bottom:2px}
+.recado .hora{position:absolute;right:10px;bottom:4px;font-size:.68rem;color:var(--muted)}
+.digitando{display:none;gap:4px;align-items:center;color:var(--verde);font-size:.78rem;font-weight:700;margin:4px 0 12px}
+.digitando i{width:5px;height:5px;border-radius:5px;background:var(--verde);animation:pula 1.2s infinite}
+.digitando i:nth-child(2){animation-delay:.15s}.digitando i:nth-child(3){animation-delay:.3s}
+@keyframes pula{0%,60%,100%{opacity:.3;transform:none}30%{opacity:1;transform:translateY(-3px)}}
+label{display:block;font-size:.8rem;font-weight:700;color:var(--muted);margin:12px 0 6px}
+input[type=text],input[type=tel],input[type=email]{width:100%;font:inherit;font-size:1rem;color:var(--txt);background:var(--campo);border:1px solid transparent;border-radius:12px;padding:14px 16px;outline:none;transition:border-color .15s}
+input::placeholder{color:#8696A0}
+input:focus{border-color:var(--verde)}
 input.bad{border-color:var(--err)}
-.consent{display:flex;gap:10px;align-items:flex-start;margin:16px 0 4px;font-size:.8rem;color:var(--muted2);line-height:1.45;cursor:pointer}
-.consent input{margin-top:3px;accent-color:var(--gold);width:16px;height:16px;flex:none}
+.consent{display:flex;gap:10px;align-items:flex-start;margin:16px 0 4px;font-size:.8rem;color:var(--muted);line-height:1.45;cursor:pointer}
+.consent input{margin-top:3px;accent-color:var(--verde);width:16px;height:16px;flex:none}
 .consent.bad{color:var(--err)}
 .err{color:var(--err);font-size:.8rem;min-height:1.2em;margin-top:8px}
-.btn{display:flex;width:100%;align-items:center;justify-content:center;gap:.5em;font-family:inherit;font-weight:800;font-size:1.04rem;padding:17px 24px;border-radius:60px;cursor:pointer;border:0;margin-top:12px;background:linear-gradient(100deg,var(--gold-deep),var(--gold) 42%,var(--gold2));color:#221806;box-shadow:0 14px 34px -10px rgba(201,161,90,.6),inset 0 1px 0 rgba(255,255,255,.35);transition:transform .18s;text-decoration:none;text-align:center}
-.btn:hover{transform:translateY(-2px)}
+.btn{display:flex;width:100%;align-items:center;justify-content:center;gap:10px;font-family:inherit;font-weight:800;font-size:1.04rem;padding:16px 24px;border-radius:60px;cursor:pointer;border:0;margin-top:12px;background:var(--verde);color:#0B141A;box-shadow:0 12px 30px -10px rgba(37,211,102,.6);transition:transform .18s,background .18s;text-decoration:none;text-align:center}
+.btn:hover{transform:translateY(-2px);background:#2BE070}
+.btn svg{width:22px;height:22px}
 .btn[disabled]{opacity:.7;cursor:wait;transform:none}
-.btn.wa{background:#25D366;color:#06210F;box-shadow:0 14px 34px -10px rgba(37,211,102,.55)}
-.safe{color:var(--muted2);font-size:.76rem;text-align:center;margin-top:12px}
-.ok{width:58px;height:58px;border-radius:50%;margin:0 auto 14px;background:rgba(37,211,102,.14);border:1px solid rgba(37,211,102,.5);display:grid;place-items:center;color:#25D366;font-size:1.6rem}
+.safe{color:var(--muted);font-size:.76rem;text-align:center;margin-top:12px}
+.safe svg{width:11px;height:11px;vertical-align:-1px;margin-right:4px}
+.ok{width:62px;height:62px;border-radius:50%;margin:0 auto 14px;background:var(--verde);display:grid;place-items:center;color:#0B141A}
+.ok svg{width:34px;height:34px}
 .fim{text-align:center}
-footer{color:var(--muted2);font-size:.72rem;text-align:center;margin-top:34px}
+footer{color:var(--muted);font-size:.72rem;text-align:center;margin-top:30px}
 @media(max-width:860px){
-  .brand{margin-bottom:14px}
-  .grid{grid-template-columns:1fr;gap:16px}
+  .topo{margin-bottom:12px}
+  .topo .icones{display:none}
+  .grid{grid-template-columns:1fr;gap:14px}
   .visual{height:31vh;min-height:200px;max-height:300px}
   .prints img{width:44%}
   .prints.solo img{width:92%;object-position:center 22%}
@@ -117,7 +147,15 @@ footer{color:var(--muted2);font-size:.72rem;text-align:center;margin-top:34px}
 </head>
 <body>
 <div class="wrap">
-  <div class="brand"><div class="mark">I</div><div><small>Inframe</small>Comunidade</div></div>
+  <div class="topo">
+    <span class="voltar-ico">&#8249;</span>
+    <div class="avatar"><img src="../guestbook-principal.jpeg" alt="" /></div>
+    <div><b>Comunidade Inframe &#128248;</b><small><i>grupo gratuito</i> &middot; guestbook Polaroid</small></div>
+    <div class="icones">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="M16 10l6-3v10l-6-3"/></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+    </div>
+  </div>
 
   <div class="grid">
     <div class="visual" aria-hidden="true">
@@ -141,8 +179,8 @@ footer{color:var(--muted2);font-size:.72rem;text-align:center;margin-top:34px}
 
       <!-- Etapa 1 -->
       <section class="etapa on" data-etapa="1">
-        <span class="eyebrow">Grupo gratuito no WhatsApp</span>
-        <h1>A comunidade de quem quer trabalhar com <span class="gold">guestbook de fotos Polaroid</span></h1>
+        <span class="eyebrow"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.2.5.1.6-.1l.8-1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg>Grupo gratuito no WhatsApp</span>
+        <h1>A comunidade de quem quer trabalhar com <span class="verde">guestbook de fotos Polaroid</span></h1>
         <p class="pergunta">Você já trabalha com eventos?</p>
         <button class="opcao" data-p="trabalha_eventos" data-v="sim">
           <span class="ico">✓</span>
@@ -179,7 +217,8 @@ footer{color:var(--muted2);font-size:.72rem;text-align:center;margin-top:34px}
         <form id="form" novalidate>
           <span class="eyebrow">Último passo</span>
           <h2>Pra onde a gente manda o link do grupo?</h2>
-          <div class="recado" id="recado3"></div>
+          <div class="digitando" id="digitando"><i></i><i></i><i></i>&nbsp;Inframe está digitando</div>
+          <div class="recado" id="recado3wrap"><span class="quem">Inframe</span><span id="recado3"></span><span class="hora">agora</span></div>
 
           <label for="nome">Nome</label>
           <input type="text" id="nome" name="nome" autocomplete="name" placeholder="Seu nome" required />
@@ -196,18 +235,18 @@ footer{color:var(--muted2);font-size:.72rem;text-align:center;margin-top:34px}
           </label>
 
           <div class="err" id="err"></div>
-          <button type="submit" class="btn" id="enviar">Quero entrar no grupo</button>
-          <p class="safe">Seus dados ficam só com a Inframe.</p>
+          <button type="submit" class="btn" id="enviar"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.2.5.1.6-.1l.8-1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg>Quero entrar no grupo</button>
+          <p class="safe"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a5 5 0 0 0-5 5v3H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2h-1V7a5 5 0 0 0-5-5zm-3 8V7a3 3 0 0 1 6 0v3z"/></svg>Seus dados ficam só com a Inframe.</p>
           <button type="button" class="voltar" data-voltar="2">← voltar</button>
         </form>
       </section>
 
       <!-- Fim -->
       <section class="etapa fim" data-etapa="4">
-        <div class="ok">✓</div>
+        <div class="ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
         <h2>Tudo certo!</h2>
         <p class="sub">Agora é só tocar no botão para entrar no grupo.</p>
-        <a class="btn wa" id="entrar" href="https://chat.whatsapp.com/LrPqzVzJGmx42VJkcuuJYA">Entrar no grupo do WhatsApp</a>
+        <a class="btn" id="entrar" href="https://chat.whatsapp.com/LrPqzVzJGmx42VJkcuuJYA"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.2.5.1.6-.1l.8-1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg>Entrar no grupo do WhatsApp</a>
       </section>
     </div>
   </div>
@@ -229,6 +268,12 @@ var RECADO3 = {
   clientes: '💬 Você vai receber dicas de divulgação, orçamento e de como conversar com as noivas.'
 };
 
+// Na etapa 3, o recado aparece depois de um "digitando", como no WhatsApp
+function mostraRecado() {
+  var d = document.getElementById('digitando'), r = document.getElementById('recado3wrap');
+  d.style.display = 'inline-flex'; r.style.display = 'none';
+  setTimeout(function () { d.style.display = 'none'; r.style.display = 'block'; }, 1100);
+}
 function track(nome, dados) { if (typeof fbq === 'function') fbq('trackCustom', nome, dados || {}); }
 function marca(chave, valor) { if (typeof clarity === 'function') clarity('set', chave, valor); }
 
@@ -254,6 +299,7 @@ document.querySelectorAll('.opcao').forEach(function (b) {
     } else {
       track('QuizPergunta2', { trabalha_eventos: respostas.trabalha_eventos, interesse: v });
       document.getElementById('recado3').textContent = RECADO3[v];
+      mostraRecado();
       setTimeout(function () { irPara(3); }, 180);
     }
   });
