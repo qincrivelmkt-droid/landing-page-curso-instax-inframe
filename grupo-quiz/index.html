@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Comunidade Inframe</title>
+<meta name="description" content="Grupo gratuito no WhatsApp para quem quer trabalhar com guestbook de fotos Polaroid em casamentos e eventos." />
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '3042384852613397');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=3042384852613397&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "ylwlsk0iif");
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="../grupo-print-1.jpg">
+<link rel="preload" as="image" href="../poster-hook.jpg">
+<style>
+:root{
+  --bg:#0A0806; --panel:#161009; --panel2:#1E160D; --line:#2E2417;
+  --gold:#C9A15A; --gold2:#EBCB84; --gold-deep:#9C7838; --cream:#F2EBDD;
+  --muted:#AC9E85; --muted2:#9A8F78; --err:#F0655F;
+  --shadow:0 26px 64px -22px rgba(0,0,0,.8);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--cream);font-family:'Manrope',system-ui,Arial,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden;min-height:100vh}
+body::before{content:"";position:fixed;inset:0;background:radial-gradient(700px 460px at 85% 0%,rgba(201,161,90,.16),transparent 60%);pointer-events:none}
+img{max-width:100%;display:block}
+.wrap{position:relative;max-width:1040px;margin:0 auto;padding:22px 16px 40px}
+.brand{display:flex;align-items:center;gap:11px;font-weight:800;margin-bottom:22px}
+.brand .mark{width:34px;height:34px;border:1.5px solid var(--gold);border-radius:9px;display:grid;place-items:center;color:var(--gold);font-family:'Fraunces',serif;font-size:1.05rem}
+.brand small{display:block;font-size:.56rem;letter-spacing:.34em;color:var(--muted2);text-transform:uppercase}
+.grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:44px;align-items:center}
+.gold{color:var(--gold)}
+
+/* Imagem que muda a cada etapa */
+.visual{position:relative;height:560px}
+.vis{position:absolute;inset:0;opacity:0;transform:translateY(14px) scale(.98);transition:opacity .45s ease,transform .45s ease;pointer-events:none}
+.vis.on{opacity:1;transform:none}
+.vis .foto{width:100%;height:100%;object-fit:cover;border-radius:20px;border:1px solid var(--line);box-shadow:var(--shadow)}
+.vis .selo{position:absolute;left:16px;bottom:16px;background:rgba(10,8,6,.82);border:1px solid var(--line);border-radius:12px;padding:10px 14px;font-size:.82rem;color:var(--muted);backdrop-filter:blur(6px)}
+.vis .selo b{color:var(--gold2)}
+.prints{display:flex;justify-content:center;align-items:center;height:100%;gap:0}
+.prints img{width:48%;border-radius:18px;border:1px solid var(--line);box-shadow:var(--shadow);object-fit:cover;object-position:top;aspect-ratio:9/13}
+.prints img:first-child{transform:rotate(-4deg) translateX(14px);z-index:1}
+.prints img:last-child{transform:rotate(4deg) translateX(-14px) translateY(24px)}
+
+/* Card das etapas */
+.card{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:22px;padding:28px 24px;box-shadow:var(--shadow)}
+.progresso{display:flex;gap:6px;margin-bottom:20px}
+.progresso span{flex:1;height:4px;border-radius:4px;background:var(--line);transition:background .3s}
+.progresso span.on{background:var(--gold)}
+.etapa{display:none;animation:entra .4s ease}
+.etapa.on{display:block}
+@keyframes entra{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.eyebrow{font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);font-weight:800}
+h1,h2{font-family:'Fraunces',Georgia,serif;font-weight:600;line-height:1.15;letter-spacing:-.01em}
+h1{font-size:clamp(1.65rem,5vw,2.3rem);margin:10px 0 8px;text-wrap:balance}
+h2{font-size:clamp(1.4rem,4.4vw,1.85rem);margin:6px 0 6px;text-wrap:balance}
+.sub{color:var(--muted);font-size:.98rem;margin-bottom:18px}
+.pergunta{font-weight:700;font-size:1.05rem;margin:4px 0 14px}
+.opcao{display:flex;align-items:center;gap:14px;width:100%;text-align:left;font:inherit;color:var(--cream);background:#0F0B07;border:1.5px solid var(--line);border-radius:14px;padding:16px 16px;margin-bottom:12px;cursor:pointer;transition:border-color .15s,transform .15s,background .15s}
+.opcao:hover{border-color:var(--gold-deep);transform:translateY(-1px)}
+.opcao:active,.opcao.marcada{border-color:var(--gold);background:rgba(201,161,90,.1)}
+.opcao .ico{flex:none;width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:rgba(201,161,90,.12);color:var(--gold2);font-size:1.2rem}
+.opcao b{display:block;font-size:1rem}
+.opcao small{display:block;color:var(--muted2);font-size:.82rem;margin-top:2px;line-height:1.35}
+.opcao .seta{margin-left:auto;color:var(--gold);font-size:1.2rem}
+.voltar{background:none;border:0;color:var(--muted2);font:inherit;font-size:.85rem;cursor:pointer;margin-top:4px;padding:4px 0}
+.recado{background:rgba(201,161,90,.08);border:1px solid rgba(201,161,90,.3);border-radius:12px;padding:12px 14px;color:var(--cream);font-size:.92rem;margin-bottom:14px}
+label{display:block;font-size:.82rem;font-weight:700;color:var(--muted);margin:12px 0 6px}
+input[type=text],input[type=tel],input[type=email]{width:100%;font:inherit;font-size:1rem;color:var(--cream);background:#0F0B07;border:1px solid var(--line);border-radius:12px;padding:14px 15px;outline:none;transition:border-color .15s}
+input:focus{border-color:var(--gold)}
+input.bad{border-color:var(--err)}
+.consent{display:flex;gap:10px;align-items:flex-start;margin:16px 0 4px;font-size:.8rem;color:var(--muted2);line-height:1.45;cursor:pointer}
+.consent input{margin-top:3px;accent-color:var(--gold);width:16px;height:16px;flex:none}
+.consent.bad{color:var(--err)}
+.err{color:var(--err);font-size:.8rem;min-height:1.2em;margin-top:8px}
+.btn{display:flex;width:100%;align-items:center;justify-content:center;gap:.5em;font-family:inherit;font-weight:800;font-size:1.04rem;padding:17px 24px;border-radius:60px;cursor:pointer;border:0;margin-top:12px;background:linear-gradient(100deg,var(--gold-deep),var(--gold) 42%,var(--gold2));color:#221806;box-shadow:0 14px 34px -10px rgba(201,161,90,.6),inset 0 1px 0 rgba(255,255,255,.35);transition:transform .18s;text-decoration:none;text-align:center}
+.btn:hover{transform:translateY(-2px)}
+.btn[disabled]{opacity:.7;cursor:wait;transform:none}
+.btn.wa{background:#25D366;color:#06210F;box-shadow:0 14px 34px -10px rgba(37,211,102,.55)}
+.safe{color:var(--muted2);font-size:.76rem;text-align:center;margin-top:12px}
+.ok{width:58px;height:58px;border-radius:50%;margin:0 auto 14px;background:rgba(37,211,102,.14);border:1px solid rgba(37,211,102,.5);display:grid;place-items:center;color:#25D366;font-size:1.6rem}
+.fim{text-align:center}
+footer{color:var(--muted2);font-size:.72rem;text-align:center;margin-top:34px}
+@media(max-width:860px){
+  .brand{margin-bottom:14px}
+  .grid{grid-template-columns:1fr;gap:16px}
+  .visual{height:31vh;min-height:200px;max-height:300px}
+  .prints img{width:44%}
+  .vis .selo{font-size:.74rem;padding:8px 11px;left:10px;bottom:10px}
+  .card{padding:22px 18px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="brand"><div class="mark">I</div><div><small>Inframe</small>Comunidade</div></div>
+
+  <div class="grid">
+    <div class="visual" aria-hidden="true">
+      <div class="vis on" data-vis="1">
+        <img class="foto" src="../guestbook-principal.jpeg" alt="" style="object-position:center 78%" />
+        <div class="selo">Guestbook de fotos Polaroid <b>Inframe</b></div>
+      </div>
+      <div class="vis" data-vis="2">
+        <img class="foto" src="../poster-hook.jpg" alt="" style="object-position:center 30%" />
+        <div class="selo">Dicas e lives com a <b>Manu</b>, da Inframe</div>
+      </div>
+      <div class="vis" data-vis="3">
+        <div class="prints">
+          <img src="../grupo-print-1.jpg" alt="" />
+          <img src="../grupo-print-2.jpg" alt="" />
+        </div>
+      </div>
+    </div>
+
+    <div class="card" id="card">
+      <div class="progresso" id="progresso"><span class="on"></span><span></span><span></span></div>
+
+      <!-- Etapa 1 -->
+      <section class="etapa on" data-etapa="1">
+        <span class="eyebrow">Grupo gratuito no WhatsApp</span>
+        <h1>A comunidade de quem quer trabalhar com <span class="gold">guestbook de fotos Polaroid</span></h1>
+        <p class="pergunta">Você já trabalha com eventos?</p>
+        <button class="opcao" data-p="trabalha_eventos" data-v="sim">
+          <span class="ico">✓</span>
+          <span><b>Sim, já trabalho</b><small>Guestbook Polaroid, storymaker, videomaker, fotógrafo, etc.</small></span>
+          <span class="seta">→</span>
+        </button>
+        <button class="opcao" data-p="trabalha_eventos" data-v="nao">
+          <span class="ico">✦</span>
+          <span><b>Ainda não</b><small>Quero começar nesse mercado</small></span>
+          <span class="seta">→</span>
+        </button>
+      </section>
+
+      <!-- Etapa 2 -->
+      <section class="etapa" data-etapa="2">
+        <span class="eyebrow">Pergunta 2 de 2</span>
+        <h2 id="titulo2">O que você mais quer aprender no grupo?</h2>
+        <p class="sub" id="recado2"></p>
+        <button class="opcao" data-p="interesse" data-v="guestbook">
+          <span class="ico">📸</span>
+          <span><b>Como trabalhar com guestbook Polaroid</b><small>Equipamento, montagem e o passo a passo do evento</small></span>
+          <span class="seta">→</span>
+        </button>
+        <button class="opcao" data-p="interesse" data-v="clientes">
+          <span class="ico">💬</span>
+          <span><b>Como conseguir clientes</b><small>Divulgação, orçamento e conversa com a noiva</small></span>
+          <span class="seta">→</span>
+        </button>
+        <button class="voltar" data-voltar="1">← voltar</button>
+      </section>
+
+      <!-- Etapa 3 -->
+      <section class="etapa" data-etapa="3">
+        <form id="form" novalidate>
+          <span class="eyebrow">Último passo</span>
+          <h2>Pra onde a gente manda o link do grupo?</h2>
+          <div class="recado" id="recado3"></div>
+
+          <label for="nome">Nome</label>
+          <input type="text" id="nome" name="nome" autocomplete="name" placeholder="Seu nome" required />
+
+          <label for="telefone">WhatsApp</label>
+          <input type="tel" id="telefone" name="telefone" autocomplete="tel" inputmode="numeric" placeholder="(48) 99999-9999" required />
+
+          <label for="email">E-mail</label>
+          <input type="email" id="email" name="email" autocomplete="email" placeholder="voce@email.com" required />
+
+          <label class="consent" id="consentLabel">
+            <input type="checkbox" id="consent" />
+            <span>Autorizo a Inframe a entrar em contato comigo por WhatsApp e e-mail. Você pode pedir para sair a qualquer momento.</span>
+          </label>
+
+          <div class="err" id="err"></div>
+          <button type="submit" class="btn" id="enviar">Quero entrar no grupo</button>
+          <p class="safe">Seus dados ficam só com a Inframe.</p>
+          <button type="button" class="voltar" data-voltar="2">← voltar</button>
+        </form>
+      </section>
+
+      <!-- Fim -->
+      <section class="etapa fim" data-etapa="4">
+        <div class="ok">✓</div>
+        <h2>Tudo certo!</h2>
+        <p class="sub">Agora é só tocar no botão para entrar no grupo.</p>
+        <a class="btn wa" id="entrar" href="https://chat.whatsapp.com/LrPqzVzJGmx42VJkcuuJYA">Entrar no grupo do WhatsApp</a>
+      </section>
+    </div>
+  </div>
+
+  <footer>Inframe · Guestbook de fotos instantâneas</footer>
+</div>
+
+<script>
+var PLANILHA_URL = 'https://script.google.com/macros/s/AKfycbz1zNCVmA9o8LFxu35M7SQlIkFdYLkg6xuBdacjimYzjcdQU1hCYvLoFJpqKsNTFejl-g/exec';
+var GRUPO_URL = 'https://chat.whatsapp.com/LrPqzVzJGmx42VJkcuuJYA';
+var respostas = { trabalha_eventos: '', interesse: '' };
+
+var RECADO2 = {
+  sim: 'Ótimo! No grupo você vê como incluir o guestbook Polaroid nos serviços que já oferece.',
+  nao: 'Perfeito, dá pra começar do zero. No grupo você entende como esse mercado funciona na prática.'
+};
+var RECADO3 = {
+  guestbook: '📸 Você vai receber dicas de equipamento, montagem e de como funciona um evento na prática.',
+  clientes: '💬 Você vai receber dicas de divulgação, orçamento e de como conversar com as noivas.'
+};
+
+function track(nome, dados) { if (typeof fbq === 'function') fbq('trackCustom', nome, dados || {}); }
+function marca(chave, valor) { if (typeof clarity === 'function') clarity('set', chave, valor); }
+
+function irPara(n) {
+  document.querySelectorAll('.etapa').forEach(function (e) { e.classList.toggle('on', e.dataset.etapa == n); });
+  var vis = Math.min(n, 3);
+  document.querySelectorAll('.vis').forEach(function (v) { v.classList.toggle('on', v.dataset.vis == vis); });
+  document.querySelectorAll('#progresso span').forEach(function (s, i) { s.classList.toggle('on', i < Math.min(n, 3)); });
+  if (n === 4) document.getElementById('progresso').style.visibility = 'hidden';
+  if (window.innerWidth < 860) document.getElementById('card').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+document.querySelectorAll('.opcao').forEach(function (b) {
+  b.addEventListener('click', function () {
+    var p = b.dataset.p, v = b.dataset.v;
+    respostas[p] = v;
+    document.querySelectorAll('.opcao[data-p="' + p + '"]').forEach(function (o) { o.classList.toggle('marcada', o === b); });
+    marca(p, v);
+    if (p === 'trabalha_eventos') {
+      track('QuizPergunta1', { trabalha_eventos: v });
+      document.getElementById('recado2').textContent = RECADO2[v];
+      setTimeout(function () { irPara(2); }, 180);
+    } else {
+      track('QuizPergunta2', { trabalha_eventos: respostas.trabalha_eventos, interesse: v });
+      document.getElementById('recado3').textContent = RECADO3[v];
+      setTimeout(function () { irPara(3); }, 180);
+    }
+  });
+});
+document.querySelectorAll('[data-voltar]').forEach(function (b) {
+  b.addEventListener('click', function () { irPara(+b.dataset.voltar); });
+});
+
+var tel = document.getElementById('telefone');
+tel.addEventListener('input', function () {
+  var d = tel.value.replace(/\D/g, '').slice(0, 11);
+  var r = d;
+  if (d.length > 2) r = '(' + d.slice(0, 2) + ') ' + d.slice(2);
+  if (d.length > 7) r = '(' + d.slice(0, 2) + ') ' + d.slice(2, 7) + '-' + d.slice(7);
+  tel.value = r;
+});
+
+function utms() {
+  var p = new URLSearchParams(location.search), o = {};
+  ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'].forEach(function (k) { o[k] = p.get(k) || ''; });
+  return o;
+}
+
+document.getElementById('form').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var nome = document.getElementById('nome'), email = document.getElementById('email');
+  var consent = document.getElementById('consent'), err = document.getElementById('err');
+  [nome, tel, email].forEach(function (i) { i.classList.remove('bad'); });
+  document.getElementById('consentLabel').classList.remove('bad');
+
+  var digitos = tel.value.replace(/\D/g, '');
+  var problemas = [];
+  if (nome.value.trim().length < 2) { nome.classList.add('bad'); problemas.push('nome'); }
+  if (digitos.length < 10) { tel.classList.add('bad'); problemas.push('WhatsApp com DDD'); }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) { email.classList.add('bad'); problemas.push('e-mail'); }
+  if (!consent.checked) { document.getElementById('consentLabel').classList.add('bad'); problemas.push('autorização de contato'); }
+  if (problemas.length) { err.textContent = 'Confira: ' + problemas.join(', ') + '.'; return; }
+  err.textContent = '';
+
+  var btn = document.getElementById('enviar');
+  btn.disabled = true; btn.textContent = 'Enviando...';
+
+  var dados = Object.assign({
+    nome: nome.value.trim(),
+    telefone: digitos,
+    email: email.value.trim().toLowerCase(),
+    trabalha_eventos: respostas.trabalha_eventos === 'sim' ? 'Sim' : 'Não',
+    interesse: respostas.interesse === 'clientes' ? 'Conseguir clientes' : 'Trabalhar com guestbook',
+    pagina: location.href.split('?')[0]
+  }, utms());
+
+  if (typeof fbq === 'function') fbq('track', 'Lead', { content_name: 'Comunidade Inframe', trabalha_eventos: respostas.trabalha_eventos, interesse: respostas.interesse });
+  if (typeof clarity === 'function') clarity('event', 'lead_grupo');
+
+  var envio = fetch(PLANILHA_URL, { method: 'POST', mode: 'no-cors', body: new URLSearchParams(dados) }).catch(function () {});
+
+  // Dá tempo do pixel e da planilha saírem antes de abrir o WhatsApp
+  Promise.race([envio, new Promise(function (r) { setTimeout(r, 2500); })]).then(function () {
+    irPara(4);
+    setTimeout(function () { location.href = GRUPO_URL; }, 1200);
+  });
+});
+</script>
+</body>
+</html>
