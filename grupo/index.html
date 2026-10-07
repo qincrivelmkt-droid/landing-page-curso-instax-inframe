@@ -31,118 +31,187 @@ src="https://www.facebook.com/tr?id=3042384852613397&ev=PageView&noscript=1"
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="../grupo-print-thalita.jpg">
 <style>
 :root{
-  --bg:#0A0806; --panel:#161009; --panel2:#1E160D; --line:#2E2417;
-  --gold:#C9A15A; --gold2:#EBCB84; --gold-deep:#9C7838; --cream:#F2EBDD;
-  --muted:#AC9E85; --muted2:#9A8F78; --err:#F0655F;
-  --shadow:0 26px 64px -22px rgba(0,0,0,.8);
+  /* Paleta do WhatsApp (modo escuro) */
+  --bg:#0B141A; --panel:#202C33; --bolha:#005C4B; --campo:#2A3942;
+  --verde:#25D366; --azul:#53BDEB; --txt:#E9EDEF; --muted:#8696A0; --err:#F15C6D;
 }
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:var(--bg);color:var(--cream);font-family:'Manrope',system-ui,Arial,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;min-height:100vh}
-body::before{content:"";position:fixed;inset:0;background:radial-gradient(700px 460px at 85% 0%,rgba(201,161,90,.16),transparent 60%);pointer-events:none}
-img{max-width:100%;display:block}
-.wrap{position:relative;max-width:1040px;margin:0 auto;padding:28px 16px 48px}
-.brand{display:flex;align-items:center;gap:11px;font-weight:800;margin-bottom:34px}
-.brand .mark{width:34px;height:34px;border:1.5px solid var(--gold);border-radius:9px;display:grid;place-items:center;color:var(--gold);font-family:'Fraunces',serif;font-size:1.05rem}
-.brand small{display:block;font-size:.56rem;letter-spacing:.34em;color:var(--muted2);text-transform:uppercase}
-.grid{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
-.eyebrow{font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);font-weight:800}
-h1{font-size:clamp(2rem,5.6vw,3.1rem);line-height:1.1;font-weight:800;letter-spacing:-.02em;margin:14px 0 16px;text-wrap:balance}
-.gold{color:var(--gold)}
-.sub{color:var(--muted);font-size:clamp(1rem,2.5vw,1.1rem);max-width:520px}
-.list{list-style:none;margin:24px 0 0;display:grid;gap:12px}
-.list li{display:flex;gap:12px;align-items:flex-start;color:var(--cream);font-size:.98rem}
-.list li::before{content:"";flex:none;width:20px;height:20px;margin-top:3px;border-radius:50%;background:var(--gold) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23221806' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5 9-10'/%3E%3C/svg%3E") center/12px no-repeat}
-.photo{margin-top:26px;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);max-width:380px}
-.photo img{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:center 80%}
-.card{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:22px;padding:30px 26px;box-shadow:var(--shadow)}
-.card h2{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:1.5rem;line-height:1.2;margin-bottom:6px}
-.card .hint{color:var(--muted);font-size:.9rem;margin-bottom:20px}
-label{display:block;font-size:.82rem;font-weight:700;color:var(--muted);margin:14px 0 6px}
-input[type=text],input[type=tel],input[type=email]{width:100%;font:inherit;font-size:1rem;color:var(--cream);background:#0F0B07;border:1px solid var(--line);border-radius:12px;padding:14px 15px;outline:none;transition:border-color .15s}
-input:focus{border-color:var(--gold)}
+body{background:var(--bg);color:var(--txt);font-family:'Manrope',system-ui,Arial,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased;min-height:100vh}
+img{display:block;max-width:100%}
+
+/* Uma coluna estreita e centralizada: uma coisa por vez */
+.wrap{max-width:440px;margin:0 auto;padding:22px 20px 36px}
+.marca{display:flex;align-items:center;justify-content:center;gap:8px;font-size:.82rem;font-weight:700;color:var(--muted);margin-bottom:18px}
+.marca svg{width:18px;height:18px;color:var(--verde)}
+.progresso{display:flex;gap:6px;margin:0 auto 22px;max-width:120px}
+.progresso span{flex:1;height:4px;border-radius:4px;background:var(--campo);transition:background .3s}
+.progresso span.on{background:var(--verde)}
+
+.etapa{display:none;animation:entra .35s ease}
+.etapa.on{display:block}
+@keyframes entra{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+.imagem{width:100%;height:210px;object-fit:cover;border-radius:18px;margin-bottom:24px}
+h1,h2{font-weight:800;line-height:1.2;letter-spacing:-.015em;text-align:center;text-wrap:balance}
+h1{font-size:1.65rem;margin-bottom:8px}
+h2{font-size:1.45rem;margin-bottom:22px}
+.verde{color:var(--verde)}
+.pergunta{text-align:center;font-size:1.08rem;font-weight:700;margin:14px 0 18px}
+
+/* Opções como balões de mensagem: tocar = responder */
+.opcao{position:relative;display:block;width:100%;text-align:left;font:inherit;color:var(--txt);background:var(--panel);border:0;border-radius:16px 16px 16px 4px;padding:17px 20px;margin-bottom:12px;cursor:pointer;transition:background .15s,transform .15s}
+.opcao:hover{transform:translateY(-1px);background:#26353D}
+.opcao b{display:block;font-size:1.05rem}
+.opcao small{display:block;color:var(--muted);font-size:.84rem;margin-top:2px}
+.opcao.marcada{background:var(--bolha);border-radius:16px 16px 4px 16px}
+.opcao.marcada small{color:#C4D7D2}
+.opcao.marcada::after{content:"✓✓";position:absolute;right:14px;bottom:8px;font-size:.72rem;letter-spacing:-.15em;color:var(--azul);font-weight:800}
+
+input[type=text],input[type=tel],input[type=email]{width:100%;font:inherit;font-size:1rem;color:var(--txt);background:var(--campo);border:1.5px solid transparent;border-radius:14px;padding:15px 18px;margin-bottom:12px;outline:none;transition:border-color .15s}
+input::placeholder{color:var(--muted)}
+input:focus{border-color:var(--verde)}
 input.bad{border-color:var(--err)}
-.consent{display:flex;gap:10px;align-items:flex-start;margin:18px 0 4px;font-size:.8rem;color:var(--muted2);line-height:1.45;cursor:pointer}
-.consent input{margin-top:3px;accent-color:var(--gold);width:16px;height:16px;flex:none}
+.consent{display:flex;gap:10px;align-items:flex-start;margin:6px 0 2px;font-size:.8rem;color:var(--muted);line-height:1.4;cursor:pointer}
+.consent input{margin-top:2px;accent-color:var(--verde);width:16px;height:16px;flex:none}
 .consent.bad{color:var(--err)}
-.err{color:var(--err);font-size:.8rem;min-height:1.2em;margin-top:8px}
-.btn{display:flex;width:100%;align-items:center;justify-content:center;gap:.5em;font-family:inherit;font-weight:800;font-size:1.04rem;padding:17px 24px;border-radius:60px;cursor:pointer;border:0;margin-top:14px;background:linear-gradient(100deg,var(--gold-deep),var(--gold) 42%,var(--gold2));color:#221806;box-shadow:0 14px 34px -10px rgba(201,161,90,.6),inset 0 1px 0 rgba(255,255,255,.35);transition:transform .18s;text-decoration:none;text-align:center}
+.err{color:var(--err);font-size:.8rem;min-height:1.2em;margin-top:6px;text-align:center}
+.btn{display:flex;width:100%;align-items:center;justify-content:center;gap:10px;font-family:inherit;font-weight:800;font-size:1.05rem;padding:17px 24px;border-radius:60px;cursor:pointer;border:0;margin-top:10px;background:var(--verde);color:#0B141A;transition:transform .18s;text-decoration:none}
 .btn:hover{transform:translateY(-2px)}
+.btn svg{width:22px;height:22px}
 .btn[disabled]{opacity:.7;cursor:wait;transform:none}
-.btn.wa{background:#25D366;color:#06210F;box-shadow:0 14px 34px -10px rgba(37,211,102,.55)}
-.safe{color:var(--muted2);font-size:.76rem;text-align:center;margin-top:12px}
-.done{display:none;text-align:center}
-.done .ok{width:58px;height:58px;border-radius:50%;margin:0 auto 14px;background:rgba(37,211,102,.14);border:1px solid rgba(37,211,102,.5);display:grid;place-items:center;color:#25D366;font-size:1.6rem}
-.card.sent form{display:none}
-.card.sent .done{display:block}
-footer{color:var(--muted2);font-size:.72rem;text-align:center;margin-top:40px}
-@media(max-width:860px){
-  .brand{margin-bottom:24px}
-  .grid{grid-template-columns:1fr;gap:28px}
-  .photo{display:none}
-  .card{padding:26px 20px}
+.voltar{display:block;margin:16px auto 0;background:none;border:0;color:var(--muted);font:inherit;font-size:.85rem;cursor:pointer}
+.ok{width:64px;height:64px;border-radius:50%;margin:10px auto 18px;background:var(--verde);display:grid;place-items:center;color:#0B141A}
+.ok svg{width:34px;height:34px}
+.so-desk{display:none}
+
+/* Computador: duas colunas que ocupam a tela, imagem grande e textos maiores */
+@media(min-width:900px){
+  body{display:flex;flex-direction:column;justify-content:center}
+  .wrap{max-width:1280px;width:100%;padding:36px 56px}
+  .marca{font-size:1.05rem;margin-bottom:14px}
+  .marca svg{width:22px;height:22px}
+  .progresso{max-width:180px;margin-bottom:34px}
+  .etapa.on{display:grid;grid-template-columns:1.1fr 1fr;gap:72px;align-items:center}
+  .imagem,.so-desk{display:block;height:min(76vh,700px);margin:0;border-radius:24px;box-shadow:0 30px 70px -30px rgba(0,0,0,.8)}
+  .conteudo{max-width:540px}
+  h1,h2{text-align:left}
+  h1{font-size:3.5rem;margin-bottom:6px}
+  h2{font-size:2.7rem;margin-bottom:30px}
+  .pergunta{text-align:left;font-size:1.5rem;margin:26px 0 24px}
+  .opcao{padding:26px 30px;margin-bottom:16px;border-radius:20px 20px 20px 6px}
+  .opcao.marcada{border-radius:18px 18px 5px 18px}
+  .opcao b{font-size:1.35rem}
+  .opcao small{font-size:1.02rem;margin-top:4px}
+  input[type=text],input[type=tel],input[type=email]{font-size:1.2rem;padding:21px 24px;margin-bottom:16px}
+  .consent{font-size:1rem}
+  .btn{font-size:1.25rem;padding:22px 30px}
+  .voltar{margin:18px 0 0;font-size:.95rem}
+  .fim h2{margin-bottom:24px}
+  .fim .ok{margin:0 0 22px;width:76px;height:76px}
+  .err{text-align:left}
 }
 </style>
 </head>
 <body>
 <div class="wrap">
-  <div class="brand"><div class="mark">I</div><div><small>Inframe</small>Comunidade</div></div>
-
-  <div class="grid">
-    <div>
-      <span class="eyebrow">Grupo gratuito no WhatsApp</span>
-      <h1>A comunidade de quem quer trabalhar com <span class="gold">guestbook de fotos Polaroid</span></h1>
-      <p class="sub">Entre no grupo da Inframe e aprenda com quem já faz guestbook de fotos instantâneas em casamentos e eventos.</p>
-      <ul class="list">
-        <li>Dicas práticas sobre equipamento, filme e técnica</li>
-        <li>Quanto cobrar e como apresentar o serviço para a noiva</li>
-        <li>Espaço para tirar dúvidas direto com a Inframe</li>
-      </ul>
-      <div class="photo"><img src="../guestbook-principal.jpeg" alt="Guestbook de fotos Polaroid da Inframe" loading="lazy" /></div>
-    </div>
-
-    <div class="card" id="card">
-      <form id="form" novalidate>
-        <h2>Entre no grupo</h2>
-        <p class="hint">Preencha seus dados e receba o link de acesso.</p>
-
-        <label for="nome">Nome</label>
-        <input type="text" id="nome" name="nome" autocomplete="name" placeholder="Seu nome" required />
-
-        <label for="telefone">WhatsApp</label>
-        <input type="tel" id="telefone" name="telefone" autocomplete="tel" inputmode="numeric" placeholder="(48) 99999-9999" required />
-
-        <label for="email">E-mail</label>
-        <input type="email" id="email" name="email" autocomplete="email" placeholder="voce@email.com" required />
-
-        <label class="consent" id="consentLabel">
-          <input type="checkbox" id="consent" />
-          <span>Autorizo a Inframe a entrar em contato comigo por WhatsApp e e-mail. Você pode pedir para sair a qualquer momento.</span>
-        </label>
-
-        <div class="err" id="err"></div>
-        <button type="submit" class="btn" id="enviar">Quero entrar no grupo</button>
-        <p class="safe">Seus dados ficam só com a Inframe.</p>
-      </form>
-
-      <div class="done">
-        <div class="ok">✓</div>
-        <h2>Tudo certo!</h2>
-        <p class="hint">Agora é só tocar no botão para entrar no grupo.</p>
-        <a class="btn wa" id="entrar" href="https://chat.whatsapp.com/LrPqzVzJGmx42VJkcuuJYA">Entrar no grupo do WhatsApp</a>
-      </div>
-    </div>
+  <div class="marca">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.2.5.1.6-.1l.8-1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg>
+    Comunidade Inframe
   </div>
+  <div class="progresso" id="progresso"><span class="on"></span><span></span><span></span></div>
 
-  <footer>Inframe · Guestbook de fotos instantâneas</footer>
+  <!-- Etapa 1 -->
+  <section class="etapa on" data-etapa="1">
+    <img class="imagem" src="../guestbook-principal.jpeg" alt="" style="object-position:center 78%" />
+    <div class="conteudo">
+    <h1>Grupo gratuito de <span class="verde">guestbook Polaroid</span></h1>
+    <p class="pergunta">Você já trabalha com eventos?</p>
+    <button class="opcao" data-p="trabalha_eventos" data-v="sim">
+      <b>Sim, já trabalho</b><small>Guestbook, storymaker, videomaker, fotógrafo...</small>
+    </button>
+    <button class="opcao" data-p="trabalha_eventos" data-v="nao">
+      <b>Ainda não</b>
+    </button>
+    </div>
+  </section>
+
+  <!-- Etapa 2 -->
+  <section class="etapa" data-etapa="2">
+    <img class="imagem" src="../grupo-print-thalita.jpg" alt="" style="object-position:center 22%" />
+    <div class="conteudo">
+    <h2>O que você mais quer aprender no grupo?</h2>
+    <button class="opcao" data-p="interesse" data-v="guestbook"><b>Como trabalhar com guestbook Polaroid</b></button>
+    <button class="opcao" data-p="interesse" data-v="clientes"><b>Como conseguir clientes</b></button>
+    <button class="voltar" data-voltar="1">← voltar</button>
+    </div>
+  </section>
+
+  <!-- Etapa 3 -->
+  <section class="etapa" data-etapa="3">
+    <img class="imagem so-desk" src="../grupo-print-1.jpg" alt="" style="object-position:center 20%" />
+    <form id="form" class="conteudo" novalidate>
+      <h2>Pra onde mandamos o link do grupo?</h2>
+      <input type="text" id="nome" name="nome" autocomplete="name" placeholder="Seu nome" aria-label="Nome" required />
+      <input type="tel" id="telefone" name="telefone" autocomplete="tel" inputmode="numeric" placeholder="WhatsApp com DDD" aria-label="WhatsApp" required />
+      <input type="email" id="email" name="email" autocomplete="email" placeholder="Seu e-mail" aria-label="E-mail" required />
+      <label class="consent" id="consentLabel">
+        <input type="checkbox" id="consent" />
+        <span>Autorizo a Inframe a falar comigo por WhatsApp e e-mail.</span>
+      </label>
+      <div class="err" id="err"></div>
+      <button type="submit" class="btn" id="enviar">Entrar no grupo</button>
+      <button type="button" class="voltar" data-voltar="2">← voltar</button>
+    </form>
+  </section>
+
+  <!-- Fim -->
+  <section class="etapa" data-etapa="4">
+    <img class="imagem so-desk" src="../guestbook-principal.jpeg" alt="" style="object-position:center 78%" />
+    <div class="conteudo fim">
+    <div class="ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+    <h2>Tudo certo!</h2>
+    <a class="btn" id="entrar" href="https://chat.whatsapp.com/LrPqzVzJGmx42VJkcuuJYA"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.2.5.1.6-.1l.8-1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg>Abrir o grupo no WhatsApp</a>
+    </div>
+  </section>
 </div>
 
 <script>
-// URL do Apps Script que grava na planilha do Google. Vazio = só dispara o pixel e libera o grupo.
 var PLANILHA_URL = 'https://script.google.com/macros/s/AKfycbz1zNCVmA9o8LFxu35M7SQlIkFdYLkg6xuBdacjimYzjcdQU1hCYvLoFJpqKsNTFejl-g/exec';
 var GRUPO_URL = 'https://chat.whatsapp.com/LrPqzVzJGmx42VJkcuuJYA';
+var respostas = { trabalha_eventos: '', interesse: '' };
+
+function track(nome, dados) { if (typeof fbq === 'function') fbq('trackCustom', nome, dados || {}); }
+function marca(chave, valor) { if (typeof clarity === 'function') clarity('set', chave, valor); }
+
+function irPara(n) {
+  document.querySelectorAll('.etapa').forEach(function (e) { e.classList.toggle('on', e.dataset.etapa == n); });
+  document.querySelectorAll('#progresso span').forEach(function (s, i) { s.classList.toggle('on', i < Math.min(n, 3)); });
+  document.getElementById('progresso').style.visibility = n === 4 ? 'hidden' : 'visible';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+document.querySelectorAll('.opcao').forEach(function (b) {
+  b.addEventListener('click', function () {
+    var p = b.dataset.p, v = b.dataset.v;
+    respostas[p] = v;
+    document.querySelectorAll('.opcao[data-p="' + p + '"]').forEach(function (o) { o.classList.toggle('marcada', o === b); });
+    marca(p, v);
+    if (p === 'trabalha_eventos') {
+      track('QuizPergunta1', { trabalha_eventos: v });
+      setTimeout(function () { irPara(2); }, 260);
+    } else {
+      track('QuizPergunta2', { trabalha_eventos: respostas.trabalha_eventos, interesse: v });
+      setTimeout(function () { irPara(3); }, 260);
+    }
+  });
+});
+document.querySelectorAll('[data-voltar]').forEach(function (b) {
+  b.addEventListener('click', function () { irPara(+b.dataset.voltar); });
+});
 
 var tel = document.getElementById('telefone');
 tel.addEventListener('input', function () {
@@ -171,7 +240,7 @@ document.getElementById('form').addEventListener('submit', function (e) {
   if (nome.value.trim().length < 2) { nome.classList.add('bad'); problemas.push('nome'); }
   if (digitos.length < 10) { tel.classList.add('bad'); problemas.push('WhatsApp com DDD'); }
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) { email.classList.add('bad'); problemas.push('e-mail'); }
-  if (!consent.checked) { document.getElementById('consentLabel').classList.add('bad'); problemas.push('autorização de contato'); }
+  if (!consent.checked) { document.getElementById('consentLabel').classList.add('bad'); problemas.push('autorização'); }
   if (problemas.length) { err.textContent = 'Confira: ' + problemas.join(', ') + '.'; return; }
   err.textContent = '';
 
@@ -182,19 +251,19 @@ document.getElementById('form').addEventListener('submit', function (e) {
     nome: nome.value.trim(),
     telefone: digitos,
     email: email.value.trim().toLowerCase(),
-    pagina: location.href.split('?')[0]
+    trabalha_eventos: respostas.trabalha_eventos === 'sim' ? 'Sim' : 'Não',
+    interesse: respostas.interesse === 'clientes' ? 'Conseguir clientes' : 'Trabalhar com guestbook',
+    pagina: 'grupo-quiz' // a planilha mostra como "Quiz"
   }, utms());
 
-  if (typeof fbq === 'function') fbq('track', 'Lead', { content_name: 'Comunidade Inframe' });
+  if (typeof fbq === 'function') fbq('track', 'Lead', { content_name: 'Comunidade Inframe', trabalha_eventos: respostas.trabalha_eventos, interesse: respostas.interesse });
   if (typeof clarity === 'function') clarity('event', 'lead_grupo');
 
-  var envio = PLANILHA_URL
-    ? fetch(PLANILHA_URL, { method: 'POST', mode: 'no-cors', body: new URLSearchParams(dados) }).catch(function () {})
-    : Promise.resolve();
+  var envio = fetch(PLANILHA_URL, { method: 'POST', mode: 'no-cors', body: new URLSearchParams(dados) }).catch(function () {});
 
   // Dá tempo do pixel e da planilha saírem antes de abrir o WhatsApp
   Promise.race([envio, new Promise(function (r) { setTimeout(r, 2500); })]).then(function () {
-    document.getElementById('card').classList.add('sent');
+    irPara(4);
     setTimeout(function () { location.href = GRUPO_URL; }, 1200);
   });
 });
