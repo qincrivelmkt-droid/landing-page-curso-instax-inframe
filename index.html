@@ -203,6 +203,14 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between}
 .social{background:var(--bg2)}
 .sp-wrap{display:grid;grid-template-columns:1fr 340px;gap:40px;align-items:start;margin-top:36px}
 .carousel{position:relative;max-width:520px;margin:0 auto;width:100%}
+/* depoimento em destaque, antes do carrossel */
+.destaque{display:grid;grid-template-columns:1fr 1.05fr;gap:34px;align-items:center;margin:38px auto 30px;max-width:1000px;padding:30px;border:1px solid var(--gold-deep);border-radius:22px;background:linear-gradient(160deg,var(--panel2),var(--panel));box-shadow:var(--shadow),0 0 60px -26px rgba(201,161,90,.45)}
+.destaque .selo-d{display:inline-flex;align-items:center;gap:8px;font-size:.72rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.destaque blockquote{margin:14px 0 14px;font-family:'Fraunces',Georgia,serif;font-size:clamp(1.6rem,3.6vw,2.3rem);line-height:1.18;color:var(--cream)}
+.destaque blockquote .gold{color:var(--gold2)}
+.destaque p{margin:0;color:var(--muted);font-size:.98rem}
+.destaque img{width:100%;border-radius:16px;border:1px solid var(--line);box-shadow:var(--shadow)}
+@media(max-width:860px){.destaque{grid-template-columns:1fr;gap:20px;padding:22px;text-align:center}.destaque .selo-d{justify-content:center}}
 .car-w{overflow:hidden;border-radius:18px}
 .car-t{display:flex;transition:transform .45s cubic-bezier(.4,.1,.2,1)}
 .car-s{min-width:100%;padding:0 2px}
@@ -492,6 +500,14 @@ footer a.zap{color:var(--gold2);font-weight:700}
       <span class="eyebrow c">Prova social</span>
       <h2 class="h" style="margin:14px auto 0;max-width:640px">Uma comunidade que já está <span class="gold">colhendo resultado</span></h2>
       <p class="lead" style="margin:12px auto 0">Mais de 100 alunos ativos no grupo, trocando experiências, fornecedores e conquistas todos os dias.</p>
+    </div>
+    <div class="destaque reveal">
+      <div>
+        <span class="selo-d">★ Resultado de aluna</span>
+        <blockquote>"Nosso segundo evento já. E estamos com orçamento <span class="gold">para mais 1</span>."</blockquote>
+        <p>Mensagem que recebemos de uma aluna que aplicou o método e já está fechando eventos.</p>
+      </div>
+      <img src="depoimento-segundo-evento.jpg" alt="Print da conversa: aluna conta que já está no segundo evento e com orçamento para mais um" loading="lazy" width="900" height="683">
     </div>
     <div class="sp-wrap">
       <div class="carousel reveal" id="carousel">
