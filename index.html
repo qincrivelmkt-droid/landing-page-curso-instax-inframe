@@ -201,7 +201,8 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between}
 .mmodal .btn{margin-top:20px}
 
 .social{background:var(--bg2)}
-.sp-wrap{display:grid;grid-template-columns:1fr 340px;gap:40px;align-items:start;margin-top:36px}
+.sp-wrap{display:flex;justify-content:center;margin-top:36px}
+.sp-wrap .vport{width:340px;max-width:100%}
 .carousel{position:relative;max-width:520px;margin:0 auto;width:100%}
 /* depoimento em destaque, antes do carrossel */
 .destaque{display:grid;grid-template-columns:1fr 1.05fr;gap:34px;align-items:center;margin:38px auto 30px;max-width:1000px;padding:30px;border:1px solid var(--gold-deep);border-radius:22px;background:linear-gradient(160deg,var(--panel2),var(--panel));box-shadow:var(--shadow),0 0 60px -26px rgba(201,161,90,.45)}
@@ -535,16 +536,6 @@ footer a.zap{color:var(--gold2);font-weight:700}
       <img src="depoimento-aluno-primeiro-casamento.jpg" alt="Print da mensagem: aluno conta que vai ter o primeiro casamento em julho e investiu em bolsa e blusa para o evento" loading="lazy" width="1127" height="543">
     </div>
     <div class="sp-wrap">
-      <div class="carousel reveal" id="carousel">
-        <button class="car-b prev" aria-label="Anterior"><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></button>
-        <div class="car-w"><div class="car-t" id="track">
-          <div class="car-s"><img src="https://qincrivelmkt-droid.github.io/landing-page-curso-instax-inframe/feedback2.jpeg" alt="Feedback 2" loading="lazy"></div>
-          <div class="car-s"><img src="https://qincrivelmkt-droid.github.io/landing-page-curso-instax-inframe/feedback3.jpeg" alt="Feedback 3" loading="lazy"></div>
-          <div class="car-s"><img src="https://qincrivelmkt-droid.github.io/landing-page-curso-instax-inframe/feedback4.jpeg" alt="Feedback 4" loading="lazy"></div>
-        </div></div>
-        <button class="car-b next" aria-label="Próximo"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
-        <div class="dots" id="dots"></div>
-      </div>
       <div class="vport reveal">
         <video id="vport1" controls playsinline preload="none" poster="poster-video-vertical.jpg">
           <source src="video-depoimento-vertical.mp4" type="video/mp4" />
