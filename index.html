@@ -382,10 +382,13 @@ footer a.zap{color:var(--gold2);font-weight:700}
 .bf-price .to{font-size:clamp(2.1rem,6.6vw,2.8rem);font-weight:600}
 .bf-price .to b{color:var(--gold2)}
 .bf-note{color:var(--muted);font-size:.86rem}
+.bf-off{margin:12px 0 0;font-family:'Fraunces',serif;font-weight:600;line-height:1;font-size:clamp(3.6rem,13vw,5rem);color:var(--gold2);letter-spacing:-.01em}
+.bf-off span{font-size:.42em;letter-spacing:.08em;color:var(--cream);vertical-align:.55em;margin-left:.08em}
 .bf-cd{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:18px 0 16px}
-.bf-cd div{background:rgba(10,8,6,.7);border:1px solid var(--line);border-radius:14px;padding:12px 4px 9px}
-.bf-cd b{display:block;font-family:'Fraunces',serif;font-variant-numeric:tabular-nums;font-size:clamp(2rem,7vw,2.7rem);font-weight:600;line-height:1;color:var(--cream)}
-.bf-cd small{display:block;margin-top:6px;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted2);font-weight:800}
+.bf-cd div{background:rgba(224,74,68,.12);border:1px solid rgba(224,74,68,.5);border-radius:14px;padding:12px 4px 9px}
+.bf-cd b{display:block;font-family:'Fraunces',serif;font-variant-numeric:tabular-nums;font-size:clamp(2rem,7vw,2.7rem);font-weight:600;line-height:1;color:#F0655F}
+.bf-cd small{display:block;margin-top:6px;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:#F0A19C;font-weight:800}
+.bf-red,.bf-bar .bf-mini{color:#F0655F}
 .bf-coupon{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px 12px;padding:11px 14px;margin-bottom:16px;border:1px dashed var(--gold);border-radius:12px;background:rgba(201,161,90,.08);font-size:.92rem}
 .bf-coupon b{color:var(--gold2);letter-spacing:.06em}
 .bf-copy{font:800 .8rem 'Manrope',system-ui,sans-serif;color:#221806;background:var(--gold2);border:0;border-radius:40px;padding:8px 14px;cursor:pointer}
@@ -407,7 +410,7 @@ footer a.zap{color:var(--gold2);font-weight:700}
 <body>
 
 <div class="bf-bar" data-bf hidden>
-  <span>Condição especial: <b>15% off</b> com o cupom <b>BLACKINFRAME</b></span>
+  <span>Esquenta Black Friday: <b>15% off</b> com o cupom <b>BLACKINFRAME</b></span>
   <span>Termina em <span class="bf-mini" data-cdtxt>--</span></span>
   <a href="#oferta">Ver oferta</a>
 </div>
@@ -430,12 +433,12 @@ footer a.zap{color:var(--gold2);font-weight:700}
         <div class="pt"><b>+250 pessoas</b> já aprenderam com a Inframe, entre curso e mentorias</div>
       </div>
       <div class="bf-box" data-bf hidden>
-        <span class="bf-tag">Condição especial · 72 horas</span>
-        <div class="bf-price"><span class="from">De 12x de R$ 30,72</span><span class="to"><span class="qtd">12x de</span> <b>R$ 26,11</b></span></div>
-        <div class="bf-note">ou R$ 252,45 à vista</div>
-        <div class="bf-cd" aria-label="Tempo restante da condição especial"><div><b data-d>00</b><small>dias</small></div><div><b data-h>00</b><small>horas</small></div><div><b data-m>00</b><small>min</small></div><div><b data-s>00</b><small>seg</small></div></div>
-        <div class="bf-coupon"><span>Cupom <b>BLACKINFRAME</b> · 15% off</span><button type="button" class="bf-copy">Copiar cupom</button></div>
-        <a href="https://pay.kiwify.com.br/auJqmnG" class="btn">Quero garantir os 15% <span class="ar">→</span></a>
+        <span class="bf-tag">Esquenta Black Friday</span>
+        <div class="bf-off">15% <span>OFF</span></div>
+        <div class="bf-note">em todo o curso, só por 72 horas</div>
+        <div class="bf-cd" aria-label="Tempo restante do esquenta"><div><b data-d>00</b><small>dias</small></div><div><b data-h>00</b><small>horas</small></div><div><b data-m>00</b><small>min</small></div><div><b data-s>00</b><small>seg</small></div></div>
+        <div class="bf-coupon"><span>Cupom <b>BLACKINFRAME</b></span><button type="button" class="bf-copy">Copiar cupom</button></div>
+        <a href="#oferta" class="btn">Ver a oferta com desconto <span class="ar">↓</span></a>
       </div>
       <div class="hero-cta">
         <div class="micro"><span>✓ <b>Acesso imediato</b></span><span>✓ <b>Acesso vitalício</b></span></div>
@@ -681,7 +684,7 @@ footer a.zap{color:var(--gold2);font-weight:700}
         </ul>
         <div class="pb">
           <div class="bf-box" data-bf hidden>
-            <span class="bf-tag">Condição especial · 72 horas</span>
+            <span class="bf-tag">Esquenta Black Friday · 15% off</span>
             <div class="bf-price"><span class="from">De 12x de R$ 30,72</span><span class="to"><span class="qtd">12x de</span> <b>R$ 26,11</b></span></div>
             <div class="bf-note">ou R$ 252,45 à vista</div>
             <div class="bf-cd" aria-label="Tempo restante da condição especial"><div><b data-d>00</b><small>dias</small></div><div><b data-h>00</b><small>horas</small></div><div><b data-m>00</b><small>min</small></div><div><b data-s>00</b><small>seg</small></div></div>
@@ -875,7 +878,7 @@ document.querySelectorAll('a[href*="pay.kiwify.com.br"]').forEach(function(btn){
     poe('[data-d]',pad(d));poe('[data-h]',pad(h));poe('[data-m]',pad(m));poe('[data-s]',pad(x));
     var txt=(d>0?d+'d ':'')+pad(h)+':'+pad(m)+':'+pad(x);
     poe('[data-cdtxt]',txt);
-    if(mbarP)mbarP.innerHTML='<b>12x de R$ 26,11</b><small>15% off · termina em '+txt+'</small>';
+    if(mbarP)mbarP.innerHTML='<b>15% off · Esquenta Black</b><small>termina em <span class="bf-red">'+txt+'</span></small>';
   }
   t=setInterval(tick,1000);tick();
   document.querySelectorAll('.bf-copy').forEach(function(btn){
