@@ -431,8 +431,8 @@ footer a.zap{color:var(--gold2);font-weight:700}
       </div>
       <div class="bf-box" data-bf hidden>
         <span class="bf-tag">Condição especial · 72 horas</span>
-        <div class="bf-price"><span class="from">De R$ 297,00</span><span class="to">por <b>R$ 252,45</b></span></div>
-        <div class="bf-note">à vista, ou em até 12x no cartão</div>
+        <div class="bf-price"><span class="from">De 12x de R$ 30,72</span><span class="to"><span class="qtd">12x de</span> <b>R$ 26,11</b></span></div>
+        <div class="bf-note">ou R$ 252,45 à vista</div>
         <div class="bf-cd" aria-label="Tempo restante da condição especial"><div><b data-d>00</b><small>dias</small></div><div><b data-h>00</b><small>horas</small></div><div><b data-m>00</b><small>min</small></div><div><b data-s>00</b><small>seg</small></div></div>
         <div class="bf-coupon"><span>Cupom <b>BLACKINFRAME</b> · 15% off</span><button type="button" class="bf-copy">Copiar cupom</button></div>
         <a href="https://pay.kiwify.com.br/auJqmnG" class="btn">Quero garantir os 15% <span class="ar">→</span></a>
@@ -682,8 +682,8 @@ footer a.zap{color:var(--gold2);font-weight:700}
         <div class="pb">
           <div class="bf-box" data-bf hidden>
             <span class="bf-tag">Condição especial · 72 horas</span>
-            <div class="bf-price"><span class="from">De R$ 297,00</span><span class="to">por <b>R$ 252,45</b></span></div>
-            <div class="bf-note">à vista, ou em até 12x no cartão</div>
+            <div class="bf-price"><span class="from">De 12x de R$ 30,72</span><span class="to"><span class="qtd">12x de</span> <b>R$ 26,11</b></span></div>
+            <div class="bf-note">ou R$ 252,45 à vista</div>
             <div class="bf-cd" aria-label="Tempo restante da condição especial"><div><b data-d>00</b><small>dias</small></div><div><b data-h>00</b><small>horas</small></div><div><b data-m>00</b><small>min</small></div><div><b data-s>00</b><small>seg</small></div></div>
             <div class="bf-coupon"><span>Cupom <b>BLACKINFRAME</b> · 15% off</span><button type="button" class="bf-copy">Copiar cupom</button></div>
           </div>
@@ -875,7 +875,7 @@ document.querySelectorAll('a[href*="pay.kiwify.com.br"]').forEach(function(btn){
     poe('[data-d]',pad(d));poe('[data-h]',pad(h));poe('[data-m]',pad(m));poe('[data-s]',pad(x));
     var txt=(d>0?d+'d ':'')+pad(h)+':'+pad(m)+':'+pad(x);
     poe('[data-cdtxt]',txt);
-    if(mbarP)mbarP.innerHTML='<b>R$ 252,45</b><small>15% off · termina em '+txt+'</small>';
+    if(mbarP)mbarP.innerHTML='<b>12x de R$ 26,11</b><small>15% off · termina em '+txt+'</small>';
   }
   t=setInterval(tick,1000);tick();
   document.querySelectorAll('.bf-copy').forEach(function(btn){
