@@ -369,6 +369,32 @@ footer a.zap{color:var(--gold2);font-weight:700}
 .risk-band b{color:var(--cream)}
 .risk-band .seal{flex-shrink:0;width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--gold-deep),var(--gold2));color:#221806;font-family:'Fraunces',serif;font-weight:700;font-size:1.05rem;display:grid;place-items:center}
 @media(max-width:860px){.risk-band{margin-left:auto;margin-right:auto}}
+
+/* condição especial BLACKINFRAME com prazo real: tudo some sozinho quando o prazo acaba */
+.bf-bar{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:4px 14px;padding:10px 16px;background:linear-gradient(90deg,#1a1206,#3a2809,#1a1206);border-bottom:1px solid var(--gold-deep);color:var(--cream);font-size:.88rem;text-align:center;line-height:1.35}
+.bf-bar b{color:var(--gold2)}
+.bf-bar a{color:var(--gold2);font-weight:800;text-decoration:underline;text-underline-offset:3px}
+.bf-mini{font-variant-numeric:tabular-nums;font-weight:800;color:#fff;letter-spacing:.03em}
+.bf-box{margin-top:22px;max-width:480px;padding:22px 22px 24px;border:1px solid rgba(235,203,132,.55);border-radius:20px;background:linear-gradient(180deg,rgba(58,40,9,.55),rgba(22,16,9,.9));box-shadow:0 18px 44px -18px rgba(201,161,90,.55);text-align:center}
+.bf-tag{display:inline-block;font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;font-weight:800;color:#221806;background:linear-gradient(100deg,var(--gold-deep),var(--gold2));border-radius:40px;padding:6px 14px}
+.bf-price{margin:14px 0 2px;font-family:'Fraunces',serif;line-height:1.15}
+.bf-price .from{display:block;color:var(--muted2);font-size:1.02rem;text-decoration:line-through}
+.bf-price .to{font-size:clamp(2.1rem,6.6vw,2.8rem);font-weight:600}
+.bf-price .to b{color:var(--gold2)}
+.bf-note{color:var(--muted);font-size:.86rem}
+.bf-cd{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:18px 0 16px}
+.bf-cd div{background:rgba(10,8,6,.7);border:1px solid var(--line);border-radius:14px;padding:12px 4px 9px}
+.bf-cd b{display:block;font-family:'Fraunces',serif;font-variant-numeric:tabular-nums;font-size:clamp(2rem,7vw,2.7rem);font-weight:600;line-height:1;color:var(--cream)}
+.bf-cd small{display:block;margin-top:6px;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted2);font-weight:800}
+.bf-coupon{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px 12px;padding:11px 14px;margin-bottom:16px;border:1px dashed var(--gold);border-radius:12px;background:rgba(201,161,90,.08);font-size:.92rem}
+.bf-coupon b{color:var(--gold2);letter-spacing:.06em}
+.bf-copy{font:800 .8rem 'Manrope',system-ui,sans-serif;color:#221806;background:var(--gold2);border:0;border-radius:40px;padding:8px 14px;cursor:pointer}
+.bf-copy:focus-visible{outline:2px solid var(--cream);outline-offset:2px}
+.bf-box .btn{width:100%}
+.ocard .bf-box{max-width:none;margin:0 0 4px;border-color:rgba(235,203,132,.4)}
+.ocard .bf-tag{letter-spacing:.14em;font-size:.64rem;white-space:nowrap}
+[data-bf][hidden],[data-bf-off][hidden]{display:none!important}
+@media(max-width:860px){.bf-box{margin-left:auto;margin-right:auto}}
 </style>
 <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
@@ -379,6 +405,12 @@ footer a.zap{color:var(--gold2);font-weight:700}
 </script>
 </head>
 <body>
+
+<div class="bf-bar" data-bf hidden>
+  <span>Condição especial: <b>15% off</b> com o cupom <b>BLACKINFRAME</b></span>
+  <span>Termina em <span class="bf-mini" data-cdtxt>--</span></span>
+  <a href="#oferta">Ver oferta</a>
+</div>
 
 <nav id="nav">
   <div class="wrap">
@@ -396,6 +428,14 @@ footer a.zap{color:var(--gold2);font-weight:700}
       <div class="proof-row">
         <div class="avs"><div class="a">◉</div><div class="a">◉</div><div class="a">◉</div><div class="a">+</div></div>
         <div class="pt"><b>+250 pessoas</b> já aprenderam com a Inframe, entre curso e mentorias</div>
+      </div>
+      <div class="bf-box" data-bf hidden>
+        <span class="bf-tag">Condição especial · 72 horas</span>
+        <div class="bf-price"><span class="from">De R$ 297,00</span><span class="to">por <b>R$ 252,45</b></span></div>
+        <div class="bf-note">à vista, ou em até 12x no cartão</div>
+        <div class="bf-cd" aria-label="Tempo restante da condição especial"><div><b data-d>00</b><small>dias</small></div><div><b data-h>00</b><small>horas</small></div><div><b data-m>00</b><small>min</small></div><div><b data-s>00</b><small>seg</small></div></div>
+        <div class="bf-coupon"><span>Cupom <b>BLACKINFRAME</b> · 15% off</span><button type="button" class="bf-copy">Copiar cupom</button></div>
+        <a href="https://pay.kiwify.com.br/auJqmnG" class="btn">Quero garantir os 15% <span class="ar">→</span></a>
       </div>
       <div class="hero-cta">
         <div class="micro"><span>✓ <b>Acesso imediato</b></span><span>✓ <b>Acesso vitalício</b></span></div>
@@ -621,7 +661,7 @@ footer a.zap{color:var(--gold2);font-weight:700}
 </section>
 
 
-<section class="offer sec">
+<section class="offer sec" id="oferta">
   <div class="wrap">
     <div class="center reveal">
       <span class="eyebrow c">A oferta completa</span>
@@ -640,8 +680,15 @@ footer a.zap{color:var(--gold2);font-weight:700}
           <li><span class="ck">✓</span><div class="tx"><b>Suporte em horário comercial</b><small>tire suas dúvidas com quem vive disso</small></div><span class="val">Brinde</span></li>
         </ul>
         <div class="pb">
-          <div class="big"><span class="qtd">12x</span> <b>R$ 30,72</b></div>
-          <div class="cashline">ou R$ 297,00 à vista</div>
+          <div class="bf-box" data-bf hidden>
+            <span class="bf-tag">Condição especial · 72 horas</span>
+            <div class="bf-price"><span class="from">De R$ 297,00</span><span class="to">por <b>R$ 252,45</b></span></div>
+            <div class="bf-note">à vista, ou em até 12x no cartão</div>
+            <div class="bf-cd" aria-label="Tempo restante da condição especial"><div><b data-d>00</b><small>dias</small></div><div><b data-h>00</b><small>horas</small></div><div><b data-m>00</b><small>min</small></div><div><b data-s>00</b><small>seg</small></div></div>
+            <div class="bf-coupon"><span>Cupom <b>BLACKINFRAME</b> · 15% off</span><button type="button" class="bf-copy">Copiar cupom</button></div>
+          </div>
+          <div class="big" data-bf-off><span class="qtd">12x</span> <b>R$ 30,72</b></div>
+          <div class="cashline" data-bf-off>ou R$ 297,00 à vista</div>
           <a href="https://pay.kiwify.com.br/auJqmnG" class="btn block">Garantir meu acesso agora <span class="ar">→</span></a>
           <div class="pay"><span>💳 Cartão em até 12x</span><span>· Pix</span><span>· Boleto</span></div>
         </div>
@@ -786,7 +833,7 @@ wireVideo('hookVideo','vover-hook');
 
 document.querySelectorAll('a[href*="pay.kiwify.com.br"]').forEach(function(btn){
   btn.addEventListener('click',function(){
-    if(typeof fbq==='function'){fbq('track','InitiateCheckout',{content_name:'Método Inframe Guestbook',value:297.00,currency:'BRL'});}
+    if(typeof fbq==='function'){fbq('track','InitiateCheckout',{content_name:'Método Inframe Guestbook',value:(window.BF_ON?252.45:297.00),currency:'BRL'});}
   });
 });
 
@@ -801,6 +848,42 @@ document.querySelectorAll('a[href*="pay.kiwify.com.br"]').forEach(function(btn){
     var u=new URL(a.href);
     Object.keys(saved).forEach(function(k){u.searchParams.set(k,saved[k]);});
     a.href=u.toString();
+  });
+})();
+
+// condição especial BLACKINFRAME: prazo real, igual para todo mundo; no fim tudo volta ao normal sozinho
+(function(){
+  var END=new Date('2026-10-22T23:59:59-03:00').getTime(),CUPOM='BLACKINFRAME';
+  var on=document.querySelectorAll('[data-bf]'),off=document.querySelectorAll('[data-bf-off]');
+  var mbarP=document.querySelector('#mbar .p'),mbarOrig=mbarP?mbarP.innerHTML:'',ativo=null,t;
+  function pad(n){return n<10?'0'+n:''+n;}
+  function poe(sel,v){var el=document.querySelectorAll(sel);for(var i=0;i<el.length;i++)el[i].textContent=v;}
+  function liga(sim){
+    window.BF_ON=sim;ativo=sim;
+    for(var i=0;i<on.length;i++)on[i].hidden=!sim;
+    for(var j=0;j<off.length;j++)off[j].hidden=sim;
+    document.querySelectorAll('a[href*="pay.kiwify.com.br"]').forEach(function(a){
+      var u=new URL(a.href);if(sim)u.searchParams.set('coupon',CUPOM);else u.searchParams.delete('coupon');a.href=u.toString();
+    });
+    if(!sim&&mbarP)mbarP.innerHTML=mbarOrig;
+  }
+  function tick(){
+    var left=END-Date.now();
+    if(left<=0){if(ativo!==false)liga(false);clearInterval(t);return;}
+    if(ativo!==true)liga(true);
+    var s=Math.floor(left/1000),d=Math.floor(s/86400),h=Math.floor(s%86400/3600),m=Math.floor(s%3600/60),x=s%60;
+    poe('[data-d]',pad(d));poe('[data-h]',pad(h));poe('[data-m]',pad(m));poe('[data-s]',pad(x));
+    var txt=(d>0?d+'d ':'')+pad(h)+':'+pad(m)+':'+pad(x);
+    poe('[data-cdtxt]',txt);
+    if(mbarP)mbarP.innerHTML='<b>R$ 252,45</b><small>15% off · termina em '+txt+'</small>';
+  }
+  t=setInterval(tick,1000);tick();
+  document.querySelectorAll('.bf-copy').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      function ok(){btn.textContent='Copiado!';setTimeout(function(){btn.textContent='Copiar cupom';},1800);}
+      function fb(){var x=document.createElement('textarea');x.value=CUPOM;x.style.position='fixed';x.style.opacity='0';document.body.appendChild(x);x.select();try{document.execCommand('copy');ok();}catch(e){}document.body.removeChild(x);}
+      if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(CUPOM).then(ok,fb);}else{fb();}
+    });
   });
 })();
 
