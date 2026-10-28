@@ -392,6 +392,82 @@ footer a.zap{color:var(--gold2);font-weight:700}
 .risk-band .seal{flex-shrink:0;width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--gold-deep),var(--gold2));color:#221806;font-family:'Fraunces',serif;font-weight:700;font-size:1.05rem;display:grid;place-items:center}
 @media(max-width:860px){.risk-band{margin-left:auto;margin-right:auto}}
 
+/* Black Friday Inframe, exclusiva da comunidade: tudo com data-bf some sozinho no fim do prazo */
+[data-bf][hidden],[data-bf-off][hidden]{display:none!important}
+.bf-fita{position:relative;z-index:61;overflow:hidden;background:linear-gradient(90deg,#B48A47,#F6E3B4 50%,#B48A47);color:#140E05;font-weight:800;font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;white-space:nowrap;padding:9px 0;box-shadow:0 6px 24px -6px rgba(235,203,132,.5)}
+.bf-fita .rolo{display:inline-flex;animation:bfrola 40s linear infinite}
+.bf-fita .rolo span{padding-right:2.6em}
+@keyframes bfrola{to{transform:translateX(-50%)}}
+
+.bf-hero{position:relative;overflow:hidden;isolation:isolate;background:#070504;padding:58px 0 66px;text-align:center;border-bottom:1px solid var(--gold-deep)}
+.bf-parede{position:absolute;left:50%;top:50%;width:1900px;display:grid;grid-template-columns:repeat(6,1fr);gap:26px;transform:translate(-50%,-50%) perspective(1600px) rotateX(24deg) rotateZ(-9deg);z-index:-4}
+.bf-parede img{width:100%;aspect-ratio:2/3;object-fit:cover;border-radius:14px}
+.bf-escuro{position:absolute;inset:0;z-index:-3;background:radial-gradient(ellipse 62% 34% at 50% 26%,rgba(212,172,110,.22),transparent 70%),linear-gradient(180deg,rgba(7,5,4,.93) 0%,rgba(7,5,4,.74) 38%,rgba(7,5,4,.8) 62%,rgba(10,8,6,.97) 100%)}
+.bf-raios{position:absolute;left:50%;top:34%;width:2200px;height:2200px;z-index:-2;transform:translate(-50%,-50%);background:repeating-conic-gradient(from 0deg,rgba(246,227,180,.13) 0deg 5deg,transparent 5deg 15deg);-webkit-mask:radial-gradient(circle,#000 0%,rgba(0,0,0,.55) 16%,transparent 40%);mask:radial-gradient(circle,#000 0%,rgba(0,0,0,.55) 16%,transparent 40%);animation:bfgira 120s linear infinite}
+@keyframes bfgira{to{transform:translate(-50%,-50%) rotate(360deg)}}
+.bf-pts{position:absolute;inset:0;z-index:-1;pointer-events:none}
+.bf-pts i{position:absolute;border-radius:50%;background:radial-gradient(circle,#FFF4D6,#D4AC6E 60%,transparent 70%)}
+.bf-pts svg{position:absolute;fill:#F6E3B4;filter:drop-shadow(0 0 9px rgba(246,227,180,.9));animation:bfpisca 3s ease-in-out infinite}
+@keyframes bfpisca{0%,100%{opacity:.35;transform:scale(.78)}50%{opacity:1;transform:scale(1)}}
+.bf-in{max-width:760px;margin:0 auto;padding:0 22px}
+.bf-excl{display:inline-block;font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;font-weight:800;color:#140E05;background:linear-gradient(100deg,#B48A47,#F6E3B4 50%,#B48A47);padding:8px 18px;border-radius:40px;transform:rotate(-2deg);box-shadow:0 10px 30px -8px rgba(235,203,132,.6)}
+.bf-black{display:block;margin-top:20px;font-weight:800;font-size:clamp(5.2rem,25vw,12.5rem);line-height:.8;letter-spacing:-.035em;padding-top:.05em;background:linear-gradient(180deg,#FFF6DC 0%,#F1DCA7 30%,#D4AC6E 58%,#A97F3E 80%,#E8CF95 100%);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 26px rgba(246,227,180,.42)) drop-shadow(0 8px 18px rgba(0,0,0,.8))}
+.bf-friday{display:block;font-family:'Fraunces',Georgia,serif;font-style:italic;font-weight:500;font-size:clamp(2.5rem,10vw,4.8rem);line-height:1;color:var(--gold2);margin-top:4px;text-shadow:0 2px 18px rgba(0,0,0,.9)}
+.bf-oferta{margin-top:26px;font-weight:800;font-size:clamp(1.3rem,4.6vw,2rem);line-height:1.2;color:var(--cream);text-shadow:0 2px 16px rgba(0,0,0,.9)}
+.bf-oferta b{color:#F6E3B4;font-size:1.3em;letter-spacing:-.01em}
+.bf-oferta i{font-style:normal;color:var(--gold);padding:0 .15em}
+.bf-plano{margin-top:6px;color:var(--muted);font-size:clamp(.98rem,2.6vw,1.1rem)}
+.bf-dez{display:inline-block;margin-top:22px;padding:13px 26px 14px;transform:rotate(-2deg);font-weight:800;font-size:clamp(1.05rem,3.6vw,1.4rem);letter-spacing:.02em;color:#140E05;background:linear-gradient(115deg,#A97F3E 0%,#F6E3B4 22%,#D4AC6E 40%,#FFF3D2 52%,#C9A458 68%,#F1DCA7 86%,#A97F3E 100%);box-shadow:0 0 0 3px rgba(11,10,8,.9),0 0 0 5px #E8CF95,0 0 70px rgba(246,227,180,.5),0 18px 40px rgba(0,0,0,.6)}
+.bf-preco{margin-top:30px;display:flex;flex-direction:column;align-items:center;gap:2px}
+.bf-preco s{color:var(--muted2);font-size:1rem}
+.bf-preco .to{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:clamp(2.2rem,7vw,3rem);line-height:1.1}
+.bf-preco .to b{color:var(--gold2)}
+.bf-preco .to .qtd{font-size:.5em;vertical-align:.4em;font-weight:500}
+.bf-preco small{color:var(--muted);font-size:.92rem}
+.bf-cd{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;max-width:440px;margin:22px auto 0}
+.bf-cd div{background:rgba(10,8,6,.78);border:1px solid rgba(235,203,132,.5);border-radius:14px;padding:12px 4px 9px;box-shadow:inset 0 0 18px rgba(201,161,90,.12)}
+.bf-cd b{display:block;font-family:'Fraunces',Georgia,serif;font-variant-numeric:tabular-nums;font-size:clamp(1.9rem,7vw,2.6rem);font-weight:600;line-height:1;color:#F6E3B4}
+.bf-cd small{display:block;margin-top:6px;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:800}
+.bf-cdtit{margin-top:26px;font-size:.74rem;letter-spacing:.24em;text-transform:uppercase;font-weight:800;color:var(--gold2);display:inline-flex;align-items:center;gap:8px}
+.bf-coupon{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px 12px;max-width:440px;margin:16px auto 0;padding:11px 14px;border:1px dashed var(--gold);border-radius:12px;background:rgba(201,161,90,.1);font-size:.92rem}
+.bf-coupon b{color:var(--gold2);letter-spacing:.08em}
+.bf-copy{font:800 .8rem 'Manrope',system-ui,sans-serif;color:#221806;background:var(--gold2);border:0;border-radius:40px;padding:8px 14px;cursor:pointer}
+.bf-copy:focus-visible{outline:2px solid var(--cream);outline-offset:2px}
+.bf-btn{margin-top:20px;width:100%;max-width:440px;font-size:1.08rem;padding:19px 28px;box-shadow:0 0 0 1px rgba(255,243,210,.4),0 0 46px rgba(246,227,180,.45),0 18px 40px -12px rgba(201,161,90,.8)}
+.bf-ver{display:inline-block;margin-top:14px;color:var(--muted);font-size:.88rem;text-decoration:underline;text-underline-offset:3px}
+.bf-nota{max-width:520px;margin:14px auto 0;color:var(--muted2);font-size:.76rem;line-height:1.45}
+
+.bf-ment{background:radial-gradient(700px 420px at 20% 10%,rgba(201,161,90,.14),transparent 60%),var(--bg2)}
+.bf-ment .grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:44px;align-items:center;max-width:980px;margin:0 auto}
+.bf-foto{position:relative;transform:rotate(-2.5deg);background:#FBF8F2;padding:12px 12px 52px;border-radius:4px;box-shadow:0 26px 54px rgba(0,0,0,.7);max-width:340px;margin:0 auto}
+.bf-foto img{width:100%;height:auto;aspect-ratio:4/4.3;object-fit:cover;object-position:50% 25%}
+.bf-foto span{position:absolute;left:0;right:0;bottom:14px;text-align:center;font-family:'Fraunces',Georgia,serif;font-style:italic;font-size:1.15rem;color:#2A2015}
+.bf-foto::before{content:"";position:absolute;top:-14px;left:50%;width:96px;height:28px;transform:translateX(-50%) rotate(3deg);background:rgba(235,203,132,.75);z-index:2}
+.bf-ment h2{margin:14px 0 14px}
+.bf-ment p.lead{margin-bottom:22px}
+.bf-planos{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.bf-pl{border:1px solid var(--line);border-radius:16px;padding:20px 18px;background:var(--panel)}
+.bf-pl .n{font-family:'Fraunces',Georgia,serif;font-size:2.8rem;font-weight:600;line-height:1;color:var(--gold2)}
+.bf-pl b{display:block;margin-top:8px;font-size:1rem}
+.bf-pl small{display:block;margin-top:4px;color:var(--muted);font-size:.84rem;line-height:1.4}
+.bf-pl.top10{border-color:rgba(235,203,132,.7);background:linear-gradient(180deg,rgba(58,40,9,.6),rgba(22,16,9,.92));box-shadow:0 0 40px -10px rgba(235,203,132,.45)}
+.bf-pl .tag{display:inline-block;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;font-weight:800;color:#221806;background:var(--gold2);border-radius:30px;padding:4px 10px;margin-bottom:10px}
+@media(max-width:760px){.bf-ment .grid{grid-template-columns:1fr;gap:34px;text-align:center}.bf-ment .eyebrow{justify-content:center}.bf-ment p.lead{margin-left:auto;margin-right:auto}}
+@media(max-width:420px){.bf-planos{grid-template-columns:1fr}}
+
+.bf-on .ocard{border-color:rgba(235,203,132,.75);box-shadow:0 0 60px -14px rgba(235,203,132,.5),var(--shadow)}
+.ocard .bf-top{background:linear-gradient(90deg,#B48A47,#F6E3B4 50%,#B48A47);letter-spacing:.2em}
+.stack .bf-li .ck{color:#F6E3B4}
+.stack .bf-li .tx b{color:var(--gold2)}
+.stack .bf-val{text-decoration:none;color:#221806;background:var(--gold2);border-radius:30px;padding:2px 9px;font-weight:800;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase}
+.pb .bf-preco{margin-top:0}
+.pb .bf-cdtit{margin-top:18px}
+.pb .bf-coupon{margin-bottom:18px}
+.bf-final{margin:0 auto 18px;color:var(--gold2);font-weight:700;font-size:.95rem}
+.bf-final b{font-variant-numeric:tabular-nums;color:#F6E3B4}
+.mbar .p .bf-cdm{color:#F6E3B4;font-variant-numeric:tabular-nums;font-weight:800}
+@media(max-width:480px){.ocard .bf-top{letter-spacing:.1em;font-size:.76rem}.bf-excl{letter-spacing:.14em;font-size:.62rem;padding:7px 14px}.bf-dez{white-space:nowrap;font-size:.98rem;padding:11px 16px 12px}}
+@media(prefers-reduced-motion:reduce){.bf-fita .rolo,.bf-raios,.bf-pts svg{animation:none}}
 </style>
 <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
@@ -403,12 +479,35 @@ footer a.zap{color:var(--gold2);font-weight:700}
 </head>
 <body>
 
+<div class="bf-fita" data-bf hidden aria-label="Black Friday Inframe: 20% off e mentoria ao vivo com a Manu, só para a comunidade, até 31/10 às 23h59"><div class="rolo" aria-hidden="true"><span>Black Friday Inframe</span><span>✦ 20% off + mentoria ao vivo com a Manu</span><span>✦ só para a comunidade</span><span>✦ até 31/10 às 23h59</span><span>Black Friday Inframe</span><span>✦ 20% off + mentoria ao vivo com a Manu</span><span>✦ só para a comunidade</span><span>✦ até 31/10 às 23h59</span><span>Black Friday Inframe</span><span>✦ 20% off + mentoria ao vivo com a Manu</span><span>✦ só para a comunidade</span><span>✦ até 31/10 às 23h59</span><span>Black Friday Inframe</span><span>✦ 20% off + mentoria ao vivo com a Manu</span><span>✦ só para a comunidade</span><span>✦ até 31/10 às 23h59</span></div></div>
+
 <nav id="nav">
   <div class="wrap">
     <div class="brand"><div class="mark">IN</div><div><span>INFRAME</span><small>Guestbook</small></div></div>
     <a href="https://pay.kiwify.com.br/auJqmnG" class="btn nav-cta">Quero acesso</a>
   </div>
 </nav>
+
+<section class="bf-hero" data-bf hidden>
+  <div class="bf-parede" id="bfParede" aria-hidden="true"></div>
+  <div class="bf-escuro"></div>
+  <div class="bf-raios" aria-hidden="true"></div>
+  <div class="bf-pts" id="bfPts" aria-hidden="true"></div>
+  <div class="bf-in">
+    <span class="bf-excl">Exclusiva da comunidade Inframe</span>
+    <h2 style="margin:0"><span class="bf-black">BLACK</span><span class="bf-friday">Friday</span></h2>
+    <div class="bf-oferta"><b>20% OFF</b> <i>+</i> mentoria individual ao vivo com a Manu</div>
+    <p class="bf-plano">para montar com ela o seu plano de carreira no guestbook</p>
+    <div class="bf-dez">★ Os 10 primeiros ganham 2 mentorias</div>
+    <div class="bf-preco"><s>De R$ 297,00</s><span class="to"><span class="qtd">12x de</span> <b>R$ 24,58</b></span><small>ou R$ 237,60 à vista</small></div>
+    <div class="bf-cdtit"><span class="dotpulse"></span>A Black termina em</div>
+    <div class="bf-cd" aria-label="Tempo restante da Black Friday"><div><b data-d>00</b><small>dias</small></div><div><b data-h>00</b><small>horas</small></div><div><b data-m>00</b><small>min</small></div><div><b data-s>00</b><small>seg</small></div></div>
+    <div class="bf-coupon"><span>Cupom <b>BLACKINFRAME</b></span><button type="button" class="bf-copy">Copiar cupom</button></div>
+    <a href="https://pay.kiwify.com.br/auJqmnG" class="btn bf-btn">Quero 20% off + mentoria <span class="ar">→</span></a>
+    <div><a href="#oferta" class="bf-ver">Ver tudo o que vem no curso</a></div>
+    <p class="bf-nota">O desconto já entra pelo botão. Se não aparecer, digite o cupom BLACKINFRAME no checkout. Válido até 31/10 às 23h59, horário de Brasília.</p>
+  </div>
+</section>
 
 <section class="hero">
   <div class="wrap">
@@ -642,6 +741,23 @@ footer a.zap{color:var(--gold2);font-weight:700}
 </section>
 
 
+<section class="bf-ment sec" id="mentoria" data-bf hidden>
+  <div class="wrap">
+    <div class="grid">
+      <div class="bf-foto reveal"><img src="manuela.jpeg" alt="Manuela Rosa Dias, da Inframe" loading="lazy" width="901" height="959"><span>com a Manu, ao vivo</span></div>
+      <div class="reveal">
+        <span class="eyebrow">Bônus da Black Friday</span>
+        <h2 class="h">Uma mentoria individual com a Manu para montar <span class="gold">o seu plano de carreira</span></h2>
+        <p class="lead">Ao vivo, só você e ela. A Manu olha o seu momento e monta com você o caminho no guestbook: por onde começar, como se posicionar e quais são os próximos passos.</p>
+        <div class="bf-planos">
+          <div class="bf-pl"><div class="n">1</div><b>mentoria para todos</b><small>quem comprar com o cupom BLACKINFRAME até 31/10</small></div>
+          <div class="bf-pl top10"><span class="tag">10 primeiros</span><div class="n">2</div><b>mentorias com a Manu</b><small>para os 10 primeiros compradores, pela ordem de pagamento aprovado</small></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="offer sec" id="oferta">
   <div class="wrap">
     <div class="center reveal">
@@ -649,9 +765,12 @@ footer a.zap{color:var(--gold2);font-weight:700}
       <h2 class="h" style="margin-top:14px">Tudo o que você recebe <span class="gold">hoje</span></h2>
     </div>
     <div class="ocard reveal">
-      <div class="top">Acesso imediato</div>
+      <div class="top" data-bf-off>Acesso imediato</div>
+      <div class="top bf-top" data-bf hidden>Black Friday · exclusiva da comunidade</div>
       <div class="in">
         <ul class="stack">
+          <li class="bf-li" data-bf hidden><span class="ck">★</span><div class="tx"><b>Mentoria individual ao vivo com a Manu</b><small>o seu plano de carreira no guestbook, montado com ela</small></div><span class="val bf-val">Black</span></li>
+          <li class="bf-li" data-bf hidden><span class="ck">★</span><div class="tx"><b>2ª mentoria para os 10 primeiros</b><small>pela ordem de pagamento aprovado</small></div><span class="val bf-val">Black</span></li>
           <li><span class="ck">✓</span><div class="tx"><b>Curso completo, 49 aulas</b><small>10 módulos, do equipamento ao contrato assinado</small></div><span class="val" style="text-decoration:none">Incluso</span></li>
           <li><span class="ck">✓</span><div class="tx"><b>Acesso vitalício</b><small>entre quando quiser e assista quantas vezes precisar, sem prazo de expiração</small></div><span class="val">Incluso</span></li>
           <li><span class="ck">✓</span><div class="tx"><b>Bônus: PDF Como montar seu guestbook</b><small>material de apoio para consultar sempre</small></div><span class="val">Brinde</span></li>
@@ -661,8 +780,14 @@ footer a.zap{color:var(--gold2);font-weight:700}
           <li><span class="ck">✓</span><div class="tx"><b>Suporte em horário comercial</b><small>tire suas dúvidas com quem vive disso</small></div><span class="val">Brinde</span></li>
         </ul>
         <div class="pb">
-          <div class="big"><span class="qtd">12x</span> <b>R$ 30,72</b></div>
-          <div class="cashline">ou R$ 297,00 à vista</div>
+          <div data-bf hidden>
+            <div class="bf-preco"><s>De R$ 297,00</s><span class="to"><span class="qtd">12x de</span> <b>R$ 24,58</b></span><small>ou R$ 237,60 à vista com o cupom</small></div>
+            <div class="bf-cdtit"><span class="dotpulse"></span>A Black termina em</div>
+            <div class="bf-cd" aria-label="Tempo restante da Black Friday"><div><b data-d>00</b><small>dias</small></div><div><b data-h>00</b><small>horas</small></div><div><b data-m>00</b><small>min</small></div><div><b data-s>00</b><small>seg</small></div></div>
+            <div class="bf-coupon"><span>Cupom <b>BLACKINFRAME</b> · 20% off</span><button type="button" class="bf-copy">Copiar cupom</button></div>
+          </div>
+          <div class="big" data-bf-off><span class="qtd">12x</span> <b>R$ 30,72</b></div>
+          <div class="cashline" data-bf-off>ou R$ 297,00 à vista</div>
           <a href="https://pay.kiwify.com.br/auJqmnG" class="btn block">Garantir meu acesso agora <span class="ar">→</span></a>
           <div class="pay"><span>💳 Cartão em até 12x</span><span>· Pix</span><span>· Boleto</span></div>
         </div>
@@ -694,7 +819,8 @@ footer a.zap{color:var(--gold2);font-weight:700}
       <div class="ai"><button class="aq">Já trabalho com eventos. Vale a pena?<span class="pl">+</span></button><div class="aa"><p>Vale. Além do operacional, o método aprofunda precificação, posicionamento premium e captação de clientes, que é onde a maioria trava para escalar.</p></div></div>
       <div class="ai"><button class="aq">Como recebo o acesso ao curso?<span class="pl">+</span></button><div class="aa"><p>Assim que o pagamento é confirmado, o acesso é liberado na hora pela Kiwify. Você recebe o login por e-mail e já pode começar a assistir.</p></div></div>
       <div class="ai"><button class="aq">Tem suporte se eu travar?<span class="pl">+</span></button><div class="aa"><p>Tem. Você conta com suporte em horário comercial e com o grupo no WhatsApp, onde a comunidade e a gente trocamos experiências todos os dias.</p></div></div>
-      <div class="ai"><button class="aq">Quais as formas de pagamento?<span class="pl">+</span></button><div class="aa"><p>Cartão de crédito em até 12x, Pix ou boleto. À vista sai por R$ 297,00.</p></div></div>
+      <div class="ai" data-bf hidden><button class="aq">Como funciona a mentoria da Black Friday?<span class="pl">+</span></button><div class="aa"><p>É uma mentoria individual e ao vivo com a Manu para montar o seu plano de carreira no guestbook. Todo mundo que comprar com o cupom BLACKINFRAME até 31/10 às 23h59 ganha 1 mentoria. Os 10 primeiros, pela ordem de pagamento aprovado, ganham 2. Depois da compra, a gente entra em contato para agendar.</p></div></div>
+      <div class="ai"><button class="aq">Quais as formas de pagamento?<span class="pl">+</span></button><div class="aa"><p>Cartão de crédito em até 12x, Pix ou boleto. À vista sai por <span data-bf-off>R$ 297,00</span><span data-bf hidden>R$ 237,60 com o cupom BLACKINFRAME, válido até 31/10 às 23h59</span>.</p></div></div>
     </div>
   </div>
 </section>
@@ -704,8 +830,9 @@ footer a.zap{color:var(--gold2);font-weight:700}
     <span class="eyebrow c">Sua vez</span>
     <h2 class="h" style="margin-top:16px">Enquanto você pensa, alguém na sua cidade já está <span class="gold">fechando o próximo evento</span></h2>
     <p class="lead center" style="margin:0 auto 18px">O método já está pronto e liberado. O primeiro passo é seu.</p>
+    <div class="bf-final" data-bf hidden>20% off + mentoria com a Manu termina em <b data-cdtxt>--</b></div>
     <a href="https://pay.kiwify.com.br/auJqmnG" class="btn">Quero começar agora <span class="ar">→</span></a>
-    <div class="micro c" style="justify-content:center"><span>✓ <b>Acesso imediato</b></span><span>✓ <b>Acesso vitalício</b></span><span>✓ <b>12x de R$ 30,72</b></span><span>✓ <b>Garantia de 7 dias</b></span></div>
+    <div class="micro c" style="justify-content:center"><span>✓ <b>Acesso imediato</b></span><span>✓ <b>Acesso vitalício</b></span><span data-bf-off>✓ <b>12x de R$ 30,72</b></span><span data-bf hidden>✓ <b>12x de R$ 24,58 com o cupom</b></span><span>✓ <b>Garantia de 7 dias</b></span></div>
     <div class="ps"><b>P.S.</b> Você vai ter em mãos o mesmo passo a passo que a gente usa na Inframe, do primeiro equipamento ao contrato assinado. A diferença entre quem só olha e quem começa é ter o método na mão. Ele está aqui, com 7 dias de garantia. O risco é todo nosso.</div>
   </div>
 </section>
@@ -807,7 +934,7 @@ wireVideo('hookVideo','vover-hook');
 
 document.querySelectorAll('a[href*="pay.kiwify.com.br"]').forEach(function(btn){
   btn.addEventListener('click',function(){
-    if(typeof fbq==='function'){fbq('track','InitiateCheckout',{content_name:'Método Inframe Guestbook',value:(window.BF_ON?252.45:297.00),currency:'BRL'});}
+    if(typeof fbq==='function'){fbq('track','InitiateCheckout',{content_name:'Método Inframe Guestbook',value:(window.BF_ON?237.60:297.00),currency:'BRL'});}
   });
 });
 
@@ -853,6 +980,58 @@ document.querySelectorAll('a[href*="pay.kiwify.com.br"]').forEach(function(btn){
   track.addEventListener('touchstart',function(e){x0=e.touches[0].clientX;},{passive:true});
   track.addEventListener('touchend',function(e){if(x0===null)return;var dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>40){usou();vai(i+(dx<0?1:-1));}x0=null;});
   vai(0);
+})();
+
+// Black Friday Inframe, só para a comunidade: prazo real, igual para todo mundo; no fim tudo volta ao normal sozinho
+(function(){
+  var END=new Date('2026-10-31T23:59:59-03:00').getTime(),CUPOM='BLACKINFRAME';
+  var on=document.querySelectorAll('[data-bf]'),off=document.querySelectorAll('[data-bf-off]');
+  var mbarP=document.querySelector('#mbar .p'),mbarOrig=mbarP?mbarP.innerHTML:'',ativo=null,montou=false,t;
+  function pad(n){return n<10?'0'+n:''+n;}
+  function poe(sel,v){var el=document.querySelectorAll(sel);for(var i=0;i<el.length;i++)el[i].textContent=v;}
+  // fundo da abertura: parede com as capas dos módulos, partículas douradas e brilhos (mesmo visual do banner do grupo)
+  function monta(){
+    if(montou)return;montou=true;
+    var m=['comece','01','02','03','equipamentos','05','06','marketing','meta-ads','vlog'],par=document.getElementById('bfParede');
+    if(par)for(var r=0;r<5;r++)for(var c=0;c<6;c++){var im=document.createElement('img');im.src='modulo-'+m[(r*4+c)%m.length]+'.jpg';im.alt='';par.appendChild(im);}
+    var pts=document.getElementById('bfPts');if(!pts)return;
+    var sd=7,rnd=function(){return (sd=(sd*16807)%2147483647)/2147483647;};
+    for(var k=0;k<60;k++){var i=document.createElement('i'),tm=2+rnd()*8;i.style.width=i.style.height=tm+'px';i.style.left=(rnd()*100)+'%';i.style.top=(rnd()*100)+'%';i.style.opacity=.3+rnd()*.6;if(tm>7)i.style.filter='blur(2px)';pts.appendChild(i);}
+    [[8,14,40],[88,10,32],[6,62,30],[93,48,44],[80,30,22],[18,40,20],[70,86,28]].forEach(function(b,n){
+      var v=document.createElementNS('http://www.w3.org/2000/svg','svg');v.setAttribute('viewBox','0 0 20 20');
+      v.style.left=b[0]+'%';v.style.top=b[1]+'%';v.style.width=v.style.height=b[2]+'px';v.style.animationDelay=(n*.45)+'s';
+      v.innerHTML='<path d="M10 0 C10.6 6.5 13.5 9.4 20 10 C13.5 10.6 10.6 13.5 10 20 C9.4 13.5 6.5 10.6 0 10 C6.5 9.4 9.4 6.5 10 0Z"/>';pts.appendChild(v);
+    });
+  }
+  function liga(sim){
+    window.BF_ON=sim;ativo=sim;
+    document.documentElement.classList.toggle('bf-on',sim);
+    for(var i=0;i<on.length;i++)on[i].hidden=!sim;
+    for(var j=0;j<off.length;j++)off[j].hidden=sim;
+    document.querySelectorAll('a[href*="pay.kiwify.com.br"]').forEach(function(a){
+      var u=new URL(a.href);if(sim)u.searchParams.set('coupon',CUPOM);else u.searchParams.delete('coupon');a.href=u.toString();
+    });
+    if(sim)monta();
+    if(!sim&&mbarP)mbarP.innerHTML=mbarOrig;
+  }
+  function tick(){
+    var left=END-Date.now();
+    if(left<=0){if(ativo!==false)liga(false);clearInterval(t);return;}
+    if(ativo!==true)liga(true);
+    var s=Math.floor(left/1000),d=Math.floor(s/86400),h=Math.floor(s%86400/3600),m=Math.floor(s%3600/60),x=s%60;
+    poe('[data-d]',pad(d));poe('[data-h]',pad(h));poe('[data-m]',pad(m));poe('[data-s]',pad(x));
+    var txt=(d>0?d+'d ':'')+pad(h)+':'+pad(m)+':'+pad(x);
+    poe('[data-cdtxt]',txt);
+    if(mbarP)mbarP.innerHTML='<b>20% off + mentoria</b><small>Black termina em <span class="bf-cdm">'+txt+'</span></small>';
+  }
+  t=setInterval(tick,1000);tick();
+  document.querySelectorAll('.bf-copy').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      function ok(){btn.textContent='Copiado!';setTimeout(function(){btn.textContent='Copiar cupom';},1800);}
+      function fb(){var x=document.createElement('textarea');x.value=CUPOM;x.style.position='fixed';x.style.opacity='0';document.body.appendChild(x);x.select();try{document.execCommand('copy');ok();}catch(e){}document.body.removeChild(x);}
+      if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(CUPOM).then(ok,fb);}else{fb();}
+    });
+  });
 })();
 </script>
 </body>
