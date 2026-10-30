@@ -440,6 +440,19 @@ footer a.zap{color:var(--gold2);font-weight:700}
 .bf-ver{display:inline-block;margin-top:14px;color:var(--muted);font-size:.88rem;text-decoration:underline;text-underline-offset:3px}
 .bf-nota{max-width:520px;margin:14px auto 0;color:var(--muted2);font-size:.76rem;line-height:1.45}
 
+.bf-sorteio{display:flex;align-items:center;gap:12px;max-width:440px;margin:16px auto 0;padding:8px 16px 8px 8px;border:1px solid rgba(235,203,132,.55);border-radius:16px;background:rgba(10,8,6,.78);text-align:left;font-size:.95rem;line-height:1.35;color:var(--cream)}
+.bf-sorteio img{flex:none;width:58px;height:58px;object-fit:contain;background:#fff;border-radius:10px;padding:4px}
+.bf-sorteio b{color:#F6E3B4}
+.bf-sort{background:radial-gradient(700px 420px at 80% 10%,rgba(201,161,90,.14),transparent 60%),var(--bg)}
+.bf-sort .grid{grid-template-columns:1.2fr .8fr}
+.bf-sort .bf-foto{transform:rotate(2.5deg)}
+.bf-sort .bf-foto img{aspect-ratio:640/670;object-fit:contain;background:#fff}
+.bf-passos{list-style:none;display:grid;gap:10px;margin:0 0 22px;padding:0}
+.bf-passos li{display:flex;gap:12px;align-items:center;border:1px solid var(--line);border-radius:14px;padding:12px 16px;background:var(--panel);text-align:left}
+.bf-passos .n{flex:none;width:30px;height:30px;display:grid;place-items:center;border-radius:50%;background:var(--gold2);color:#221806;font-weight:800;font-size:.9rem}
+.bf-chance{font-family:'Fraunces',Georgia,serif;font-style:italic;font-size:1.25rem;color:var(--gold2);margin-bottom:18px}
+.bf-cert{margin-top:16px;color:var(--muted2);font-size:.76rem;line-height:1.45}
+@media(max-width:760px){.bf-sort .grid{grid-template-columns:1fr}.bf-sort .bf-foto{order:-1}}
 .bf-ment{background:radial-gradient(700px 420px at 20% 10%,rgba(201,161,90,.14),transparent 60%),var(--bg2)}
 .bf-ment .grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:44px;align-items:center;max-width:980px;margin:0 auto}
 .bf-foto{position:relative;transform:rotate(-2.5deg);background:#FBF8F2;padding:12px 12px 52px;border-radius:4px;box-shadow:0 26px 54px rgba(0,0,0,.7);max-width:340px;margin:0 auto}
@@ -482,7 +495,7 @@ footer a.zap{color:var(--gold2);font-weight:700}
 </head>
 <body>
 
-<div class="bf-fita" data-bf hidden aria-label="Black Friday Inframe: R$ 100 de desconto e mentoria com a Manu para os 10 primeiros, só para a comunidade, até 31/10 às 23h59"><div class="rolo" aria-hidden="true"><span>Black Friday Inframe</span><span>✦ R$ 100 OFF + mentoria com a Manu para os 10 primeiros</span><span>✦ só para a comunidade</span><span>✦ até 31/10 às 23h59</span><span>Black Friday Inframe</span><span>✦ R$ 100 OFF + mentoria com a Manu para os 10 primeiros</span><span>✦ só para a comunidade</span><span>✦ até 31/10 às 23h59</span><span>Black Friday Inframe</span><span>✦ R$ 100 OFF + mentoria com a Manu para os 10 primeiros</span><span>✦ só para a comunidade</span><span>✦ até 31/10 às 23h59</span><span>Black Friday Inframe</span><span>✦ R$ 100 OFF + mentoria com a Manu para os 10 primeiros</span><span>✦ só para a comunidade</span><span>✦ até 31/10 às 23h59</span></div></div>
+<div class="bf-fita" data-bf hidden aria-label="Black Friday Inframe: R$ 100 de desconto e mentoria com a Manu para os 10 primeiros, só para a comunidade, até 31/10 às 23h59"><div class="rolo" aria-hidden="true"><span>Black Friday Inframe</span><span>✦ R$ 100 OFF + mentoria com a Manu para os 10 primeiros</span><span>✦ sorteio de uma Instax Mini 13 + 10 filmes</span><span>✦ só para a comunidade</span><span>✦ até 31/10 às 23h59</span><span>Black Friday Inframe</span><span>✦ R$ 100 OFF + mentoria com a Manu para os 10 primeiros</span><span>✦ sorteio de uma Instax Mini 13 + 10 filmes</span><span>✦ só para a comunidade</span><span>✦ até 31/10 às 23h59</span><span>Black Friday Inframe</span><span>✦ R$ 100 OFF + mentoria com a Manu para os 10 primeiros</span><span>✦ sorteio de uma Instax Mini 13 + 10 filmes</span><span>✦ só para a comunidade</span><span>✦ até 31/10 às 23h59</span><span>Black Friday Inframe</span><span>✦ R$ 100 OFF + mentoria com a Manu para os 10 primeiros</span><span>✦ sorteio de uma Instax Mini 13 + 10 filmes</span><span>✦ só para a comunidade</span><span>✦ até 31/10 às 23h59</span></div></div>
 
 <nav id="nav">
   <div class="wrap">
@@ -502,6 +515,7 @@ footer a.zap{color:var(--gold2);font-weight:700}
     <div class="bf-oferta"><b>R$ 100 OFF</b> <i>+</i> mentoria individual com&nbsp;a&nbsp;Manu</div>
     <p class="bf-plano">ao vivo, para montar com ela o seu plano de carreira no guestbook</p>
     <div class="bf-dez">★ Mentoria só para os 10 primeiros</div>
+    <div class="bf-sorteio"><img src="instax-mini-13.jpg" alt="" width="58" height="58"><span>Os <b>30 primeiros</b> concorrem a uma <b>Instax Mini 13 + 10 filmes</b></span></div>
     <div class="bf-preco"><div class="bf-de"><s>R$ 297</s><span class="bf-off">− R$ 100</span></div><span class="to"><b>R$ 196,02</b> <span class="qtd">à vista</span></span><small>ou 12x de R$ 20,27 no cartão</small></div>
     <div class="bf-cdtit"><span class="dotpulse"></span>A Black termina em</div>
     <div class="bf-cd" aria-label="Tempo restante da Black Friday"><div><b data-d>00</b><small>dias</small></div><div><b data-h>00</b><small>horas</small></div><div><b data-m>00</b><small>min</small></div><div><b data-s>00</b><small>seg</small></div></div>
@@ -764,6 +778,26 @@ footer a.zap{color:var(--gold2);font-weight:700}
   </div>
 </section>
 
+<section class="bf-ment bf-sort sec" id="sorteio" data-bf hidden>
+  <div class="wrap">
+    <div class="grid">
+      <div class="reveal">
+        <span class="eyebrow">Sorteio dos 30 primeiros</span>
+        <h2 class="h">Concorra a uma <span class="gold">Instax Mini 13 + 10 filmes</span></h2>
+        <p class="lead">A câmera para você começar a fazer guestbook de verdade, com filme para os primeiros eventos.</p>
+        <ol class="bf-passos">
+          <li><span class="n">1</span><span>Compre o curso com o cupom <b>BLACKINFRAME</b></span></li>
+          <li><span class="n">2</span><span>Esteja entre os <b>30 primeiros</b> pagamentos aprovados</span></li>
+          <li><span class="n">3</span><span>Sorteio com resultado aqui na comunidade</span></li>
+        </ol>
+        <p class="bf-chance">Só 30 pessoas concorrem. Sua chance é de no mínimo 1 em 30.</p>
+        <a href="https://pay.kiwify.com.br/auJqmnG" class="btn bf-btn">Quero concorrer à Instax <span class="ar">→</span></a>
+      </div>
+      <div class="bf-foto reveal"><img src="instax-mini-13.jpg" alt="Câmera Instax Mini 13 azul, prêmio do sorteio" loading="lazy" width="640" height="670"><span>+ 10 filmes</span></div>
+    </div>
+  </div>
+</section>
+
 <section class="offer sec" id="oferta">
   <div class="wrap">
     <div class="center reveal">
@@ -776,6 +810,7 @@ footer a.zap{color:var(--gold2);font-weight:700}
       <div class="in">
         <ul class="stack">
           <li class="bf-li" data-bf hidden><span class="ck">★</span><div class="tx"><b>R$ 100 de desconto no curso</b><small>com o cupom BLACKINFRAME, até 31/10 às 23h59</small></div><span class="val bf-val">Black</span></li>
+          <li class="bf-li" data-bf hidden><span class="ck">★</span><div class="tx"><b>Sorteio de uma Instax Mini 13 + 10 filmes</b><small>entre os 30 primeiros compradores</small></div><span class="val bf-val">Black</span></li>
           <li class="bf-li" data-bf hidden><span class="ck">★</span><div class="tx"><b>Mentoria individual ao vivo com a Manu</b><small>o seu plano de carreira no guestbook, para os 10 primeiros pela ordem de pagamento aprovado</small></div><span class="val bf-val">Black</span></li>
           <li><span class="ck">✓</span><div class="tx"><b>Curso completo, 49 aulas</b><small>10 módulos, do equipamento ao contrato assinado</small></div><span class="val" style="text-decoration:none">Incluso</span></li>
           <li><span class="ck">✓</span><div class="tx"><b>Acesso vitalício</b><small>entre quando quiser e assista quantas vezes precisar, sem prazo de expiração</small></div><span class="val">Incluso</span></li>
@@ -826,6 +861,7 @@ footer a.zap{color:var(--gold2);font-weight:700}
       <div class="ai"><button class="aq">Como recebo o acesso ao curso?<span class="pl">+</span></button><div class="aa"><p>Assim que o pagamento é confirmado, o acesso é liberado na hora pela Kiwify. Você recebe o login por e-mail e já pode começar a assistir.</p></div></div>
       <div class="ai"><button class="aq">Tem suporte se eu travar?<span class="pl">+</span></button><div class="aa"><p>Tem. Você conta com suporte em horário comercial e com o grupo no WhatsApp, onde a comunidade e a gente trocamos experiências todos os dias.</p></div></div>
       <div class="ai" data-bf hidden><button class="aq">Como funciona a mentoria da Black Friday?<span class="pl">+</span></button><div class="aa"><p>É uma mentoria individual e ao vivo com a Manu para montar o seu plano de carreira no guestbook. Ela é para os 10 primeiros que comprarem com o cupom BLACKINFRAME até 31/10 às 23h59, pela ordem de pagamento aprovado. Depois da compra, a gente entra em contato para agendar.</p></div></div>
+      <div class="ai" data-bf hidden><button class="aq">Como funciona o sorteio da Instax?<span class="pl">+</span></button><div class="aa"><p>Os 30 primeiros que comprarem com o cupom BLACKINFRAME, pela ordem de pagamento aprovado, concorrem a uma Instax Mini 13 com 10 filmes. O resultado sai na comunidade.</p></div></div>
       <div class="ai"><button class="aq">Quais as formas de pagamento?<span class="pl">+</span></button><div class="aa"><p>Cartão de crédito em até 12x, Pix ou boleto. À vista sai por <span data-bf-off>R$ 297,00</span><span data-bf hidden>R$ 196,02 com o cupom BLACKINFRAME (R$ 100 de desconto), válido até 31/10 às 23h59</span>.</p></div></div>
     </div>
   </div>
@@ -836,7 +872,7 @@ footer a.zap{color:var(--gold2);font-weight:700}
     <span class="eyebrow c">Sua vez</span>
     <h2 class="h" style="margin-top:16px">Enquanto você pensa, alguém na sua cidade já está <span class="gold">fechando o próximo evento</span></h2>
     <p class="lead center" style="margin:0 auto 18px">O método já está pronto e liberado. O primeiro passo é seu.</p>
-    <div class="bf-final" data-bf hidden>R$ 100 OFF + mentoria para os 10 primeiros termina em <b data-cdtxt>--</b></div>
+    <div class="bf-final" data-bf hidden>R$ 100 OFF + mentoria + sorteio da Instax termina em <b data-cdtxt>--</b></div>
     <a href="https://pay.kiwify.com.br/auJqmnG" class="btn" data-bf-txt>Quero começar agora <span class="ar">→</span></a>
     <div class="micro c" style="justify-content:center"><span>✓ <b>Acesso imediato</b></span><span>✓ <b>Acesso vitalício</b></span><span data-bf-off>✓ <b>12x de R$ 30,72</b></span><span data-bf hidden>✓ <b>12x de R$ 20,27 com o cupom</b></span><span>✓ <b>Garantia de 7 dias</b></span></div>
     <div class="ps"><b>P.S.</b> Você vai ter em mãos o mesmo passo a passo que a gente usa na Inframe, do primeiro equipamento ao contrato assinado. A diferença entre quem só olha e quem começa é ter o método na mão. Ele está aqui, com 7 dias de garantia. O risco é todo nosso.</div>
