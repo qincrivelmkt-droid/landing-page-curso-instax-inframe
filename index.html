@@ -446,9 +446,12 @@ footer a.zap{color:var(--gold2);font-weight:700}
 .bf-ver{display:inline-block;margin-top:14px;color:var(--muted);font-size:.88rem;text-decoration:underline;text-underline-offset:3px}
 .bf-nota{max-width:520px;margin:14px auto 0;color:var(--muted2);font-size:.76rem;line-height:1.45}
 
-.bf-sorteio{display:flex;align-items:center;gap:12px;max-width:440px;margin:16px auto 0;padding:8px 16px 8px 8px;border:1px solid rgba(235,203,132,.55);border-radius:16px;background:rgba(10,8,6,.78);text-align:left;font-size:.95rem;line-height:1.35;color:var(--cream)}
-.bf-sorteio img{flex:none;width:58px;height:58px;object-fit:contain;background:#fff;border-radius:10px;padding:4px}
-.bf-sorteio b{color:#F6E3B4}
+.bf-sorteio{position:relative;display:flex;align-items:center;gap:16px;max-width:440px;margin:22px auto 0;padding:12px 18px 12px 12px;border:2px solid #EBCB84;border-radius:18px;background:linear-gradient(135deg,rgba(58,40,9,.92),rgba(14,10,6,.95));text-align:left;font-size:clamp(1rem,3.4vw,1.12rem);line-height:1.35;color:var(--cream);box-shadow:0 0 40px -6px rgba(246,227,180,.55);animation:bfsort 2.4s ease-in-out infinite}
+.bf-sorteio img{flex:none;width:96px;height:96px;object-fit:contain;background:#fff;border-radius:12px;padding:6px;transform:rotate(-4deg);box-shadow:0 10px 24px rgba(0,0,0,.6)}
+.bf-sorteio em{display:inline-block;margin-bottom:6px;font-style:normal;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;font-weight:800;color:#221806;background:var(--gold2);border-radius:30px;padding:4px 10px}
+.bf-sorteio b{color:#F6E3B4;font-weight:800}
+.bf-sorteio .gde{display:block;font-size:1.2em;line-height:1.2}
+@keyframes bfsort{50%{box-shadow:0 0 60px -4px rgba(246,227,180,.8)}}
 .bf-sort{background:radial-gradient(700px 420px at 80% 10%,rgba(201,161,90,.14),transparent 60%),var(--bg)}
 .bf-sort .grid{grid-template-columns:1.2fr .8fr}
 .bf-sort .bf-foto{transform:rotate(2.5deg)}
@@ -489,7 +492,7 @@ footer a.zap{color:var(--gold2);font-weight:700}
 .bf-final b{font-variant-numeric:tabular-nums;color:#F6E3B4}
 .mbar .p .bf-cdm{color:#FF6A5C;font-variant-numeric:tabular-nums;font-weight:800}
 @media(max-width:480px){.ocard .bf-top{letter-spacing:.1em;font-size:.76rem}.bf-excl{letter-spacing:.14em;font-size:.62rem;padding:7px 14px}.bf-dez{white-space:nowrap;font-size:.98rem;padding:11px 16px 12px}}
-@media(prefers-reduced-motion:reduce){.bf-fita .rolo,.bf-raios,.bf-pts svg,.bf-cd div{animation:none}}
+@media(prefers-reduced-motion:reduce){.bf-fita .rolo,.bf-raios,.bf-pts svg,.bf-cd div,.bf-sorteio{animation:none}}
 </style>
 <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
@@ -521,7 +524,7 @@ footer a.zap{color:var(--gold2);font-weight:700}
     <div class="bf-oferta"><b>R$ 100 OFF</b> <i>+</i> mentoria individual com&nbsp;a&nbsp;Manu</div>
     <p class="bf-plano">ao vivo, para montar com ela o seu plano de carreira no guestbook</p>
     <div class="bf-dez">★ Mentoria só para os 10 primeiros</div>
-    <div class="bf-sorteio"><img src="instax-mini-13.jpg" alt="" width="58" height="58"><span>Os <b>30 primeiros</b> concorrem a uma <b>Instax Mini 13 + 10 filmes</b></span></div>
+    <div class="bf-sorteio"><img src="instax-mini-13.jpg" alt="" width="96" height="96"><span><em>Sorteio</em><b class="gde">Instax Mini 13 + 10 filmes</b>entre os <b>30 primeiros</b> compradores</span></div>
     <div class="bf-preco"><div class="bf-de"><s>R$ 297</s><span class="bf-off">− R$ 100</span></div><span class="to"><b>R$ 196,02</b> <span class="qtd">à vista</span></span><small class="bf-12x">ou <b>12x de R$ 20,27</b> no cartão</small></div>
     <div class="bf-cdtit"><span class="dotpulse"></span>A Black termina em</div>
     <div class="bf-cd" aria-label="Tempo restante da Black Friday"><div><b data-d>00</b><small>dias</small></div><div><b data-h>00</b><small>horas</small></div><div><b data-m>00</b><small>min</small></div><div><b data-s>00</b><small>seg</small></div></div>
