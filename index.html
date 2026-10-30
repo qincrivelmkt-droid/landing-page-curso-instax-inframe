@@ -420,7 +420,8 @@ footer a.zap{color:var(--gold2);font-weight:700}
 .bf-dez{display:inline-block;margin-top:22px;padding:13px 26px 14px;transform:rotate(-2deg);font-weight:800;font-size:clamp(1.05rem,3.6vw,1.4rem);letter-spacing:.02em;color:#140E05;background:linear-gradient(115deg,#A97F3E 0%,#F6E3B4 22%,#D4AC6E 40%,#FFF3D2 52%,#C9A458 68%,#F1DCA7 86%,#A97F3E 100%);box-shadow:0 0 0 3px rgba(11,10,8,.9),0 0 0 5px #E8CF95,0 0 70px rgba(246,227,180,.5),0 18px 40px rgba(0,0,0,.6)}
 .bf-preco{margin-top:30px;display:flex;flex-direction:column;align-items:center;gap:2px}
 .bf-de{display:flex;align-items:center;justify-content:center;gap:12px}
-.bf-de s{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:clamp(1.6rem,5vw,2.1rem);color:var(--muted);text-decoration-color:#E0584A;text-decoration-thickness:3px}
+.bf-de s{position:relative;text-decoration:none;font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:clamp(1.6rem,5vw,2.1rem);color:var(--muted)}
+.bf-de s::after{content:"";position:absolute;left:-6%;right:-6%;top:52%;height:3px;border-radius:3px;background:#E0584A;transform:rotate(-14deg);box-shadow:0 0 6px rgba(224,88,74,.6)}
 .bf-off{display:inline-block;transform:rotate(-3deg);background:linear-gradient(100deg,#B48A47,#F6E3B4 50%,#B48A47);color:#140E05;font-weight:800;font-size:clamp(.95rem,3vw,1.1rem);padding:6px 12px;border-radius:8px;box-shadow:0 0 24px rgba(246,227,180,.35)}
 .bf-pl .n.rs{font-size:2.2rem}
 .bf-preco .to{font-family:'Fraunces',Georgia,serif;font-weight:600;font-size:clamp(2.2rem,7vw,3rem);line-height:1.1}
@@ -428,10 +429,13 @@ footer a.zap{color:var(--gold2);font-weight:700}
 .bf-preco .to .qtd{font-size:.42em;vertical-align:.5em;font-weight:500;color:var(--muted)}
 .bf-preco small{color:var(--muted);font-size:.92rem}
 .bf-cd{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;max-width:440px;margin:22px auto 0}
-.bf-cd div{background:rgba(10,8,6,.78);border:1px solid rgba(235,203,132,.5);border-radius:14px;padding:12px 4px 9px;box-shadow:inset 0 0 18px rgba(201,161,90,.12)}
-.bf-cd b{display:block;font-family:'Fraunces',Georgia,serif;font-variant-numeric:tabular-nums;font-size:clamp(1.9rem,7vw,2.6rem);font-weight:600;line-height:1;color:#F6E3B4}
-.bf-cd small{display:block;margin-top:6px;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:800}
-.bf-cdtit{margin-top:26px;font-size:.74rem;letter-spacing:.24em;text-transform:uppercase;font-weight:800;color:var(--gold2);display:inline-flex;align-items:center;gap:8px}
+.bf-cd div{background:linear-gradient(180deg,#3A0B08,#1C0503);border:1px solid #FF4D3D;border-radius:14px;padding:12px 4px 9px;box-shadow:0 0 22px rgba(255,59,43,.45),inset 0 0 18px rgba(255,77,61,.25);animation:bfcd 2s ease-in-out infinite}
+.bf-cd b{display:block;font-family:'Fraunces',Georgia,serif;font-variant-numeric:tabular-nums;font-size:clamp(1.9rem,7vw,2.6rem);font-weight:600;line-height:1;color:#fff;text-shadow:0 0 12px rgba(255,77,61,.9)}
+.bf-cd small{display:block;margin-top:6px;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:#FF9C90;font-weight:800}
+.bf-cdtit{margin-top:26px;font-size:.74rem;letter-spacing:.24em;text-transform:uppercase;font-weight:800;color:#FF6A5C;display:inline-flex;align-items:center;gap:8px}
+.bf-cdtit .dotpulse{background:#FF3B2B;animation-name:bfpulse}
+@keyframes bfpulse{0%{box-shadow:0 0 0 0 rgba(255,59,43,.7)}70%{box-shadow:0 0 0 9px rgba(255,59,43,0)}100%{box-shadow:0 0 0 0 rgba(255,59,43,0)}}
+@keyframes bfcd{50%{box-shadow:0 0 34px rgba(255,59,43,.75),inset 0 0 22px rgba(255,77,61,.4)}}
 .bf-coupon{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px 12px;max-width:440px;margin:16px auto 0;padding:11px 14px;border:1px dashed var(--gold);border-radius:12px;background:rgba(201,161,90,.1);font-size:.92rem}
 .bf-coupon b{color:var(--gold2);letter-spacing:.08em}
 .bf-copy{font:800 .8rem 'Manrope',system-ui,sans-serif;color:#221806;background:var(--gold2);border:0;border-radius:40px;padding:8px 14px;cursor:pointer}
@@ -481,9 +485,9 @@ footer a.zap{color:var(--gold2);font-weight:700}
 .pb .bf-coupon{margin-bottom:18px}
 .bf-final{margin:0 auto 18px;color:var(--gold2);font-weight:700;font-size:.95rem}
 .bf-final b{font-variant-numeric:tabular-nums;color:#F6E3B4}
-.mbar .p .bf-cdm{color:#F6E3B4;font-variant-numeric:tabular-nums;font-weight:800}
+.mbar .p .bf-cdm{color:#FF6A5C;font-variant-numeric:tabular-nums;font-weight:800}
 @media(max-width:480px){.ocard .bf-top{letter-spacing:.1em;font-size:.76rem}.bf-excl{letter-spacing:.14em;font-size:.62rem;padding:7px 14px}.bf-dez{white-space:nowrap;font-size:.98rem;padding:11px 16px 12px}}
-@media(prefers-reduced-motion:reduce){.bf-fita .rolo,.bf-raios,.bf-pts svg{animation:none}}
+@media(prefers-reduced-motion:reduce){.bf-fita .rolo,.bf-raios,.bf-pts svg,.bf-cd div{animation:none}}
 </style>
 <script type="text/javascript">
     (function(c,l,a,r,i,t,y){
