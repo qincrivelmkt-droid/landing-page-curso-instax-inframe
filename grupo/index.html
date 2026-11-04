@@ -32,7 +32,6 @@ src="https://www.facebook.com/tr?id=3042384852613397&ev=PageView&noscript=1"
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="../grupo-print-thalita.jpg">
 <style>
 :root{
   /* Black Inframe: preto, branco e dourado */
@@ -60,15 +59,25 @@ img{display:block;max-width:100%}
 .etapa.on{display:block}
 @keyframes entra{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 
-/* Foto em preto e branco com selo dourado */
-.foto{position:relative;margin-bottom:28px}
-.imagem{width:100%;height:210px;object-fit:cover;border-radius:4px;filter:grayscale(1) contrast(1.08) brightness(.8)}
-.selo{position:absolute;right:-6px;bottom:-14px;background:var(--ouro);color:#000;font-weight:900;line-height:.9;text-align:center;padding:12px 14px 10px;transform:rotate(-4deg);box-shadow:0 0 0 4px #000,0 14px 30px rgba(0,0,0,.6)}
-.selo b{display:block;font-size:1.9rem;letter-spacing:-.04em}
-.selo small{display:block;font-size:.72rem;letter-spacing:.2em;margin-top:4px}
+/* Cartaz da Black: R$100 OFF sobre a parede de capas dos módulos */
+.cartaz{position:relative;overflow:hidden;height:230px;border-radius:6px;margin-bottom:28px;background:#000;box-shadow:inset 0 0 0 1.5px var(--ouro);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;isolation:isolate}
+.parede{position:absolute;left:50%;top:50%;width:170%;display:grid;grid-template-columns:repeat(6,1fr);gap:10px;z-index:-2;
+  transform:translate(-50%,-50%) rotate(-9deg);opacity:.75}
+.parede img{width:100%;aspect-ratio:2/3;object-fit:cover;border-radius:6px}
+.vela{position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse 75% 65% at 50% 50%,rgba(0,0,0,.72),rgba(0,0,0,.5))}
+.cartaz::after{content:"";position:absolute;inset:0;border:1.5px solid var(--ouro);border-radius:6px;pointer-events:none}
+.c-topo{font-weight:800;font-size:.72rem;letter-spacing:.3em;color:var(--ouro)}
+.c-valor{font-weight:900;font-size:4.6rem;line-height:.9;letter-spacing:-.05em;margin:8px 0 6px}
+.c-valor small{font-size:.45em;vertical-align:top;margin-right:6px;position:relative;top:.25em;letter-spacing:-.02em}
+.c-valor .off{color:var(--ouro);filter:url(#contorno);margin-left:8px;letter-spacing:.01em}
+.c-mais{font-weight:700;font-size:.85rem;letter-spacing:.16em}
+.c-mais b{color:var(--ouro);font-weight:900}
+.c-data{margin-top:12px;padding:6px 14px;border:1.5px solid var(--ouro);font-weight:800;font-size:.7rem;letter-spacing:.2em}
+.c-data em{font-style:normal;color:var(--ouro)}
 
 .black{font-weight:900;font-size:4.6rem;line-height:.82;letter-spacing:-.05em}
-.friday{font-weight:600;font-size:1.25rem;letter-spacing:.36em;color:var(--ouro);margin:10px 0 18px}
+.friday{font-weight:600;font-size:1.25rem;letter-spacing:.36em;color:var(--ouro);margin:10px 0 0}
 .oferta{font-size:1.25rem;font-weight:600;line-height:1.25}
 .oferta b{font-weight:900}
 .oferta .ouro{color:var(--ouro)}
@@ -78,7 +87,7 @@ img{display:block;max-width:100%}
 
 h2{font-weight:900;font-size:1.6rem;line-height:1.1;letter-spacing:-.025em;margin-bottom:22px;text-wrap:balance}
 h2 .ouro{color:var(--ouro)}
-.pergunta{font-size:1.08rem;font-weight:700;margin:26px 0 14px}
+.pergunta{font-size:1.08rem;font-weight:700;margin:22px 0 14px}
 
 /* Opções: cartão preto, contorno dourado ao marcar */
 .opcao{position:relative;display:block;width:100%;text-align:left;font:inherit;color:var(--txt);background:var(--panel);border:1.5px solid var(--linha);border-radius:6px;padding:17px 44px 17px 20px;margin-bottom:12px;cursor:pointer;transition:border-color .15s,transform .15s}
@@ -115,14 +124,15 @@ input.bad{border-color:var(--err)}
   .marca{font-size:.95rem;margin-bottom:16px}
   .progresso{margin-bottom:32px}
   .etapa.on{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
-  .foto,.so-desk{display:block;margin:0}
-  .imagem{height:min(70vh,640px)}
-  .selo{right:-22px;bottom:34px;padding:18px 22px 14px}
-  .selo b{font-size:3rem}
-  .selo small{font-size:.9rem}
+  .cartaz,.so-desk{display:flex;height:min(70vh,640px);margin:0}
+  .parede{width:150%;gap:16px}
+  .c-topo{font-size:1rem}
+  .c-valor{font-size:7rem;margin:18px 0 14px}
+  .c-mais{font-size:1.3rem}
+  .c-data{margin-top:30px;padding:10px 22px;font-size:1rem}
   .conteudo{max-width:540px}
   .black{font-size:7.4rem}
-  .friday{font-size:1.7rem;margin:12px 0 20px}
+  .friday{font-size:1.7rem;margin:12px 0 0}
   .oferta{font-size:1.6rem}
   .quando{font-size:.95rem;margin-top:20px;padding-top:12px}
   h2{font-size:2.9rem;margin-bottom:30px}
@@ -141,6 +151,7 @@ input.bad{border-color:var(--err)}
 </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><filter id="contorno" x="-5%" y="-5%" width="110%" height="110%"><feMorphology in="SourceGraphic" operator="erode" radius="3" result="dentro"/><feComposite in="SourceGraphic" in2="dentro" operator="out"/></filter></svg>
 <div class="faixa" aria-hidden="true"><div>BLACK FRIDAY INFRAME ✦ R$100 OFF ✦ + MENTORIA ✦ COMEÇA 9/11 ✦ SÓ NO GRUPO ✦ BLACK FRIDAY INFRAME ✦ R$100 OFF ✦ + MENTORIA ✦ COMEÇA 9/11 ✦ SÓ NO GRUPO ✦&nbsp;</div></div>
 <div class="wrap">
   <div class="marca"><span>INFRAME</span><span>BLACK 2026</span></div>
@@ -148,15 +159,15 @@ input.bad{border-color:var(--err)}
 
   <!-- Etapa 1 -->
   <section class="etapa on" data-etapa="1">
-    <div class="foto">
-      <img class="imagem" src="../guestbook-principal.jpeg" alt="" style="object-position:center 78%" />
-      <div class="selo"><b>R$100</b><small>OFF</small></div>
+    <div class="cartaz"><div class="parede"></div><div class="vela"></div>
+      <div class="c-topo">BLACK FRIDAY INFRAME</div>
+      <div class="c-valor"><small>R$</small>100<span class="off">OFF</span></div>
+      <div class="c-mais">+ MENTORIA NO <b>MÉTODO INFRAME</b></div>
+      <div class="c-data">COMEÇA <em>9/11</em> · SÓ NO GRUPO</div>
     </div>
     <div class="conteudo">
     <div class="black">BLACK</div>
     <div class="friday">FRIDAY</div>
-    <p class="oferta"><b>R$100 OFF</b> + uma <b>mentoria</b> no nosso <b class="ouro">Método Inframe</b>.</p>
-    <div class="quando"><span>COMEÇA <em>9/11</em></span><span>SÓ NO GRUPO</span></div>
     <p class="pergunta">Você já trabalha com eventos?</p>
     <button class="opcao" data-p="trabalha_eventos" data-v="sim">
       <b>Sim, já trabalho</b><small>Guestbook, storymaker, videomaker, fotógrafo...</small>
@@ -169,9 +180,11 @@ input.bad{border-color:var(--err)}
 
   <!-- Etapa 2 -->
   <section class="etapa" data-etapa="2">
-    <div class="foto">
-      <img class="imagem" src="../grupo-print-thalita.jpg" alt="" style="object-position:center 22%" />
-      <div class="selo"><b>9/11</b><small>COMEÇA</small></div>
+    <div class="cartaz so-desk"><div class="parede"></div><div class="vela"></div>
+      <div class="c-topo">BLACK FRIDAY INFRAME</div>
+      <div class="c-valor"><small>R$</small>100<span class="off">OFF</span></div>
+      <div class="c-mais">+ MENTORIA NO <b>MÉTODO INFRAME</b></div>
+      <div class="c-data">COMEÇA <em>9/11</em> · SÓ NO GRUPO</div>
     </div>
     <div class="conteudo">
     <h2>O que você mais quer aprender <span class="ouro">nessa Black?</span></h2>
@@ -183,9 +196,11 @@ input.bad{border-color:var(--err)}
 
   <!-- Etapa 3 -->
   <section class="etapa" data-etapa="3">
-    <div class="foto so-desk">
-      <img class="imagem" src="../grupo-print-1.jpg" alt="" style="object-position:center 20%" />
-      <div class="selo"><b>R$100</b><small>OFF</small></div>
+    <div class="cartaz so-desk"><div class="parede"></div><div class="vela"></div>
+      <div class="c-topo">BLACK FRIDAY INFRAME</div>
+      <div class="c-valor"><small>R$</small>100<span class="off">OFF</span></div>
+      <div class="c-mais">+ MENTORIA NO <b>MÉTODO INFRAME</b></div>
+      <div class="c-data">COMEÇA <em>9/11</em> · SÓ NO GRUPO</div>
     </div>
     <form id="form" class="conteudo" novalidate>
       <h2>Pra onde mandamos o link do <span class="ouro">grupo da Black?</span></h2>
@@ -204,9 +219,11 @@ input.bad{border-color:var(--err)}
 
   <!-- Fim -->
   <section class="etapa" data-etapa="4">
-    <div class="foto so-desk">
-      <img class="imagem" src="../guestbook-principal.jpeg" alt="" style="object-position:center 78%" />
-      <div class="selo"><b>9/11</b><small>COMEÇA</small></div>
+    <div class="cartaz so-desk"><div class="parede"></div><div class="vela"></div>
+      <div class="c-topo">BLACK FRIDAY INFRAME</div>
+      <div class="c-valor"><small>R$</small>100<span class="off">OFF</span></div>
+      <div class="c-mais">+ MENTORIA NO <b>MÉTODO INFRAME</b></div>
+      <div class="c-data">COMEÇA <em>9/11</em> · SÓ NO GRUPO</div>
     </div>
     <div class="conteudo fim">
     <div class="ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
@@ -218,6 +235,18 @@ input.bad{border-color:var(--err)}
 </div>
 
 <script>
+// Parede de capas dos módulos atrás do cartaz
+(function () {
+  var m = ['comece', '01', '02', '03', 'equipamentos', '05', '06', 'marketing', 'meta-ads', 'vlog'];
+  document.querySelectorAll('.parede').forEach(function (p) {
+    for (var i = 0; i < 24; i++) {
+      var img = document.createElement('img');
+      img.src = '../modulo-' + m[(i * 3 + (i / 6 | 0)) % m.length] + '.jpg';
+      img.alt = '';
+      p.appendChild(img);
+    }
+  });
+})();
 var PLANILHA_URL = 'https://script.google.com/macros/s/AKfycbz1zNCVmA9o8LFxu35M7SQlIkFdYLkg6xuBdacjimYzjcdQU1hCYvLoFJpqKsNTFejl-g/exec';
 var GRUPO_URL = 'https://chat.whatsapp.com/JXZoUaPMgRmHy9aOWH2CI2';
 var respostas = { trabalha_eventos: '', interesse: '' };
