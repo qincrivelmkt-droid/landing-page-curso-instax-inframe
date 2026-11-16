@@ -492,6 +492,15 @@ footer a.zap{color:var(--gold2);font-weight:700}
 .bf-final b{font-variant-numeric:tabular-nums;color:#F6E3B4}
 .mbar .p .bf-cdm{color:#FF6A5C;font-variant-numeric:tabular-nums;font-weight:800}
 @media(max-width:480px){.ocard .bf-top{letter-spacing:.1em;font-size:.76rem}.bf-excl{letter-spacing:.14em;font-size:.62rem;padding:7px 14px}.bf-dez{white-space:nowrap;font-size:.98rem;padding:11px 16px 12px}}
+/* aumento para R$ 397 em 01/01/2027: [data-up] aparece do fim da Black até a virada do ano */
+[data-up][hidden]{display:none!important}
+.up-fita{position:relative;z-index:61;background:#120E09;border-bottom:1px solid rgba(201,161,90,.4);color:var(--cream);text-align:center;font-size:.86rem;line-height:1.4;padding:10px 16px}
+.up-fita b{color:var(--gold2)}
+.up-cd{display:inline-block;margin-left:6px;font-variant-numeric:tabular-nums;font-weight:800;color:#F6E3B4;white-space:nowrap}
+.bf-up{margin-top:12px;color:var(--cream);font-size:clamp(.92rem,2.8vw,1rem)}
+.bf-up b{color:#F6E3B4}
+.pb .up-nota{margin:-12px 0 20px;color:var(--gold2);font-size:.9rem;line-height:1.4}
+.pb .up-nota b{color:#F6E3B4}
 @media(prefers-reduced-motion:reduce){.bf-fita .rolo,.bf-raios,.bf-pts svg,.bf-cd div,.bf-sorteio{animation:none}}
 </style>
 <script type="text/javascript">
@@ -505,6 +514,8 @@ footer a.zap{color:var(--gold2);font-weight:700}
 <body>
 
 <div class="bf-fita" data-bf hidden aria-label="Black Friday Inframe: R$ 100 de desconto no Método Inframe Guestbook, até 18/11 às 20h."><div class="rolo" aria-hidden="true"><span>Black Friday Inframe</span><span>✦ R$ 100 OFF</span><span>✦ cupom BLACKINFRAME</span><span>✦ até 18/11 às 20h</span><span>Black Friday Inframe</span><span>✦ R$ 100 OFF</span><span>✦ cupom BLACKINFRAME</span><span>✦ até 18/11 às 20h</span><span>Black Friday Inframe</span><span>✦ R$ 100 OFF</span><span>✦ cupom BLACKINFRAME</span><span>✦ até 18/11 às 20h</span><span>Black Friday Inframe</span><span>✦ R$ 100 OFF</span><span>✦ cupom BLACKINFRAME</span><span>✦ até 18/11 às 20h</span></div></div>
+
+<div class="up-fita" data-up hidden>O Método cresceu para <b>10 módulos e 49 aulas</b>. A partir de 1º de janeiro de 2027, o valor passa para <b>R$ 397</b>.<span class="up-cd">Faltam <span data-upcd>--</span></span></div>
 
 <nav id="nav">
   <div class="wrap">
@@ -524,6 +535,7 @@ footer a.zap{color:var(--gold2);font-weight:700}
     <div class="bf-oferta"><b>R$ 100 OFF</b> <i>no</i> Método Inframe&nbsp;Guestbook</div>
     <p class="bf-plano">com o cupom BLACKINFRAME, até 18/11 às 20h</p>
     <div class="bf-preco"><div class="bf-de"><s>R$ 297</s><span class="bf-off">− R$ 100</span></div><span class="to"><b>R$ 196,02</b> <span class="qtd">à vista</span></span><small class="bf-12x">ou <b>12x de R$ 20,27</b> no cartão</small></div>
+    <p class="bf-up">Em janeiro de 2027 o Método passa a custar <b>R$ 397</b>.</p>
     <div class="bf-cdtit"><span class="dotpulse"></span>A Black termina em</div>
     <div class="bf-cd" aria-label="Tempo restante da Black Friday"><div><b data-d>07</b><small>dias</small></div><div><b data-h>00</b><small>horas</small></div><div><b data-m>00</b><small>min</small></div><div><b data-s>00</b><small>seg</small></div></div>
     <div class="bf-coupon"><span>Cupom <b>BLACKINFRAME</b></span><button type="button" class="bf-copy">Copiar cupom</button></div>
@@ -808,12 +820,14 @@ footer a.zap{color:var(--gold2);font-weight:700}
         <div class="pb">
           <div data-bf hidden>
             <div class="bf-preco"><div class="bf-de"><s>R$ 297</s><span class="bf-off">− R$ 100</span></div><span class="to"><b>R$ 196,02</b> <span class="qtd">à vista</span></span><small class="bf-12x">ou <b>12x de R$ 20,27</b> no cartão, com o cupom</small></div>
+            <p class="bf-up">Em janeiro de 2027 o Método passa a custar <b>R$ 397</b>.</p>
             <div class="bf-cdtit"><span class="dotpulse"></span>A Black termina em</div>
             <div class="bf-cd" aria-label="Tempo restante da Black Friday"><div><b data-d>07</b><small>dias</small></div><div><b data-h>00</b><small>horas</small></div><div><b data-m>00</b><small>min</small></div><div><b data-s>00</b><small>seg</small></div></div>
             <div class="bf-coupon"><span>Cupom <b>BLACKINFRAME</b> · R$ 100 OFF</span><button type="button" class="bf-copy">Copiar cupom</button></div>
           </div>
           <div class="big" data-bf-off><span class="qtd">12x</span> <b>R$ 30,72</b></div>
           <div class="cashline" data-bf-off>ou R$ 297,00 à vista</div>
+          <div class="up-nota" data-up hidden>Valor válido até 31/12. A partir de 1º de janeiro de 2027: <b>R$ 397</b>.</div>
           <a href="https://pay.kiwify.com.br/auJqmnG" class="btn block" data-bf-txt>Garantir meu acesso agora <span class="ar">→</span></a>
           <div class="pay"><span>💳 Cartão em até 12x</span><span>· Pix</span><span>· Boleto</span></div>
         </div>
@@ -1059,6 +1073,23 @@ document.querySelectorAll('a[href*="pay.kiwify.com.br"]').forEach(function(btn){
       if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(CUPOM).then(ok,fb);}else{fb();}
     });
   });
+})();
+
+// Aumento para R$ 397 em 01/01/2027: do fim da Black (18/11 20h) até a virada do ano mostra a faixa e o aviso; depois some sozinho.
+// ATENÇÃO: em 01/01 trocar o preço na Kiwify e os valores fixos da LP (R$ 297,00, 12x R$ 30,72).
+(function(){
+  var DE=new Date('2026-11-18T20:00:00-03:00').getTime(),ATE=new Date('2027-01-01T00:00:00-03:00').getTime();
+  var els=document.querySelectorAll('[data-up]'),cd=document.querySelectorAll('[data-upcd]'),t;
+  function tick(){
+    var agora=Date.now(),sim=agora>=DE&&agora<ATE;
+    for(var i=0;i<els.length;i++)els[i].hidden=!sim;
+    if(agora>=ATE){clearInterval(t);return;}
+    if(!sim)return;
+    var s=Math.floor((ATE-agora)/1000),d=Math.floor(s/86400),h=Math.floor(s%86400/3600),m=Math.floor(s%3600/60);
+    var txt=d>0?d+(d===1?' dia ':' dias ')+h+'h':h+'h '+m+'min';
+    for(var j=0;j<cd.length;j++)cd[j].textContent=txt;
+  }
+  t=setInterval(tick,30000);tick();
 })();
 </script>
 </body>
